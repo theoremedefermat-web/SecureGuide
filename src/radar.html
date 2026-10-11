@@ -1,0 +1,205 @@
+<title>Radar des arnaques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Concept : bulletin de veille. Bandeau bleu nuit avec radar, fiches d'alerte classées par niveau, filtres par pays. Même système que le quiz. */
+:root{
+  --night:#0A2533; --night-2:#123546; --signal:#F2B33D; --signal-ink:#2A1C00;
+  --bg:#EEF2F4; --card:#FFFFFF; --ink:#0E1C24; --muted:#5A6B75; --line:#D5DEE3;
+  --crit:#D2453A; --warn:#E39A1B; --ok:#2E9461;
+  --wide:"Archivo",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --night:#06161F; --night-2:#0E2A38; --bg:#0B1A22; --card:#12252F; --ink:#E7EEF1; --muted:#9BB0BA; --line:#22404E;
+  --crit:#F0706A; --warn:#F2B33D; --ok:#4CC488; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --night:#06161F; --night-2:#0E2A38; --bg:#0B1A22; --card:#12252F; --ink:#E7EEF1; --muted:#9BB0BA; --line:#22404E;
+  --crit:#F0706A; --warn:#F2B33D; --ok:#4CC488; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+.hero{background:radial-gradient(120% 90% at 85% 0%,var(--night-2),var(--night) 60%);color:#EAF3F7;padding:0 16px;overflow:hidden}
+.hero-in{max-width:760px;margin:0 auto;padding-block:28px 56px;display:flex;flex-direction:column;gap:18px;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;color:#fff}
+.logo svg{width:20px;height:20px}
+.live{display:flex;align-items:center;gap:8px;color:var(--signal);font-weight:700}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--crit);box-shadow:0 0 0 0 var(--crit);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:clamp(38px,9vw,64px);line-height:.95;letter-spacing:-.01em;margin:0;text-transform:uppercase;text-wrap:balance}
+h1 em{font-style:normal;color:var(--signal)}
+.week{font-family:var(--mono);font-size:13.5px;color:#CFE0E7}
+.sub{color:#B9CCD5;max-width:46ch;font-size:18px;margin:0}
+.radar{position:absolute;right:-20px;top:30px;width:240px;height:240px;opacity:.5;pointer-events:none}
+.radar circle{fill:none;stroke:#2C5468}
+.radar .sweep{transform-origin:120px 120px;animation:sweep 4s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+@media (max-width:560px){.radar{width:170px;height:170px;right:-60px;top:16px;opacity:.3}}
+
+main{padding:0 16px}
+.wrap{max-width:760px;margin:-32px auto 0;padding-block:0 56px;display:flex;flex-direction:column;gap:28px;position:relative}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(10,37,51,.35)}
+.stat{padding:18px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:clamp(24px,5.4vw,34px);line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:13.5px;color:var(--muted);line-height:1.35}
+.stat a{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
+@media (max-width:560px){.stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}}
+
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(21px,4.6vw,26px);line-height:1.1;margin:0;text-transform:uppercase}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.f{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.f[aria-pressed="true"]{background:var(--night);color:var(--signal);border-color:var(--night)}
+.f:focus-visible,.btn:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+
+.alerts{display:flex;flex-direction:column;gap:14px}
+.alert{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px 24px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.alert::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--sev)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.lvl{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--sev);padding:4px 8px;border-radius:4px}
+.ctry{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:4px;border:1.5px solid var(--ink)}
+.date{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+.alert h3{font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:clamp(19px,4.2vw,22px);line-height:1.2;margin:0;text-wrap:balance}
+.bait{font-family:var(--mono);font-size:13.5px;background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:10px 12px;color:var(--muted)}
+.bait::before{content:"Ce que vous recevez · ";color:var(--ink);font-weight:700}
+.rows{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.rows{grid-template-columns:1fr}}
+.row{display:flex;flex-direction:column;gap:2px;min-width:0}
+.row b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.row.trap b{color:var(--crit)}
+.row.do b{color:var(--ok)}
+.row p{margin:0;font-size:15.5px}
+.src{font-size:13px;color:var(--muted)}
+.src a{text-decoration-color:var(--signal);text-underline-offset:3px}
+.empty{color:var(--muted);text-align:center;padding:20px}
+
+.ref{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:640px){.ref{grid-template-columns:1fr}}
+.cty{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cty h3{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:17px;margin:0;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.cty ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.cty li{display:flex;flex-direction:column}
+.cty li span{color:var(--muted);font-size:13.5px}
+.num{font-family:var(--mono);font-weight:700;font-size:15px;user-select:all}
+
+.news{background:var(--night);color:#EAF3F7;border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;border-top:5px solid var(--signal)}
+.news h2{color:#fff}
+.news p{margin:0;color:#B9CCD5}
+form{display:flex;flex-wrap:wrap;gap:10px}
+input{flex:1 1 220px;min-width:0;font:inherit;padding:14px;border:1.5px solid #2C5468;border-radius:8px;background:#0E2D3D;color:#fff}
+input::placeholder{color:#8FAAB6}
+.btn{font-family:var(--wide);font-stretch:112%;font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:15px;padding:14px 20px;border:0;border-radius:8px;background:var(--signal);color:var(--signal-ink);cursor:pointer;box-shadow:0 4px 0 #B07A12}
+.note{font-size:13.5px;color:#8FAAB6}
+.foot{font-size:13.5px;color:var(--muted);text-align:center}
+.foot a{text-decoration-color:var(--signal)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="hero">
+  <div class="hero-in">
+    <svg class="radar" viewBox="0 0 240 240" aria-hidden="true">
+      <circle cx="120" cy="120" r="110"/><circle cx="120" cy="120" r="76"/><circle cx="120" cy="120" r="42"/>
+      <g class="sweep"><path d="M120 120 L120 10 A110 110 0 0 1 215 65 Z" fill="#F2B33D" opacity=".18"/><line x1="120" y1="120" x2="120" y2="10" stroke="#F2B33D" stroke-width="1.5"/></g>
+      <circle cx="175" cy="78" r="4" fill="#D2453A" stroke="none"/><circle cx="72" cy="162" r="3.5" fill="#F2B33D" stroke="none"/><circle cx="150" cy="180" r="3" fill="#F2B33D" stroke="none"/>
+    </svg>
+    <div class="top">
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="#F2B33D" stroke-width="2.2" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>SecureGuide.fr</span>
+      <span class="live"><i></i>Veille active</span>
+    </div>
+    <span class="week">Édition n° 1 · semaine du 5 au 11 octobre 2026</span>
+    <h1>Radar des <em>arnaques</em></h1>
+    <p class="sub">Les arnaques qui circulent en ce moment en France, en Belgique et au Luxembourg, et le bon réflexe pour chacune. Mis à jour chaque semaine.</p>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <section class="stats" aria-label="Chiffres clés">
+    <div class="stat"><b>500 000+</b><span>demandes d'aide en France en 2025, soit +20 % en un an</span><a href="https://www.economiematin.fr/?p=216423" target="_blank" rel="noopener">Cybermalveillance.gouv.fr</a></div>
+    <div class="stat"><b>≈ 10 M</b><span>messages suspects signalés en Belgique en 2025</span><a href="https://ccb.belgium.be/news/phishing-messages-surge-safeonweb-receives-nearly-10-million-suspicious-alerts-2025" target="_blank" rel="noopener">CCB · Safeonweb</a></div>
+    <div class="stat"><b>516 M€</b><span>volés en France en 2025 par manipulation (faux conseiller, IBAN)</span><a href="https://www.journaldugeek.com/2026/09/09/francais-ont-deja-perdu-516-millions-deuros-a-cause-arnaque-vicieuse/" target="_blank" rel="noopener">Observatoire des moyens de paiement</a></div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <div class="sec-h">
+      <h2>En circulation</h2>
+      <div class="filters" role="group" aria-label="Filtrer par pays">
+        <button class="f" id="f-all" data-c="all" aria-pressed="true">Tous</button>
+        <button class="f" id="f-fr" data-c="FR" aria-pressed="false">FR</button>
+        <button class="f" id="f-be" data-c="BE" aria-pressed="false">BE</button>
+        <button class="f" id="f-lu" data-c="LU" aria-pressed="false">LU</button>
+      </div>
+    </div>
+    <div class="alerts" id="alerts"></div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <h2>Les bons numéros</h2>
+    <div class="ref">
+      <div class="cty"><h3>France</h3><ul>
+        <li><span class="num">33700</span><span>Transférer un SMS frauduleux</span></li>
+        <li><span class="num">17cyber.gouv.fr</span><span>Assistance aux victimes</span></li>
+        <li><span>Votre banque, au numéro au dos de la carte, pour bloquer</span></li>
+      </ul></div>
+      <div class="cty"><h3>Belgique</h3><ul>
+        <li><span class="num">suspicious@safeonweb.be</span><span>Transférer un email suspect</span></li>
+        <li><span class="num">078 170 170</span><span>Card Stop, blocage de carte</span></li>
+        <li><span>Plainte auprès de la police locale</span></li>
+      </ul></div>
+      <div class="cty"><h3>Luxembourg</h3><ul>
+        <li><span class="num">113</span><span>Police grand-ducale</span></li>
+        <li><span class="num">8002 1234</span><span>BEE SECURE Helpline</span></li>
+        <li><span>Votre banque, via ses coordonnées officielles</span></li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="news">
+    <h2>Le Radar dans votre boîte mail</h2>
+    <p>Chaque dimanche, les nouvelles arnaques de la semaine en 2 minutes de lecture. Gratuit, désinscription en un clic.</p>
+    <form id="mail">
+      <label for="email" hidden>Adresse email</label>
+      <input id="email" type="email" required placeholder="votre@email.fr" autocomplete="email">
+      <button class="btn" type="submit">Recevoir le Radar</button>
+    </form>
+    <p class="note" id="mailnote">Aperçu : ce formulaire sera relié à Brevo une fois installé sur SecureGuide.fr.</p>
+  </section>
+
+  <p class="foot">Veille réalisée à partir des alertes officielles et de la presse, vérifiée par un expert réseau et sécurité certifié CCNP. Pas sûr d'être protégé ? <a href="https://secureguide.fr" target="_blank" rel="noopener">Faites le test en 2 minutes</a>.</p>
+</div>
+</main>
+
+<script>
+const ALERTS=[
+ {c:["LU"],lvl:"crit",date:"8 oct. 2026",t:"Faux passage à Wero, puis faux appel de la banque",bait:"Un email au nom de Payconiq ou Wero vous invite à « passer à Wero » via un lien ou un QR code.",trap:"Après le clic, un faux employé de banque ou de LuxTrust appelle, parle de piratage et propose même d'envoyer quelqu'un récupérer votre carte.",do:"Raccrochez et rappelez votre banque au numéro officiel. Personne ne vient jamais chercher une carte à domicile.",src:"Police grand-ducale via L'essentiel / Lesfrontaliers.lu",u:"https://www.lesfrontaliers.lu/?p=1227181"},
+ {c:["FR"],lvl:"crit",date:"9 sept. 2026",t:"Faux conseiller bancaire et changement d'IBAN",bait:"Un appel affichant le vrai numéro de votre banque signale une opération suspecte à « annuler » d'urgence.",trap:"Le faux conseiller vous fait valider un virement ou une opération dans votre appli. Le numéro affiché peut être falsifié.",do:"Votre banque ne vous demande jamais de valider une opération pour en annuler une autre. Raccrochez et rappelez-la vous-même.",src:"Observatoire de la sécurité des moyens de paiement via Journal du Geek",u:"https://www.journaldugeek.com/2026/09/09/francais-ont-deja-perdu-516-millions-deuros-a-cause-arnaque-vicieuse/"},
+ {c:["BE"],lvl:"crit",date:"Tendance 2026",t:"Validation itsme imposée par téléphone",bait:"Un appel, parfois précédé d'un email, au nom de la police, d'une banque ou de Proximus, signale une connexion suspecte.",trap:"On vous pousse à confirmer dans itsme une action que vous n'avez pas lancée, parfois en se réclamant du portail CSAM.",do:"Ne confirmez jamais dans itsme une action que vous n'avez pas lancée vous-même. Lisez les alertes affichées par l'appli.",src:"Safeonweb",u:"https://blog.oeccbb.be/fr/article/tendances-du-phishing-en-2026-voici-comment-reperer-les-dernieres-arnaques-.../32027"},
+ {c:["BE"],lvl:"warn",date:"Tendance 2026",t:"Faux remboursement de MyPension, du SPF Finances ou de votre fournisseur d'énergie",bait:"Un SMS ou un email promet une prime, un remboursement ou annonce une amende urgente, au nom d'un service public ou d'Engie, Fluvius, Farys.",trap:"Le lien mène à une copie du site officiel. L'IA rend ces messages sans fautes : l'orthographe ne suffit plus à les repérer.",do:"Passez toujours par votre espace client ou le site officiel tapé vous-même. Transférez le message à suspicious@safeonweb.be.",src:"Safeonweb",u:"https://blog.oeccbb.be/fr/article/tendances-du-phishing-en-2026-voici-comment-reperer-les-dernieres-arnaques-.../32027"},
+ {c:["BE","FR","LU"],lvl:"warn",date:"Tendance 2026",t:"WhatsApp « confirmez votre réservation d'hôtel »",bait:"Un message WhatsApp cite votre vraie réservation et réclame un paiement urgent pour la confirmer.",trap:"Les escrocs utilisent des données volées chez des plateformes de réservation. Les détails exacts rendent le message crédible.",do:"Ne payez jamais via un lien reçu par message. Vérifiez sur l'appli de réservation ou directement auprès de l'hôtel.",src:"Safeonweb",u:"https://blog.oeccbb.be/fr/article/tendances-du-phishing-en-2026-voici-comment-reperer-les-dernieres-arnaques-.../32027"},
+ {c:["BE","FR","LU"],lvl:"info",date:"Tendance 2026",t:"Petites entreprises : la vraie facture au faux IBAN",bait:"Une facture attendue arrive d'un fournisseur connu, depuis sa vraie adresse email.",trap:"Sa messagerie a été piratée et seul le numéro de compte a changé. Rien ne paraît suspect.",do:"Confirmez tout nouveau numéro de compte par téléphone, au numéro que vous connaissez déjà.",src:"Safeonweb",u:"https://blog.oeccbb.be/fr/article/tendances-du-phishing-en-2026-voici-comment-reperer-les-dernieres-arnaques-.../32027"}
+];
+const L={crit:["Critique","--crit"],warn:["Élevé","--warn"],info:["Pros & TPE","--ok"]};
+function draw(f){
+  const box=document.getElementById("alerts");box.replaceChildren();
+  const list=ALERTS.filter(a=>f==="all"||a.c.includes(f));
+  if(!list.length){const p=document.createElement("p");p.className="empty";p.textContent="Aucune alerte pour ce pays cette semaine.";box.append(p);return}
+  list.forEach(a=>{
+    const el=document.createElement("article");el.className="alert";el.style.setProperty("--sev",`var(${L[a.lvl][1]})`);
+    el.innerHTML=`<div class="meta"><span class="lvl"></span>${a.c.map(()=>'<span class="ctry"></span>').join("")}<span class="date"></span></div><h3></h3><div class="bait"></div><div class="rows"><div class="row trap"><b>Le piège</b><p class="tr"></p></div><div class="row do"><b>Le bon réflexe</b><p class="dd"></p></div></div><div class="src">Source : <a target="_blank" rel="noopener"></a></div>`;
+    el.querySelector(".lvl").textContent=L[a.lvl][0];
+    el.querySelectorAll(".ctry").forEach((s,k)=>s.textContent=a.c[k]);
+    el.querySelector(".date").textContent=a.date;
+    el.querySelector("h3").textContent=a.t;
+    el.querySelector(".bait").append(a.bait);
+    el.querySelector(".tr").textContent=a.trap;el.querySelector(".dd").textContent=a.do;
+    const s=el.querySelector(".src a");s.href=a.u;s.textContent=a.src;
+    box.append(el)});
+}
+document.querySelectorAll(".f").forEach(b=>b.onclick=()=>{document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));draw(b.dataset.c)});
+draw("all");
+document.getElementById("mail").addEventListener("submit",e=>{e.preventDefault();document.getElementById("mailnote").textContent="Adresse valide. Dans cet aperçu rien n'est envoyé : l'inscription passera par Brevo sur SecureGuide.fr."});
+</script>
