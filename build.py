@@ -52,6 +52,7 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website"):
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="fr_FR">
 <meta name="theme-color" content="#0A2533">
+<meta name="impact-site-verification" value="9298fb5c-374a-40b3-9497-a3e6edbdf582">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 {FONTS}
 <link rel="stylesheet" href="/assets/site.css">
@@ -61,6 +62,7 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website"):
 {nav(active)}
 {body}
 {FOOT}
+<div hidden>Impact-Site-Verification: 9298fb5c-374a-40b3-9497-a3e6edbdf582</div>
 </body>
 </html>
 '''
