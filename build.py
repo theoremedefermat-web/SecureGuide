@@ -156,7 +156,7 @@ def build():
         assert "[LIEN_" not in body, f"lien d'affiliation manquant dans {f.name}"
         body = re.sub(r"<table>(.*?)</table>", r'<div class="tbl"><table>\1</table></div>', body, flags=re.S)
         body = body.replace('href="/test-protection"', 'href="/test-protection/"')
-        kind = "Comparatif" if "comparatif" in meta["Meta description"].lower() or "Comparatif" in h1 else "Guide"
+        kind = "Alerte arnaque" if "arnaque" in meta["Slug"] else "Comparatif" if "comparatif" in meta["Meta description"].lower() or "Comparatif" in h1 else "Guide"
         slug = meta["Slug"].strip()
         ld = json.dumps({"@context": "https://schema.org", "@type": "Article", "headline": meta["Titre SEO"],
                          "description": meta["Meta description"], "inLanguage": "fr",
