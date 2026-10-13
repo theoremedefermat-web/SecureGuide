@@ -93,6 +93,7 @@ h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(21p
 .row p{margin:0;font-size:15.5px}
 .src{font-size:13px;color:var(--muted)}
 .src a{text-decoration-color:var(--signal);text-underline-offset:3px}
+.more{font-family:var(--mono);font-size:13px;font-weight:700;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px;align-self:flex-start}
 .empty{color:var(--muted);text-align:center;padding:20px}
 
 .ref{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -203,6 +204,7 @@ function draw(f){
     el.querySelector(".bait").append(a.bait);
     el.querySelector(".tr").textContent=a.trap;el.querySelector(".dd").textContent=a.do;
     const s=el.querySelector(".src a");s.href=a.u;s.textContent=a.src;
+    if(a.a){const r=document.createElement("a");r.href=a.a;r.className="more";r.textContent="Lire la fiche complète →";el.append(r)}
     box.append(el)});
 }
 document.querySelectorAll(".f").forEach(b=>b.onclick=()=>{document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));draw(b.dataset.c)});
