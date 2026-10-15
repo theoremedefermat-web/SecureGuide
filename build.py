@@ -55,7 +55,7 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website"):
 <meta name="impact-site-verification" value="9298fb5c-374a-40b3-9497-a3e6edbdf582">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 {FONTS}
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">\n<link rel="alternate" type="application/rss+xml" title="Radar des arnaques · SecureGuide.fr" href="/feed.xml">
 {extra_head}
 </head>
 <body>
@@ -76,6 +76,21 @@ def must_sub(pattern, repl, text, flags=0):
     assert n, f"motif introuvable : {pattern[:60]}"
     return new
 
+FOLLOW_RADAR = (
+    '<section class="news"><h2>Suivez le Radar</h2>'
+    '<p>Une nouvelle édition chaque dimanche matin. Ajoutez cette page à vos favoris, '
+    'ou abonnez-vous au flux RSS : les nouvelles alertes arrivent toutes seules dans votre lecteur, sans compte ni email.</p>'
+    '<p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn" href="/feed.xml" style="text-decoration:none">Flux RSS du Radar</a>'
+    '<a class="btn" href="/test-protection/" style="text-decoration:none;background:transparent;color:#fff;box-shadow:none;border:2px solid #3B6375">Faire le test</a></p>'
+    '</section>')
+FOLLOW_QUIZ = (
+    '<h2>Votre plan d\'action</h2>'
+    '<ul class="perks"><li>Fermez d\'abord la faille n°1 : elle compte le plus dans votre score</li>'
+    '<li>Les arnaques changent chaque semaine : consultez le <a href="/radar/">Radar des arnaques</a> le dimanche</li>'
+    '<li>Refaites le scan dans un mois pour mesurer vos progrès</li></ul>'
+    '<p class="note"><a href="/guides/">Tous nos guides pratiques</a> · <a href="/feed.xml">Suivre le Radar par RSS</a></p>'
+    '<div class="trust"><span>Gratuit</span><span>·</span><span>Sans compte</span><span>·</span><span>Rédigé par un expert réseau certifié Cisco CCNP</span></div>')
+
 BREVO_FORM = (SRC / "brevo_form.html").read_text().strip() if (SRC / "brevo_form.html").exists() else ""
 
 def strip_head(src):
@@ -86,10 +101,10 @@ def strip_head(src):
         src = must_sub(r'<form id="mail">.*?</form>', BREVO_FORM, src, re.S)
         src = must_sub(r'<p class="note" id="mailnote">.*?</p>', '<p class="note">Gratuit. Désinscription en un clic.</p>', src, re.S)
     else:
-        # Tant que Brevo n'est pas relié, pas de faux formulaire en ligne
-        src = must_sub(r'<form id="mail">.*?</form>\s*', "", src, re.S)
-        src = must_sub(r'<p class="note" id="mailnote">.*?</p>',
-                       '<p class="note"><b>Lancement très prochain.</b> Le formulaire d\'inscription arrive dans quelques jours.</p>', src, re.S)
+        # Sans formulaire Brevo : suivre le Radar par flux RSS, sans compte ni email
+        src = re.sub(r'<section class="news">.*?</section>', FOLLOW_RADAR, src, flags=re.S)
+        src = re.sub(r'(<section id="capture" class="card cap" hidden>).*?(<button class="link" id="again">)',
+                     r'\1' + FOLLOW_QUIZ.replace('\\', '\\\\') + r'\2', src, flags=re.S)
     src = re.sub(r'(\$\("mail"\)|document\.getElementById\("mail"\))\.addEventListener', r'\1?.addEventListener', src)
     return src
 
@@ -169,12 +184,12 @@ def build():
                 f'<main class="art-wrap"><article class="art">{body}</article>'
                 f'<aside class="promo"><div><b>Êtes-vous bien protégé ?</b><span>10 questions, un score sur 100, vos 3 priorités.</span></div>'
                 f'<a class="btn-y" href="/test-protection/">Faire le test</a></aside></main>')
-        guides.append((slug, h1, kind, meta["Meta description"]))
+        guides.append((slug, h1, kind, meta["Meta description"], f))
         pages.append(page(f"/guides/{slug}/", meta["Titre SEO"] + " · SecureGuide.fr", meta["Meta description"], html,
                           active="guides", og_type="article",
                           extra_head=f'<script type="application/ld+json">{ld}</script>'))
 
-    cards = "".join(f'<a class="g-card" href="/guides/{s}/"><span>{k}</span><b>{t}</b><p>{d}</p></a>' for s, t, k, d in guides)
+    cards = "".join(f'<a class="g-card" href="/guides/{s}/"><span>{k}</span><b>{t}</b><p>{d}</p></a>' for s, t, k, d, _ in guides)
     pages.append(page("/guides/", "Guides et comparatifs · SecureGuide.fr",
         "Nos guides pratiques et comparatifs pour protéger votre famille ou votre petite entreprise en ligne.",
         '<style>.g-list{display:grid;gap:14px}.g-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:6px}'
@@ -196,7 +211,40 @@ def build():
     urls = "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>" for p in pages)
     (OUT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
+    write_feed(guides)
     print(f"{len(pages)} pages générées dans {OUT}")
+
+def added_date(path):
+    """Date de première publication d'un fichier selon git (à défaut, aujourd'hui)."""
+    import subprocess, email.utils
+    try:
+        out = subprocess.run(["git", "log", "--diff-filter=A", "--follow", "--format=%aI", "--", str(path)],
+                             cwd=ROOT, capture_output=True, text=True).stdout.split()
+        d = datetime.datetime.fromisoformat(out[-1]) if out else None
+    except Exception:
+        d = None
+    d = d or datetime.datetime.now(datetime.timezone.utc)
+    return email.utils.format_datetime(d)
+
+def write_feed(guides):
+    from xml.sax.saxutils import escape
+    import email.utils
+    radar_src = (SRC / "radar.html").read_text()
+    week = re.search(r'<span class="week">(.*?)</span>', radar_src)
+    week = re.sub("<[^>]+>", "", week.group(1)) if week else "Édition de la semaine"
+    now = email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc))
+    items = [f"<item><title>{escape('Radar des arnaques · ' + week)}</title><link>{SITE}/radar/</link>"
+             f"<guid isPermaLink=\"false\">radar-{escape(week)}</guid><pubDate>{now}</pubDate>"
+             f"<description>{escape('Les arnaques en circulation cette semaine en France, en Belgique et au Luxembourg, et le bon réflexe pour chacune.')}</description></item>"]
+    for slug, title, kind, desc, path in guides:
+        items.append(f"<item><title>{escape(title)}</title><link>{SITE}/guides/{slug}/</link><guid>{SITE}/guides/{slug}/</guid>"
+                     f"<pubDate>{added_date(path)}</pubDate>"
+                     f"<category>{escape(kind)}</category><description>{escape(desc)}</description></item>")
+    (OUT / "feed.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
+        f"<title>Radar des arnaques · SecureGuide.fr</title><link>{SITE}/</link><language>fr</language>"
+        "<description>La veille des arnaques en France, en Belgique et au Luxembourg, chaque dimanche.</description>"
+        f"<lastBuildDate>{now}</lastBuildDate>{''.join(items)}</channel></rss>\n")
 
 if __name__ == "__main__":
     build()
