@@ -25,7 +25,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .nav{background:var(--night);color:#EAF3F7;padding:0 16px;position:sticky;top:0;z-index:10;border-bottom:1px solid #1C3D4E}
 .nav-in{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap;padding-block:8px}
 .brand{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.06em;text-decoration:none;color:#fff}
-.brand svg{width:22px;height:22px}
+.brand{gap:10px}
+.brand svg{width:34px;height:34px;flex:none}
+.wm{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:19px;letter-spacing:-.01em;line-height:1;text-transform:none}
+.wm-a{color:#fff}.wm-b{color:var(--signal)}.wm-c{color:#9FBAC6;font-weight:600;font-size:.72em;margin-left:1px}
+.foot-brand{margin-bottom:12px;display:inline-flex}
+.foot-brand svg{width:30px;height:30px}
+@media (max-width:420px){.wm{font-size:17px}.brand svg{width:30px;height:30px}}
 .links{display:flex;gap:4px;flex-wrap:wrap}
 .links a{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#CFE0E7;padding:8px 10px;border-radius:6px}
 .links a:hover{color:#fff;background:#123546}
@@ -57,7 +63,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .art p,.art ul,.art ol{margin:0 0 1em}
 .art li{margin-bottom:.4em}
 .art a{text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}
-.art a[rel~="sponsored"]{display:inline-block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;background:var(--signal);color:var(--signal-ink);padding:12px 18px;border-radius:8px;box-shadow:0 3px 0 #B07A12}
+.art a[rel~="sponsored"]:not(.aff-inline){display:inline-block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;background:var(--signal);color:var(--signal-ink);padding:12px 18px;border-radius:8px;box-shadow:0 3px 0 #B07A12}
+.art a.aff-inline{font-weight:700}
 .art em{color:var(--muted);font-size:14.5px}
 .tbl{overflow-x:auto;margin:0 0 1.4em;max-width:100%}
 .art table{border-collapse:collapse;width:100%;font-size:15.5px;min-width:520px}

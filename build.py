@@ -16,8 +16,31 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900'
          '&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">')
 
-SHIELD = ('<svg viewBox="0 0 24 24" fill="none" stroke="#F2B33D" stroke-width="2.2" aria-hidden="true">'
-          '<path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>')
+MARK = (SRC / "brand/mark.svg").read_text().replace('role="img" aria-label="SecureGuide"', 'aria-hidden="true"')
+def mark(uid):
+    return MARK.replace("sg-in", f"sg-in-{uid}").replace("sg-sweep", f"sg-sweep-{uid}")
+WORDMARK = '<span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span>'
+
+# Mentions de produits à transformer en liens d'affiliation (texte courant uniquement)
+AUTOLINK = {"NordVPN": "LIEN_NORDVPN", "NordPass": "LIEN_NORDPASS"}
+
+def autolink(html):
+    """Relie chaque mention NordVPN / NordPass hors titres, liens et scripts vers le lien affilié."""
+    parts = re.split(r"(<[^>]+>)", html)
+    skip, out = 0, []
+    pat = re.compile(r"\b(" + "|".join(AUTOLINK) + r")\b")
+    for part in parts:
+        if part.startswith("<"):
+            m = re.match(r"<(/?)(a|h[1-6]|script|style|title)\b", part, re.I)
+            if m:
+                skip += -1 if m.group(1) else 1
+            out.append(part)
+        elif skip <= 0 and part:
+            out.append(pat.sub(lambda m: f'<a class="aff-inline" href="{AFFILIATE[AUTOLINK[m.group(1)]]}" '
+                                         f'rel="sponsored noopener" target="_blank">{m.group(1)}</a>', part))
+        else:
+            out.append(part)
+    return "".join(out)
 
 def nav(active):
     items = [("/radar/", "Radar", "radar"), ("/guides/", "Guides", "guides"),
@@ -25,11 +48,11 @@ def nav(active):
     links = "".join(
         f'<a href="{h}"{" aria-current=\"page\"" if k == active else ""}{" class=\"cta-s\"" if k == "test" else ""}>{t}</a>'
         for h, t, k in items)
-    return (f'<nav class="nav"><div class="nav-in"><a class="brand" href="/">{SHIELD}SecureGuide.fr</a>'
+    return (f'<nav class="nav"><div class="nav-in"><a class="brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("nav")}{WORDMARK}</a>'
             f'<div class="links">{links}</div></div></nav>')
 
 FOOT = f'''<footer class="foot"><div class="foot-in">
-<div><h4>SecureGuide.fr</h4><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
+<div><a class="brand foot-brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("foot")}{WORDMARK}</a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
 <p>Contact : <span>secureguide2024@gmail.com</span></p></div>
 <div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
@@ -99,10 +122,8 @@ def build():
     (OUT / "assets").mkdir(parents=True)
     shutil.copy(SRC / "site.css", OUT / "assets/site.css")
     shutil.copy(SRC / "alerts.js", OUT / "assets/alerts.js")
-    (OUT / "assets/favicon.svg").write_text(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0A2533"/>'
-        '<path d="M12 3.5l6.5 2.4v4.9c0 4-2.7 7.5-6.5 8.9-3.8-1.4-6.5-4.9-6.5-8.9V5.9L12 3.5z" fill="none" stroke="#F2B33D" stroke-width="2"/>'
-        '<path d="M9 12l2 2 4-4.5" fill="none" stroke="#F2B33D" stroke-width="2"/></svg>')
+    shutil.copy(SRC / "brand/mark.svg", OUT / "assets/favicon.svg")
+    shutil.copy(SRC / "brand/mark.svg", OUT / "assets/logo.svg")
     pages = []
 
     # Accueil
@@ -154,6 +175,7 @@ def build():
         for key, url in AFFILIATE.items():
             body = body.replace(f"[{key}]", url)
         assert "[LIEN_" not in body, f"lien d'affiliation manquant dans {f.name}"
+        body = autolink(body)
         body = re.sub(r"<table>(.*?)</table>", r'<div class="tbl"><table>\1</table></div>', body, flags=re.S)
         body = body.replace('href="/test-protection"', 'href="/test-protection/"')
         kind = "Alerte arnaque" if "arnaque" in meta["Slug"] else "Comparatif" if "comparatif" in meta["Meta description"].lower() or "Comparatif" in h1 else "Guide"
