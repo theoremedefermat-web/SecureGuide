@@ -179,6 +179,7 @@ def build():
     shutil.copy(SRC / "alerts.js", OUT / "assets/alerts.js")
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/favicon.svg")
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/logo.svg")
+    shutil.copytree(SRC / "ads", OUT / "assets/ads")
     pages = []
 
     # Accueil
