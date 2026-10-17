@@ -1,0 +1,58 @@
+<style>
+.ty{max-width:880px;margin:0 auto;padding:40px 16px 20px}
+.ty-ok{background:var(--night);color:#EAF3F7;border-radius:18px;padding:28px;display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center}
+.ty-ok img{width:100%;height:auto;border-radius:3px 8px 8px 3px;transform:rotate(-4deg);box-shadow:0 20px 34px -14px rgba(0,0,0,.7)}
+.ty h1{font-family:var(--wide);font-stretch:120%;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4.4vw,42px);line-height:1;margin:8px 0 10px}
+.ty h1 em{font-style:normal;color:var(--signal)}
+.ty-ok p{margin:0 0 18px;color:#CFE0E7}
+.ty-ok .btn-y{display:inline-block}
+.ty-steps{margin:16px 0 0;font-size:14px;color:#9FBAC6}
+.ty-offer{margin-top:30px;background:var(--card);border:2px solid var(--signal);border-radius:18px;padding:26px;display:grid;grid-template-columns:1fr 190px;gap:26px;align-items:center}
+.ty-offer h2{font-family:var(--wide);font-stretch:118%;font-weight:900;text-transform:uppercase;font-size:clamp(22px,3vw,28px);line-height:1.05;margin:8px 0 10px}
+.ty-offer ul{margin:12px 0 18px;padding-left:20px}
+.ty-offer li{margin:4px 0}
+.ty-price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ty-price b{font-family:var(--wide);font-stretch:118%;font-weight:900;font-size:34px}
+.ty-price span{color:var(--muted);font-size:14.5px}
+.ty-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B07A12}
+.ty-more{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.ty-more a{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-decoration:none;display:block}
+.ty-more a:hover{border-color:var(--ink)}
+.ty-more b{display:block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:18px;margin-bottom:4px}
+.ty-more span{color:var(--muted);font-size:15px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ty-k{color:var(--signal)}}
+@media (max-width:680px){.ty-ok{grid-template-columns:1fr}.ty-ok img{width:120px}.ty-offer{grid-template-columns:1fr}.ty-offer .cv-wrap{order:-1;max-width:170px}.ty-more{grid-template-columns:1fr}}
+</style>
+<main class="ty">
+<section class="ty-ok">
+<img src="/assets/kit/kit-p1.jpg" alt="Couverture du Kit anti-arnaques 2026" width="560" height="792">
+<div>
+<span class="kicker">Inscription confirmée</span>
+<h1>Votre kit est <em>prêt</em></h1>
+<p>Téléchargez-le maintenant. Imprimez la page 5 et posez-la près du téléphone de vos parents : c'est celle qui sert le plus.</p>
+<a class="btn-y" href="/assets/kit/kit-anti-arnaques-2026.pdf" download>Télécharger le kit (PDF)</a>
+<p class="ty-steps">Vous recevrez aussi le lien par email, et le Radar des arnaques chaque dimanche. Pensez à vérifier vos spams.</p>
+</div>
+</section>
+
+<section class="ty-offer">
+<div>
+<span class="ty-k">Pour aller plus loin</span>
+<h2>Vos parents liront-ils ce kit&nbsp;? Offrez-leur le guide fait pour eux</h2>
+<p style="margin:0">Le kit vous alerte. Le <b>Guide anti-arnaques seniors</b> va plus loin : un format simple, pensé pour ceux qui ne suivent pas les alertes en ligne.</p>
+<ul>
+<li>Reconnaître un faux conseiller bancaire au téléphone</li>
+<li>Repérer les SMS et emails piégés</li>
+<li>Les bons réflexes en cas de doute</li>
+</ul>
+<div class="ty-price"><b><!--PRICE--></b><span>PDF en français · téléchargement immédiat · paiement sécurisé par Etsy</span></div>
+<a class="btn-y" href="<!--URL-->" target="_blank" rel="noopener" style="display:inline-block">Voir le guide sur Etsy</a>
+</div>
+<div class="cv-wrap"><!--COVER--></div>
+</section>
+
+<div class="ty-more">
+<a href="/test-protection/"><b>Faites le test en 2 minutes →</b><span>Votre score de protection sur 100 et vos 3 priorités.</span></a>
+<a href="/radar/"><b>Voir le Radar de la semaine →</b><span>Les nouvelles arnaques en France, en Belgique et au Luxembourg.</span></a>
+</div>
+</main>

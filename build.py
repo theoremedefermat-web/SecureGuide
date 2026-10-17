@@ -106,6 +106,19 @@ def nav(active):
     return (f'<nav class="nav"><div class="nav-in"><a class="brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("nav")}{WORDMARK}</a>'
             f'<div class="links">{links}</div></div></nav>')
 
+MINI_NAV = (f'<nav class="nav"><div class="nav-in"><a class="brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("nav")}{WORDMARK}</a></div></nav>')
+
+KIT_BAR = ('<a class="kit-bar" href="/kit/?utm_source=site&amp;utm_medium=bandeau&amp;utm_campaign=kit2026">'
+           '<b>Gratuit</b><span>Le Kit anti-arnaques 2026 : les 6 arnaques du moment et la carte des numéros utiles</span><i>Le recevoir →</i></a>')
+
+def kit_form():
+    """Formulaire Brevo adapté à la page du kit."""
+    f = BREVO_FORM.replace(">Recevoir le Radar</button>", ">Recevoir le kit gratuit</button>")
+    f = f.replace("Merci ! Le prochain Radar arrive dimanche.",
+                  'C\'est envoyé ! <a href="/kit/merci/">Ouvrez votre kit ici</a>.')
+    assert "Recevoir le kit gratuit" in f and "/kit/merci/" in f
+    return f
+
 FOOT = f'''<footer class="foot"><div class="foot-in">
 <div><a class="brand foot-brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("foot")}{WORDMARK}</a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
 <p>Contact : <span>secureguide2024@gmail.com</span></p></div>
@@ -114,7 +127,7 @@ FOOT = f'''<footer class="foot"><div class="foot-in">
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
 </div></footer>'''
 
-def page(path, title, desc, body, active="", extra_head="", og_type="website"):
+def page(path, title, desc, body, active="", extra_head="", og_type="website", minimal=False, noindex=False):
     url = SITE + path
     html = f'''<!doctype html>
 <html lang="fr">
@@ -134,10 +147,10 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website"):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 {FONTS}
 <link rel="stylesheet" href="/assets/site.css">
-{extra_head}
+{extra_head}{'<meta name="robots" content="noindex">' if noindex else ""}
 </head>
 <body>
-{nav(active)}
+{MINI_NAV if minimal else nav(active) + KIT_BAR}
 {body}
 {FOOT}
 <div hidden>Impact-Site-Verification: 9298fb5c-374a-40b3-9497-a3e6edbdf582</div>
@@ -180,6 +193,7 @@ def build():
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/favicon.svg")
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/logo.svg")
     shutil.copytree(SRC / "ads", OUT / "assets/ads")
+    shutil.copytree(SRC / "kit", OUT / "assets/kit")
     pages = []
 
     # Accueil
@@ -247,7 +261,9 @@ def build():
                 f'<span class="byline">Par SecureGuide.fr · mis à jour le {datetime.date.today().strftime("%d/%m/%Y")}</span></div></header>'
                 f'<main class="art-wrap"><article class="art">{body}</article>'
                 f'<aside class="promo"><div><b>Êtes-vous bien protégé ?</b><span>10 questions, un score sur 100, vos 3 priorités.</span></div>'
-                f'<a class="btn-y" href="/test-protection/">Faire le test</a></aside>' + product_promo("seniors" if kind == "Alerte arnaque" else "famille", "Protégez vos proches" if kind == "Alerte arnaque" else "Allez plus loin") + '</main>')
+                f'<a class="btn-y" href="/test-protection/">Faire le test</a></aside>'
+                f'<aside class="promo"><div><b>Le Kit anti-arnaques 2026, gratuit</b><span>Les 6 arnaques du moment, la carte des numéros utiles, 10 points à cocher.</span></div>'
+                f'<a class="btn-y" href="/kit/?utm_source=site&amp;utm_medium=article&amp;utm_campaign=kit2026">Recevoir le kit</a></aside>' + product_promo("seniors" if kind == "Alerte arnaque" else "famille", "Protégez vos proches" if kind == "Alerte arnaque" else "Allez plus loin") + '</main>')
         guides.append((slug, h1, kind, meta["Meta description"]))
         pages.append(page(f"/guides/{slug}/", meta["Titre SEO"] + " · SecureGuide.fr", meta["Meta description"], html,
                           active="guides", og_type="article",
@@ -264,6 +280,16 @@ def build():
     pages.append(page("/boutique/", "Guides PDF de cybersécurité · SecureGuide.fr",
         "Des guides PDF simples, en français, pour protéger ses parents, ses enfants et toute la famille des arnaques en ligne.",
         shop_page(), active="shop"))
+    # Tunnel : page de capture du kit gratuit, puis page de téléchargement avec l'offre
+    kit = (SRC / "kit.html").read_text().replace("<!--FORM-->", kit_form()).replace("<!--MARK-->", mark("kit"))
+    pages.append(page("/kit/", "Kit anti-arnaques 2026 gratuit · SecureGuide.fr",
+        "Recevez gratuitement le Kit anti-arnaques 2026 : les 6 arnaques du moment, la carte des numéros utiles et 10 points pour protéger la famille.",
+        kit, minimal=True))
+    fe = PROD["seniors"]
+    merci = ((SRC / "kit_merci.html").read_text().replace("<!--PRICE-->", "5,99 €")
+             .replace("<!--URL-->", fe["url"] + "?utm_source=site&utm_medium=merci&utm_campaign=kit2026").replace("<!--COVER-->", cover(fe)))
+    page("/kit/merci/", "Votre kit est prêt · SecureGuide.fr", "Téléchargez votre Kit anti-arnaques 2026.", merci, minimal=True, noindex=True)
+
     pages.append(page("/mentions-legales/", "Mentions légales · SecureGuide.fr",
         "Mentions légales, affiliation et données personnelles de SecureGuide.fr.",
         (SRC / "legal.html").read_text()))

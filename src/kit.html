@@ -1,0 +1,82 @@
+<style>
+.kit-hero{background:radial-gradient(110% 90% at 85% 0%,#123546,var(--night) 62%);color:#EAF3F7;padding:44px 16px 56px;overflow:hidden}
+.kit-in{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.kit-hero h1{font-family:var(--wide);font-stretch:122%;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5.4vw,58px);line-height:.98;letter-spacing:-.01em;margin:14px 0 18px}
+.kit-hero h1 em{font-style:normal;color:var(--signal)}
+.kit-lead{font-size:19px;color:#CFE0E7;margin:0 0 22px;max-width:560px}
+.kit-pts{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:9px}
+.kit-pts li{display:flex;gap:10px;align-items:flex-start;font-size:16.5px}
+.kit-pts li:before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--signal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A1C00' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/13px no-repeat}
+.kit-form{background:#0E2C3B;border:1px solid #24495B;border-radius:14px;padding:18px;max-width:560px}
+.kit-form .sg-form input{font:inherit;font-size:17px;padding:14px 15px;border-radius:9px;border:1.5px solid #3C6476;background:#fff;color:#0E1C24}
+.kit-form .sg-form button{font-family:var(--wide);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:15.5px;letter-spacing:.02em;border:0;cursor:pointer;background:var(--signal);color:var(--signal-ink);padding:14px 20px;border-radius:9px;box-shadow:0 4px 0 #B07A12;flex:1 1 200px}
+.kit-form .note{margin:10px 0 0;font-size:13.5px;color:#9FBAC6}
+.kit-vis{position:relative;height:460px}
+.kit-vis img{position:absolute;width:54%;height:auto;border-radius:4px 10px 10px 4px;box-shadow:0 30px 50px -18px rgba(0,0,0,.65)}
+.kit-vis .p1{left:4%;top:10px;transform:rotate(-5deg);z-index:2}
+.kit-vis .p5{right:2%;top:58px;transform:rotate(5deg);z-index:1;opacity:.95}
+.kit-badge{position:absolute;z-index:3;left:0;top:330px;background:var(--signal);color:var(--signal-ink);font-family:var(--wide);font-stretch:118%;font-weight:900;text-transform:uppercase;font-size:15px;padding:10px 14px;border-radius:10px;transform:rotate(-4deg);box-shadow:0 4px 0 #B07A12}
+.kit-main{max-width:1040px;margin:0 auto;padding:48px 16px 20px}
+.kit-h{font-family:var(--wide);font-stretch:118%;font-weight:900;text-transform:uppercase;font-size:clamp(24px,3.4vw,32px);line-height:1.05;margin:0 0 22px}
+.kit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kit-c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.kit-c b{display:block;font-family:var(--wide);font-stretch:118%;font-weight:900;font-size:34px;line-height:1;color:var(--night)}
+.kit-c h3{font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:17px;margin:10px 0 6px}
+.kit-c p{margin:0;color:var(--muted);font-size:15px;line-height:1.5}
+.kit-why{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px;align-items:center}
+.kit-quote{background:var(--night);color:#EAF3F7;border-radius:16px;padding:26px}
+.kit-quote p{margin:0}
+.kit-quote .big{font-family:var(--wide);font-stretch:118%;font-weight:900;font-size:40px;color:var(--signal);line-height:1}
+.kit-quote small{display:block;margin-top:10px;color:#9FBAC6;font-size:13px}
+.kit-who{display:flex;gap:14px;align-items:flex-start}
+.kit-who svg{width:44px;height:44px;flex:none}
+.kit-end{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 18px;margin:48px auto 10px;max-width:720px}
+.kit-end .kit-form{margin:16px auto 0;text-align:left;background:var(--night)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kit-c b{color:var(--signal)}}
+@media (max-width:860px){.kit-in{grid-template-columns:1fr;gap:20px}.kit-vis{height:270px;max-width:380px;order:-1;margin:0 auto;width:100%}.kit-vis img{width:44%}.kit-vis .p1{left:12%}.kit-vis .p5{right:10%;top:30px}.kit-badge{left:4%;top:190px}.kit-grid{grid-template-columns:1fr 1fr}.kit-why{grid-template-columns:1fr}}
+@media (max-width:480px){.kit-grid{grid-template-columns:1fr}.kit-hero{padding-top:24px}.kit-vis{height:240px}.kit-badge{top:170px}}
+</style>
+<header class="kit-hero"><div class="kit-in">
+<div>
+<span class="kicker">Kit gratuit · PDF · édition octobre 2026</span>
+<h1>Les arnaques du moment tiennent en <em>6 pages</em></h1>
+<p class="kit-lead">Faux conseiller bancaire, faux email Wero, validation itsme, faux proche sur WhatsApp : recevez le kit qui explique chaque piège et le bon réflexe, en France, en Belgique et au Luxembourg.</p>
+<ul class="kit-pts">
+<li>Les 6 arnaques qui circulent en ce moment, décryptées simplement</li>
+<li>La carte des numéros utiles à imprimer pour vos parents</li>
+<li>Les 4 gestes à faire dans l'heure si on s'est fait piéger</li>
+</ul>
+<div class="kit-form" id="kit-form">
+<!--FORM-->
+<p class="note">Gratuit. Vous recevez aussi le Radar des arnaques chaque dimanche. Désinscription en un clic.</p>
+</div>
+</div>
+<div class="kit-vis" aria-hidden="true">
+<img class="p5" src="/assets/kit/kit-p5.jpg" alt="" width="560" height="792">
+<img class="p1" src="/assets/kit/kit-p1.jpg" alt="" width="560" height="792">
+<span class="kit-badge">Gratuit</span>
+</div>
+</div></header>
+<main class="kit-main">
+<h2 class="kit-h">Ce que contient le kit</h2>
+<div class="kit-grid">
+<div class="kit-c"><b>3</b><h3>Les leviers de l'escroc</h3><p>Urgence, autorité, secret : le scénario commun à toutes les arnaques, et les 5 choses qu'une banque ne demande jamais.</p></div>
+<div class="kit-c"><b>6</b><h3>Arnaques décryptées</h3><p>Tirées du Radar et des alertes de la police, de Safeonweb et de Cybermalveillance, avec le réflexe pour chacune.</p></div>
+<div class="kit-c"><b>1</b><h3>Carte à afficher</h3><p>Les numéros utiles en France, en Belgique et au Luxembourg, et une case pour votre mot code familial.</p></div>
+<div class="kit-c"><b>10</b><h3>Points à cocher</h3><p>30 minutes ce week-end pour sécuriser les comptes de toute la famille.</p></div>
+</div>
+<div class="kit-why">
+<div class="kit-quote"><p class="big">516 M€</p><p>dérobés en France en 2025 par les arnaques « par manipulation » comme le faux conseiller bancaire.</p><small>Source : Observatoire de la sécurité des moyens de paiement, rapport 2025.</small></div>
+<div class="kit-who"><!--MARK--><div><b>Qui est derrière ?</b><p style="margin:6px 0 0;color:var(--muted)">SecureGuide.fr est tenu par un expert réseau et sécurité certifié Cisco CCNP, qui travaille au Luxembourg. Chaque dimanche, le Radar recense les nouvelles arnaques à partir des sources officielles des trois pays.</p></div></div>
+</div>
+<div class="kit-end">
+<h2 class="kit-h" style="margin:0">Recevez le kit maintenant</h2>
+<p style="margin:8px 0 0;color:var(--muted)">Le téléchargement s'ouvre dès votre inscription.</p>
+<p style="margin:18px 0 0"><a class="btn-y" href="#kit-form" style="display:inline-block">Je veux le kit gratuit</a></p>
+</div>
+</main>
+<script>
+// Après une inscription réussie, on ouvre la page de téléchargement.
+(function(){var s=document.getElementById("success-message");if(!s)return;
+new MutationObserver(function(){if(getComputedStyle(s).display!=="none")location.href="/kit/merci/"+location.search}).observe(s,{attributes:true,attributeFilter:["style","class"]});})();
+</script>

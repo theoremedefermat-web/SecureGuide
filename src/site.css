@@ -153,3 +153,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .cv.lg{font-size:22px}
 .sh-card .cv{font-size:11px}
 .cv.sm{font-size:9px}
+
+/* Bandeau du kit gratuit (tunnel) */
+.kit-bar{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--signal);color:var(--signal-ink);text-decoration:none;padding:9px 16px;font-size:15px;line-height:1.35;text-align:center}
+.kit-bar b{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--night);color:var(--signal);padding:3px 8px;border-radius:5px}
+.kit-bar i{font-style:normal;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.kit-bar:hover i{text-decoration-thickness:2px}
+@media (max-width:560px){.kit-bar span{font-size:14px}}
