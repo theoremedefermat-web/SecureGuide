@@ -1,6 +1,105 @@
 [
-  {"id":"seniors","title":"Guide anti-arnaques pour les seniors","sub":"Protéger ses parents des arnaques","desc":"Faux conseillers bancaires, SMS piégés, hameçonnage : un guide simple à offrir à ses parents pour qu'ils reconnaissent les arnaques et sachent quoi faire.","tags":["Faux conseillers","SMS piégés","À offrir"],"url":"https://www.etsy.com/listing/4542889118/anti-scam-guide-for-seniors-protecting","icon":"shield"},
-  {"id":"parents","title":"Parents, enfants et écrans","sub":"Protéger son enfant en ligne","desc":"Contrôle parental, réseaux sociaux, cyberharcèlement : les réglages et les règles qui comptent, expliqués pas à pas. Avec 2 bonus.","tags":["Contrôle parental","Réseaux sociaux","+ 2 bonus"],"url":"https://www.etsy.com/listing/4539975996/parents-children-screens-guide","icon":"family"},
-  {"id":"famille","title":"Guide cybersécurité en famille","sub":"16 conseils pratiques et une checklist","desc":"Mots de passe, arnaques, protection des données : les 16 gestes essentiels pour toute la famille, avec une checklist à cocher.","tags":["16 conseils","Checklist","Débutants"],"url":"https://www.etsy.com/listing/4535917671/family-cybersecurity-guide-pdf-french-16","icon":"check"},
-  {"id":"ia50","title":"Guide de l'IA après 50 ans","sub":"ChatGPT pour débuter, 100 prompts pratiques","desc":"Découvrir ChatGPT sans jargon, avec 100 exemples de demandes prêtes à l'emploi pour le quotidien. Un guide illustré.","tags":["ChatGPT","100 prompts","Illustré"],"url":"https://www.etsy.com/listing/4582715965/ai-guide-after-50-pdf-chatgpt-for","icon":"spark"}
+  {
+    "id": "seniors",
+    "title": "Guide anti-arnaques pour les seniors",
+    "sub": "Protéger ses parents des arnaques",
+    "desc": "Faux conseillers bancaires, SMS piégés, hameçonnage : un guide simple à offrir à ses parents pour qu'ils reconnaissent les arnaques et sachent quoi faire.",
+    "tags": [
+      "Faux conseillers",
+      "SMS piégés",
+      "À offrir"
+    ],
+    "url": "https://www.etsy.com/listing/4542889118/anti-scam-guide-for-seniors-protecting",
+    "icon": "shield",
+    "accent": "#D2453A",
+    "for": "Pour vos parents ou grands-parents",
+    "inside": [
+      "Reconnaître un faux conseiller bancaire au téléphone",
+      "Repérer les SMS et emails piégés",
+      "Les bons réflexes en cas de doute",
+      "Un format simple, pensé pour être offert"
+    ],
+    "cover": [
+      "Guide",
+      "anti-arnaques",
+      "seniors"
+    ]
+  },
+  {
+    "id": "parents",
+    "title": "Parents, enfants et écrans",
+    "sub": "Protéger son enfant en ligne",
+    "desc": "Contrôle parental, réseaux sociaux, cyberharcèlement : les réglages et les règles qui comptent, expliqués pas à pas. Avec 2 bonus.",
+    "tags": [
+      "Contrôle parental",
+      "Réseaux sociaux",
+      "+ 2 bonus"
+    ],
+    "url": "https://www.etsy.com/listing/4539975996/parents-children-screens-guide",
+    "icon": "family",
+    "accent": "#2E9461",
+    "for": "Pour les parents d'enfants et d'ados",
+    "inside": [
+      "Mettre en place le contrôle parental",
+      "Encadrer les réseaux sociaux",
+      "Prévenir et réagir au cyberharcèlement",
+      "2 bonus inclus"
+    ],
+    "cover": [
+      "Parents,",
+      "enfants",
+      "& écrans"
+    ]
+  },
+  {
+    "id": "famille",
+    "title": "Guide cybersécurité en famille",
+    "sub": "16 conseils pratiques et une checklist",
+    "desc": "Mots de passe, arnaques, protection des données : les 16 gestes essentiels pour toute la famille, avec une checklist à cocher.",
+    "tags": [
+      "16 conseils",
+      "Checklist",
+      "Débutants"
+    ],
+    "url": "https://www.etsy.com/listing/4535917671/family-cybersecurity-guide-pdf-french-16",
+    "icon": "check",
+    "accent": "#F2B33D",
+    "for": "Pour toute la famille, débutants compris",
+    "inside": [
+      "16 conseils pratiques",
+      "Mots de passe et arnaques",
+      "Protection des données personnelles",
+      "Une checklist à cocher"
+    ],
+    "cover": [
+      "Cyber-",
+      "sécurité",
+      "en famille"
+    ]
+  },
+  {
+    "id": "ia50",
+    "title": "Guide de l'IA après 50 ans",
+    "sub": "ChatGPT pour débuter, 100 prompts pratiques",
+    "desc": "Découvrir ChatGPT sans jargon, avec 100 exemples de demandes prêtes à l'emploi pour le quotidien. Un guide illustré.",
+    "tags": [
+      "ChatGPT",
+      "100 prompts",
+      "Illustré"
+    ],
+    "url": "https://www.etsy.com/listing/4582715965/ai-guide-after-50-pdf-chatgpt-for",
+    "icon": "spark",
+    "accent": "#7C8CF0",
+    "for": "Pour découvrir l'IA après 50 ans",
+    "inside": [
+      "ChatGPT expliqué sans jargon",
+      "100 demandes prêtes à l'emploi",
+      "Guide illustré"
+    ],
+    "cover": [
+      "L'IA",
+      "après",
+      "50 ans"
+    ]
+  }
 ]

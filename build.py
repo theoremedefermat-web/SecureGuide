@@ -59,6 +59,44 @@ def product_promo(pid, lead="Allez plus loin"):
             f'<span class="pp-k">{lead} · Guide PDF</span><b>{p["title"]}</b><span>{p["desc"]}</span></div>'
             f'<a class="btn-y" href="{p["url"]}" target="_blank" rel="noopener">Voir le guide</a></aside>')
 
+def cover(p, size=""):
+    l1, l2, l3 = p["cover"]
+    return (f'<div class="cv {size}" style="--ac:{p["accent"]}" aria-hidden="true"><span class="cv-band"></span>'
+            f'<span class="cv-k">SecureGuide.fr</span><span class="cv-t">{l1}<br>{l2}<br><em>{l3}</em></span>'
+            f'<span class="cv-f">{mark("cv-" + p["id"] + size)}<span>Guide PDF</span></span></div>')
+
+def shop_page():
+    fe, side, bonus = PROD["seniors"], [PROD["parents"], PROD["famille"]], PROD["ia50"]
+    li = lambda xs: "".join(f"<li>{x}</li>" for x in xs)
+    feat = (f'<section class="sh-feat"><div class="sh-feat-cv">{cover(fe, "lg")}</div><div class="sh-feat-tx">'
+            f'<span class="sh-k">Le plus utile en ce moment</span><h2>{fe["title"]}</h2><p class="sh-for">{fe["for"]}</p>'
+            f'<p>{fe["desc"]}</p><ul class="sh-in">{li(fe["inside"])}</ul>'
+            f'<a class="btn-y" href="{fe["url"]}" target="_blank" rel="noopener">Voir le guide et son prix sur Etsy</a>'
+            f'<p class="sh-why">En 2025, les demandes d\'aide liées aux faux conseillers bancaires ont augmenté de 159 % en France, selon Cybermalveillance.gouv.fr.</p></div></section>')
+    cards = "".join(
+        f'<article class="sh-card">{cover(p)}<div class="sh-card-tx"><p class="sh-for">{p["for"]}</p><h3>{p["title"]}</h3>'
+        f'<ul class="sh-in">{li(p["inside"])}</ul><a class="sh-link" href="{p["url"]}" target="_blank" rel="noopener">Voir sur Etsy →</a></div></article>'
+        for p in side)
+    return f"""
+<header class="sh-hero"><div class="sh-hero-in">
+<span class="kicker">Boutique</span>
+<h1>Des guides simples pour protéger vos proches</h1>
+<p>Rédigés par un expert réseau et sécurité certifié Cisco CCNP, en français et sans jargon.</p>
+<ul class="sh-pts"><li>PDF en français</li><li>Téléchargement immédiat</li><li>Paiement sécurisé par Etsy</li></ul>
+</div></header>
+<main class="sh-main"><div class="sh-wrap">
+{feat}
+<section><h2 class="sh-h">Selon votre situation</h2><div class="sh-grid">{cards}</div></section>
+<section class="sh-steps"><h2 class="sh-h">Comment ça marche</h2><ol>
+<li><b>Choisissez votre guide</b><span>Cliquez sur « Voir sur Etsy » pour consulter le détail et le prix.</span></li>
+<li><b>Payez sur Etsy</b><span>Paiement sécurisé par carte ou PayPal, géré entièrement par Etsy.</span></li>
+<li><b>Téléchargez le PDF</b><span>Le fichier est disponible tout de suite. Lisible sur téléphone et ordinateur, ou à imprimer.</span></li>
+</ol></section>
+<section class="sh-bonus"><div class="sh-bonus-cv">{cover(bonus, "sm")}</div><div><span class="sh-k">Hors cybersécurité</span><h3>{bonus["title"]}</h3>
+<p>{bonus["desc"]}</p><a class="sh-link" href="{bonus["url"]}" target="_blank" rel="noopener">Voir sur Etsy →</a></div></section>
+<p class="sh-note">Tous nos guides sont aussi visibles sur notre <a href="https://www.etsy.com/shop/SecureGuideFR" target="_blank" rel="noopener">boutique SecureGuideFR sur Etsy</a>.</p>
+</div></main>"""
+
 def nav(active):
     items = [("/radar/", "Radar", "radar"), ("/guides/", "Guides", "guides"), ("/boutique/", "Boutique", "shop"),
              ("/test-protection/", "Faire le test", "test")]
@@ -222,20 +260,9 @@ def build():
         '.g-card b{font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:20px;line-height:1.2}.g-card p{margin:0;color:var(--muted);font-size:15.5px}</style>'
         f'<main class="page"><h1>Guides et comparatifs</h1><div class="g-list">{cards}</div></main>', active="guides"))
 
-    cards_p = "".join(
-        f'<article class="pc"><div class="pc-ic">{icon(p["icon"])}</div><span class="pc-k">Guide PDF en français</span>'
-        f'<h2>{p["title"]}</h2><p class="pc-sub">{p["sub"]}</p><p>{p["desc"]}</p>'
-        f'<ul class="pc-tags">{"".join(f"<li>{t}</li>" for t in p["tags"])}</ul>'
-        f'<a class="btn-y" href="{p["url"]}" target="_blank" rel="noopener">Voir le guide sur Etsy</a></article>'
-        for p in PRODUCTS)
     pages.append(page("/boutique/", "Guides PDF de cybersécurité · SecureGuide.fr",
-        "Des guides PDF simples, en français, pour protéger sa famille, ses enfants et ses parents des arnaques en ligne.",
-        '<header class="art-hero"><div class="art-hero-in"><span class="kicker">Boutique</span>'
-        '<h1>Des guides pour protéger toute la famille</h1>'
-        '<span class="byline">PDF en français · téléchargement immédiat · paiement sécurisé par Etsy</span></div></header>'
-        f'<main class="art-wrap"><div class="pc-grid">{cards_p}</div>'
-        '<p class="pc-note">Les guides sont vendus et livrés par Etsy, qui gère le paiement et le téléchargement. '
-        'Ils sont rédigés par l\'équipe de SecureGuide.fr, sans jargon. <a href="https://www.etsy.com/shop/SecureGuideFR" target="_blank" rel="noopener">Voir toute la boutique SecureGuideFR sur Etsy</a></p></main>', active="shop"))
+        "Des guides PDF simples, en français, pour protéger ses parents, ses enfants et toute la famille des arnaques en ligne.",
+        shop_page(), active="shop"))
     pages.append(page("/mentions-legales/", "Mentions légales · SecureGuide.fr",
         "Mentions légales, affiliation et données personnelles de SecureGuide.fr.",
         (SRC / "legal.html").read_text()))
