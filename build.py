@@ -94,7 +94,7 @@ def shop_page():
 </ol></section>
 <section class="sh-bonus"><div class="sh-bonus-cv">{cover(bonus, "sm")}</div><div><span class="sh-k">Hors cybersécurité</span><h3>{bonus["title"]}</h3>
 <p>{bonus["desc"]}</p><a class="sh-link" href="{bonus["url"]}" target="_blank" rel="noopener">Voir sur Etsy →</a></div></section>
-<p class="sh-note">Tous nos guides sont aussi visibles sur notre <a href="https://www.etsy.com/shop/SecureGuideFR" target="_blank" rel="noopener">boutique SecureGuideFR sur Etsy</a>.</p>
+<p class="sh-note">Tous nos guides sont aussi visibles sur notre <a href="https://www.etsy.com/fr/shop/SecureGuideFR" target="_blank" rel="noopener">boutique SecureGuideFR sur Etsy</a>.</p>
 </div></main>"""
 
 def nav(active):
