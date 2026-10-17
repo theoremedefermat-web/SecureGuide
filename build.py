@@ -42,8 +42,25 @@ def autolink(html):
             out.append(part)
     return "".join(out)
 
+PRODUCTS = json.loads((SRC / "products.json").read_text())
+PROD = {p["id"]: p for p in PRODUCTS}
+ICONS = {
+    "shield": '<path d="M12 2.5l8 3v6c0 5-3.4 9.1-8 10.5-4.6-1.4-8-5.5-8-10.5v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    "family": '<circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><path d="M13.5 20c.3-2.6 1.8-4.6 3.5-4.6s3.4 2 3.5 4.6"/>',
+    "check": '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9l2 2 4-4"/><path d="M8 15h8"/>',
+    "spark": '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/>',
+}
+def icon(name):
+    return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICONS[name]}</svg>'
+
+def product_promo(pid, lead="Allez plus loin"):
+    p = PROD[pid]
+    return (f'<aside class="prod-promo"><div class="pp-ic">{icon(p["icon"])}</div><div class="pp-tx">'
+            f'<span class="pp-k">{lead} · Guide PDF</span><b>{p["title"]}</b><span>{p["desc"]}</span></div>'
+            f'<a class="btn-y" href="{p["url"]}" target="_blank" rel="noopener">Voir le guide</a></aside>')
+
 def nav(active):
-    items = [("/radar/", "Radar", "radar"), ("/guides/", "Guides", "guides"),
+    items = [("/radar/", "Radar", "radar"), ("/guides/", "Guides", "guides"), ("/boutique/", "Boutique", "shop"),
              ("/test-protection/", "Faire le test", "test")]
     links = "".join(
         f'<a href="{h}"{" aria-current=\"page\"" if k == active else ""}{" class=\"cta-s\"" if k == "test" else ""}>{t}</a>'
@@ -54,7 +71,7 @@ def nav(active):
 FOOT = f'''<footer class="foot"><div class="foot-in">
 <div><a class="brand foot-brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("foot")}{WORDMARK}</a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
 <p>Contact : <span>secureguide2024@gmail.com</span></p></div>
-<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li></ul></div>
+<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/boutique/">Guides PDF</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
 </div></footer>'''
@@ -160,6 +177,7 @@ def build():
     quiz = must_sub(re.escape('li.querySelector("a").textContent=g.q.l+" →";'),
                     'const A2=li.querySelector("a");if(g.q.u){A2.href=g.q.u;A2.textContent=g.q.l+" →"}else A2.remove();', quiz)
     quiz = quiz.replace("Rédigé par un expert réseau certifié CCNP", "Rédigé par un expert réseau certifié Cisco CCNP")
+    quiz = quiz.replace("/*PRODUCTS*/[]", json.dumps({k: {"t": v["title"], "d": v["desc"], "u": v["url"]} for k, v in PROD.items()}, ensure_ascii=False))
     pages.append(page("/test-protection/", "Test : votre famille est-elle protégée en ligne ? · SecureGuide.fr",
         "10 questions, 2 minutes : obtenez votre score de protection sur 100 et les 3 failles à corriger en priorité.",
         quiz, active="test"))
@@ -190,7 +208,7 @@ def build():
                 f'<span class="byline">Par SecureGuide.fr · mis à jour le {datetime.date.today().strftime("%d/%m/%Y")}</span></div></header>'
                 f'<main class="art-wrap"><article class="art">{body}</article>'
                 f'<aside class="promo"><div><b>Êtes-vous bien protégé ?</b><span>10 questions, un score sur 100, vos 3 priorités.</span></div>'
-                f'<a class="btn-y" href="/test-protection/">Faire le test</a></aside></main>')
+                f'<a class="btn-y" href="/test-protection/">Faire le test</a></aside>' + product_promo("seniors" if kind == "Alerte arnaque" else "famille", "Protégez vos proches" if kind == "Alerte arnaque" else "Allez plus loin") + '</main>')
         guides.append((slug, h1, kind, meta["Meta description"]))
         pages.append(page(f"/guides/{slug}/", meta["Titre SEO"] + " · SecureGuide.fr", meta["Meta description"], html,
                           active="guides", og_type="article",
@@ -204,6 +222,20 @@ def build():
         '.g-card b{font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:20px;line-height:1.2}.g-card p{margin:0;color:var(--muted);font-size:15.5px}</style>'
         f'<main class="page"><h1>Guides et comparatifs</h1><div class="g-list">{cards}</div></main>', active="guides"))
 
+    cards_p = "".join(
+        f'<article class="pc"><div class="pc-ic">{icon(p["icon"])}</div><span class="pc-k">Guide PDF en français</span>'
+        f'<h2>{p["title"]}</h2><p class="pc-sub">{p["sub"]}</p><p>{p["desc"]}</p>'
+        f'<ul class="pc-tags">{"".join(f"<li>{t}</li>" for t in p["tags"])}</ul>'
+        f'<a class="btn-y" href="{p["url"]}" target="_blank" rel="noopener">Voir le guide sur Etsy</a></article>'
+        for p in PRODUCTS)
+    pages.append(page("/boutique/", "Guides PDF de cybersécurité · SecureGuide.fr",
+        "Des guides PDF simples, en français, pour protéger sa famille, ses enfants et ses parents des arnaques en ligne.",
+        '<header class="art-hero"><div class="art-hero-in"><span class="kicker">Boutique</span>'
+        '<h1>Des guides pour protéger toute la famille</h1>'
+        '<span class="byline">PDF en français · téléchargement immédiat · paiement sécurisé par Etsy</span></div></header>'
+        f'<main class="art-wrap"><div class="pc-grid">{cards_p}</div>'
+        '<p class="pc-note">Les guides sont vendus et livrés par Etsy, qui gère le paiement et le téléchargement. '
+        'Ils sont rédigés par l\'équipe de SecureGuide.fr, sans jargon. <a href="https://www.etsy.com/shop/SecureGuideFR" target="_blank" rel="noopener">Voir toute la boutique SecureGuideFR sur Etsy</a></p></main>', active="shop"))
     pages.append(page("/mentions-legales/", "Mentions légales · SecureGuide.fr",
         "Mentions légales, affiliation et données personnelles de SecureGuide.fr.",
         (SRC / "legal.html").read_text()))

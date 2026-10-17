@@ -80,6 +80,12 @@ h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(20p
 .fix strong{font-weight:600;font-size:17.5px}
 .fix p{margin:0;color:var(--muted);font-size:15.5px}
 .fix a{color:var(--ink);font-weight:600;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px}
+.reco{display:grid;grid-template-columns:1fr auto;gap:12px 16px;align-items:center;background:var(--night);color:#EAF3F7;border-radius:12px;padding:18px 20px;border-left:5px solid var(--signal)}
+.reco .k{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.reco b{display:block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:18px;margin:4px 0}
+.reco p{margin:0;color:#B9CCD5;font-size:14.5px}
+.reco a{font-family:var(--wide);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:14px;text-decoration:none;background:var(--signal);color:var(--signal-ink);padding:12px 16px;border-radius:8px;white-space:nowrap}
+@media (max-width:560px){.reco{grid-template-columns:1fr}.reco a{justify-self:start}}
 .done{color:var(--ok);font-weight:600}
 .cap{border-top:5px solid var(--signal)}
 .cap p{margin:0;color:var(--muted)}
@@ -140,6 +146,7 @@ input{flex:1 1 220px;min-width:0;font:inherit;padding:14px;border:1.5px solid va
   <section id="prio" class="card" hidden>
     <h2>Vos 3 failles à fermer</h2>
     <ul class="fixes" id="fixes"></ul>
+    <div id="reco"></div>
   </section>
 
   <section id="capture" class="card cap" hidden>
@@ -215,6 +222,12 @@ function finish(){
     li.innerHTML=`<span class="tag"></span><strong></strong><p></p><a href="https://secureguide.fr" target="_blank" rel="noopener"></a>`;
     li.querySelector(".tag").textContent=`${sev[0]} · ${g.q.c}`;li.querySelector("strong").textContent=g.q.f;li.querySelector("p").textContent=g.q.d;li.querySelector("a").textContent=g.q.l+" →";
     F.append(li)});
+
+  const PROD=/*PRODUCTS*/[];
+  const cats=gaps.map(g=>g.q.c), pid=cats.includes("Famille")?"parents":cats.includes("Arnaques")?"seniors":"famille", pr=PROD[pid];
+  const R=$("reco");R.replaceChildren();
+  if(pr){const d=document.createElement("div");d.className="reco";d.innerHTML='<div><span class="k">Pour aller plus loin · Guide PDF</span><b></b><p></p></div><a target="_blank" rel="noopener">Voir le guide</a>';
+    d.querySelector("b").textContent=pr.t;d.querySelector("p").textContent=pr.d;d.querySelector("a").href=pr.u;R.append(d)}
 }
 function begin(){i=0;ans=[];show(["quiz"]);render();$("quiz").scrollIntoView({behavior:"smooth",block:"start"})}
 $("start").onclick=begin;$("again").onclick=begin;
