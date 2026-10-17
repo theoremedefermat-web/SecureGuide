@@ -36,7 +36,7 @@
   </g>
   <path d="M32 4 55 12.6v18.6c0 14.6-9.8 26.2-23 30.3C18.8 57.4 9 45.8 9 31.2V12.6z" fill="none" stroke="#F2B33D" stroke-width="3" stroke-linejoin="round"/>
 </svg>
-<span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><div class="links"><a href="/radar/">Radar</a><a href="/guides/">Guides</a><a href="/test-protection/" aria-current="page" class="cta-s">Faire le test</a></div></div></nav>
+<span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><div class="links"><a href="/radar/">Radar</a><a href="/guides/">Guides</a><a href="/boutique/">Boutique</a><a href="/test-protection/" aria-current="page" class="cta-s">Faire le test</a></div></div></nav>
 <style>
 /* Concept : un instrument de mesure. Bandeau bleu nuit façon tableau de bord de sécurité, jauge de score à aiguille, étiquettes jaune signalisation. */
 :root{
@@ -115,6 +115,12 @@ h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(20p
 .fix strong{font-weight:600;font-size:17.5px}
 .fix p{margin:0;color:var(--muted);font-size:15.5px}
 .fix a{color:var(--ink);font-weight:600;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px}
+.reco{display:grid;grid-template-columns:1fr auto;gap:12px 16px;align-items:center;background:var(--night);color:#EAF3F7;border-radius:12px;padding:18px 20px;border-left:5px solid var(--signal)}
+.reco .k{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.reco b{display:block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:18px;margin:4px 0}
+.reco p{margin:0;color:#B9CCD5;font-size:14.5px}
+.reco a{font-family:var(--wide);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:14px;text-decoration:none;background:var(--signal);color:var(--signal-ink);padding:12px 16px;border-radius:8px;white-space:nowrap}
+@media (max-width:560px){.reco{grid-template-columns:1fr}.reco a{justify-self:start}}
 .done{color:var(--ok);font-weight:600}
 .cap{border-top:5px solid var(--signal)}
 .cap p{margin:0;color:var(--muted)}
@@ -174,6 +180,7 @@ input{flex:1 1 220px;min-width:0;font:inherit;padding:14px;border:1.5px solid va
   <section id="prio" class="card" hidden>
     <h2>Vos 3 failles à fermer</h2>
     <ul class="fixes" id="fixes"></ul>
+    <div id="reco"></div>
   </section>
 
   <section id="capture" class="card cap" hidden>
@@ -292,6 +299,12 @@ function finish(){
     li.innerHTML=`<span class="tag"></span><strong></strong><p></p><a></a>`;
     li.querySelector(".tag").textContent=`${sev[0]} · ${g.q.c}`;li.querySelector("strong").textContent=g.q.f;li.querySelector("p").textContent=g.q.d;const A2=li.querySelector("a");if(g.q.u){A2.href=g.q.u;A2.textContent=g.q.l+" →"}else A2.remove();
     F.append(li)});
+
+  const PROD={"seniors": {"t": "Guide anti-arnaques pour les seniors", "d": "Faux conseillers bancaires, SMS piégés, hameçonnage : un guide simple à offrir à ses parents pour qu'ils reconnaissent les arnaques et sachent quoi faire.", "u": "https://www.etsy.com/listing/4542889118/anti-scam-guide-for-seniors-protecting"}, "parents": {"t": "Parents, enfants et écrans", "d": "Contrôle parental, réseaux sociaux, cyberharcèlement : les réglages et les règles qui comptent, expliqués pas à pas. Avec 2 bonus.", "u": "https://www.etsy.com/listing/4539975996/parents-children-screens-guide"}, "famille": {"t": "Guide cybersécurité en famille", "d": "Mots de passe, arnaques, protection des données : les 16 gestes essentiels pour toute la famille, avec une checklist à cocher.", "u": "https://www.etsy.com/listing/4535917671/family-cybersecurity-guide-pdf-french-16"}, "ia50": {"t": "Guide de l'IA après 50 ans", "d": "Découvrir ChatGPT sans jargon, avec 100 exemples de demandes prêtes à l'emploi pour le quotidien. Un guide illustré.", "u": "https://www.etsy.com/listing/4582715965/ai-guide-after-50-pdf-chatgpt-for"}};
+  const cats=gaps.map(g=>g.q.c), pid=cats.includes("Famille")?"parents":cats.includes("Arnaques")?"seniors":"famille", pr=PROD[pid];
+  const R=$("reco");R.replaceChildren();
+  if(pr){const d=document.createElement("div");d.className="reco";d.innerHTML='<div><span class="k">Pour aller plus loin · Guide PDF</span><b></b><p></p></div><a target="_blank" rel="noopener">Voir le guide</a>';
+    d.querySelector("b").textContent=pr.t;d.querySelector("p").textContent=pr.d;d.querySelector("a").href=pr.u;R.append(d)}
 }
 function begin(){i=0;ans=[];show(["quiz"]);render();$("quiz").scrollIntoView({behavior:"smooth",block:"start"})}
 $("start").onclick=begin;$("again").onclick=begin;
@@ -319,7 +332,7 @@ $("mail")?.addEventListener("submit",e=>{e.preventDefault();$("mailnote").textCo
 </svg>
 <span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
 <p>Contact : <span>secureguide2024@gmail.com</span></p></div>
-<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li></ul></div>
+<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/boutique/">Guides PDF</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
 </div></footer>
