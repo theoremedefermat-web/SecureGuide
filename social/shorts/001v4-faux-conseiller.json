@@ -1,0 +1,142 @@
+{
+"label": "ALERTE ARNAQUE",
+"audio": "001v4-voix.mp3",
+"images": [
+{
+"src": "001v2-img1.jpg",
+"from": 0,
+"to": 7.784988
+},
+{
+"src": "001v2-img2.jpg",
+"from": 7.784988,
+"to": 15.814693
+},
+{
+"src": "001v2-img3.jpg",
+"from": 15.814693,
+"to": 20.740339
+}
+],
+"phrases": [
+{
+"from": 0.3,
+"to": 1.5,
+"text": "Si votre banque vous appelle,",
+"hi": [
+"banque"
+]
+},
+{
+"from": 1.78,
+"to": 2.93,
+"text": "ne faites surtout pas ça.",
+"hi": [
+"surtout"
+]
+},
+{
+"from": 3.48,
+"to": 4.46,
+"text": "Le numéro affiché",
+"hi": [
+"numéro"
+]
+},
+{
+"from": 4.62,
+"to": 5.75,
+"text": "est bien celui de votre banque.",
+"hi": [
+"banque"
+]
+},
+{
+"from": 6.2,
+"to": 7.09,
+"text": "Mais il est falsifié.",
+"hi": [
+"falsifié"
+]
+},
+{
+"from": 7.78,
+"to": 9.16,
+"text": "On vous parle d'un paiement suspect,",
+"hi": [
+"suspect"
+]
+},
+{
+"from": 9.92,
+"to": 11.77,
+"text": "et on vous demande de valider une opération",
+"hi": [
+"valider"
+]
+},
+{
+"from": 11.91,
+"to": 12.39,
+"text": "pour l'annuler.",
+"hi": [
+"annuler"
+]
+},
+{
+"from": 13.0,
+"to": 15.12,
+"text": "En réalité, c'est vous qui autorisez le virement.",
+"hi": [
+"vous",
+"virement"
+]
+},
+{
+"from": 15.81,
+"to": 17.01,
+"text": "Le bon réflexe : raccrochez.",
+"hi": [
+"raccrochez"
+]
+},
+{
+"from": 17.51,
+"to": 19.76,
+"text": "Puis rappelez vous-même le numéro au dos de votre carte.",
+"hi": [
+"rappelez",
+"vous-même"
+]
+},
+{
+"from": 20.74,
+"to": 22.37,
+"text": "Un guide anti-arnaque est sur notre site.",
+"hi": [
+"guide",
+"anti-arnaque"
+]
+}
+],
+"stickers": [
+{
+"from": 6.1494100000000005,
+"to": 7.684988000000001,
+"text": "⚠ NUMÉRO FALSIFIÉ"
+},
+{
+"from": 12.999523,
+"to": 15.714693,
+"text": "516 M€ volés en 2025",
+"sub": "Fraude par manipulation, France · source OSMP"
+}
+],
+"cta": {
+"from": 20.640338999999997,
+"kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+"title": "Le kit <em>anti-arnaques</em> 2026",
+"url": "www.secureguide.fr/kit",
+"sub": "Les arnaques du moment · France · Belgique · Luxembourg"
+}
+}
