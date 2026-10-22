@@ -1,0 +1,8 @@
+{"label":"ALERTE ARNAQUE","accent":"#D2453A","scenes":[
+{"k":"Votre téléphone sonne","t":"« Ici votre <em>banque</em>, un paiement suspect… »","s":"Le numéro affiché est <b>bien celui de votre banque</b>.","d":4.2},
+{"k":"Le piège","t":"Ce numéro est <em>falsifié</em>","s":"Les escrocs savent afficher <b>n'importe quel numéro</b>.","d":4},
+{"k":"Ce qu'on vous demande","t":"« Validez pour <em>annuler</em> l'opération »","s":"En réalité, <b>c'est vous qui autorisez</b> le virement.","d":4.3},
+{"k":"France · 2025","t":"<em>516 M€</em> volés par manipulation","s":"Source : Observatoire de la sécurité des moyens de paiement.","d":4},
+{"k":"Le bon réflexe","t":"Raccrochez. <em>Rappelez</em> vous-même.","s":"Au numéro au dos de votre carte, <b>quelques minutes plus tard</b>.","d":4.3},
+{"k":"Kit gratuit · 6 pages","t":"Les arnaques du moment <em>en PDF</em>","s":"Lien dans la description · <b>secureguide.fr/kit</b>","d":4}
+]}
