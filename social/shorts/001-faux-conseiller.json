@@ -6,38 +6,38 @@
 "k": "Votre téléphone sonne",
 "t": "« Ici votre <em>banque</em>, un paiement suspect… »",
 "s": "Le numéro affiché est <b>bien celui de votre banque</b>.",
-"d": 7.0
+"d": 7.46
 },
 {
 "k": "Le piège",
 "t": "Ce numéro est <em>falsifié</em>",
 "s": "Les escrocs savent afficher <b>n'importe quel numéro</b>.",
-"d": 5.1
+"d": 5.82
 },
 {
 "k": "Ce qu'on vous demande",
 "t": "« Validez pour <em>annuler</em> l'opération »",
 "s": "En réalité, <b>c'est vous qui autorisez</b> le virement.",
-"d": 7.5
+"d": 5.93
 },
 {
 "k": "France · 2025",
 "t": "<em>516 M€</em> volés par manipulation",
 "s": "Source : Observatoire de la sécurité des moyens de paiement.",
-"d": 7.3
+"d": 6.6
 },
 {
 "k": "Le bon réflexe",
 "t": "Raccrochez. <em>Rappelez</em> vous-même.",
 "s": "Au numéro au dos de votre carte, <b>quelques minutes plus tard</b>.",
-"d": 7.3
+"d": 9.13
 },
 {
 "k": "Kit gratuit · 6 pages",
 "t": "Les arnaques du moment <em>en PDF</em>",
 "s": "Lien dans la description · <b>secureguide.fr/kit</b>",
-"d": 5.6
+"d": 5.36
 }
 ],
-"lead": 0.4
+"lead": 0.0
 }
