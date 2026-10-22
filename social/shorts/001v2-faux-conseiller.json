@@ -1,0 +1,15 @@
+{"label":"ALERTE ARNAQUE","audio":"001v2-full.mp3",
+"images":[{"src":"001v2-img1.jpg","from":0,"to":6.4},{"src":"001v2-img2.jpg","from":6.4,"to":14.5},{"src":"001v2-img3.jpg","from":14.5,"to":20.4}],
+"phrases":[
+{"from":0.02,"to":1.04,"text":"Si votre banque vous appelle,","hi":["banque"]},
+{"from":1.45,"to":2.35,"text":"ne faites surtout pas ça.","hi":["surtout"]},
+{"from":2.84,"to":4.68,"text":"Le numéro affiché est bien celui de votre banque.","hi":["numéro"]},
+{"from":5.27,"to":6.16,"text":"Mais il est falsifié.","hi":["falsifié"]},
+{"from":6.57,"to":7.68,"text":"On vous parle d'un paiement suspect,","hi":["suspect"]},
+{"from":8.0,"to":9.78,"text":"et on vous demande de valider une opération","hi":["valider"]},
+{"from":10.19,"to":10.81,"text":"pour l'annuler.","hi":["annuler"]},
+{"from":10.97,"to":13.9,"text":"En réalité, c'est vous qui autorisez le virement.","hi":["vous","virement"]},
+{"from":14.66,"to":16.65,"text":"Le bon réflexe : raccrochez.","hi":["raccrochez"]},
+{"from":17.16,"to":20.08,"text":"Puis rappelez vous-même le numéro au dos de votre carte.","hi":["rappelez","vous-même"]}],
+"stickers":[{"from":5.2,"to":6.9,"text":"⚠ NUMÉRO FALSIFIÉ"},{"from":11.0,"to":14.4,"text":"516 M€ volés en 2025","sub":"Fraude par manipulation, France · source OSMP"}],
+"cta":{"from":20.35,"kicker":"GRATUIT · PDF · 6 PAGES","title":"Le kit <em>anti-arnaques</em> 2026","url":"secureguide.fr/kit","sub":"Les arnaques du moment · FR · BE · LU"}}
