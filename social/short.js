@@ -10,7 +10,7 @@ const file = process.argv[2]; const S = JSON.parse(fs.readFileSync(file, 'utf8')
 const out = file.replace(/\.json$/, '.mp4');
 const A = S.accent || '#F2B33D';
 const nb = s => (s || '').replace(/« /g, '« ').replace(/ »/g, ' »').replace(/ ([:;?!])/g, ' $1');
-let t = 0.4; const total = S.scenes.reduce((a, s) => a + (s.d || 4.5), 0.4) + 0.3;
+let t = S.lead ?? 0.4; const total = S.scenes.reduce((a, s) => a + (s.d || 4.5), t) + 0.3;
 const scenes = S.scenes.map((s, i) => {
   const d = s.d || 4.5, st = t; t += d;
   return `<section style="animation:show ${d}s linear ${st}s both"><div class="in">

@@ -194,6 +194,7 @@ def build():
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/logo.svg")
     shutil.copytree(SRC / "ads", OUT / "assets/ads")
     shutil.copytree(SRC / "kit", OUT / "assets/kit")
+    shutil.copytree(SRC / "social", OUT / "assets/social")
     pages = []
 
     # Accueil
