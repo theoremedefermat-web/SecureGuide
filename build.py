@@ -114,6 +114,7 @@ KIT_BAR = ('<a class="kit-bar" href="/kit/?utm_source=site&amp;utm_medium=bandea
 def kit_form():
     """Formulaire Brevo adapté à la page du kit."""
     f = BREVO_FORM.replace(">Recevoir le Radar</button>", ">Recevoir le kit gratuit</button>")
+    f = f.replace('<form id="sib-form" ', '<form id="sib-form" data-redirect="/kit/merci/" ', 1)
     f = f.replace("Merci ! Le prochain Radar arrive dimanche.",
                   'C\'est envoyé ! <a href="/kit/merci/">Ouvrez votre kit ici</a>.')
     assert "Recevoir le kit gratuit" in f and "/kit/merci/" in f

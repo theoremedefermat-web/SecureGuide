@@ -75,8 +75,3 @@
 <p style="margin:18px 0 0"><a class="btn-y" href="#kit-form" style="display:inline-block">Je veux le kit gratuit</a></p>
 </div>
 </main>
-<script>
-// Après une inscription réussie, on ouvre la page de téléchargement.
-(function(){var s=document.getElementById("success-message");if(!s)return;
-new MutationObserver(function(){if(getComputedStyle(s).display!=="none")location.href="/kit/merci/"+location.search}).observe(s,{attributes:true,attributeFilter:["style","class"]});})();
-</script>
