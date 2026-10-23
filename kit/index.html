@@ -106,9 +106,9 @@
 </style>
 <div id="sib-form-container" class="sib-form-container">
 <div id="error-message" class="sib-form-message-panel"><div class="sib-form-message-panel__text"><svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm-12 120h24c7 0 12 6 12 13l-7 168c0 6-6 11-12 11h-9c-6 0-12-5-12-11l-7-168c0-7 5-13 12-13zm12 212a28 28 0 110 56 28 28 0 010-56z"/></svg><span class="sib-form-message-panel__inner-text">Nous n'avons pas pu confirmer votre inscription. Vérifiez l'adresse et réessayez.</span></div></div>
-<div id="success-message" class="sib-form-message-panel"><div class="sib-form-message-panel__text"><svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8a248 248 0 100 496 248 248 0 000-496zm142 190L217 376c-5 5-12 5-17 0l-86-87c-5-4-5-12 0-17l9-8c4-5 12-5 17 0l69 70 163-162c5-5 13-5 17 0l9 8c4 5 4 13-1 18z"/></svg><span class="sib-form-message-panel__inner-text">C'est envoyé ! <a href="/kit/merci/">Ouvrez votre kit ici</a>.</span></div></div>
+<div id="success-message" class="sib-form-message-panel"><div class="sib-form-message-panel__text"><svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8a248 248 0 100 496 248 248 0 000-496zm142 190L217 376c-5 5-12 5-17 0l-86-87c-5-4-5-12 0-17l9-8c4-5 12-5 17 0l69 70 163-162c5-5 13-5 17 0l9 8c4 5 4 13-1 18z"/></svg><span class="sib-form-message-panel__inner-text">Merci ! Dernière étape : confirmez votre inscription dans l'email que nous venons de vous envoyer (pensez aux spams).</span></div></div>
 <div id="sib-container" class="sib-container--large sib-container--vertical">
-<form id="sib-form" method="POST" action="https://962d435b.sibforms.com/serve/MUIFANcggFG-Toxcwrulv87nZ6NM5kg7gbaoer8v1BHz0B0KM_dsq3Vwr6Uu8Q1l7wOLiartPsriOlYkNulSsVaoWn3sg5qrDPaBjMYf6pi5pkiIHIf9mSqjzue-uVixwde64JRJLXh_dVSL-f6gvQPGhXITFlxt31x-RDJSf2erAnQ4dEFXJt3QY7zWYqL1uqdJ0GwdHdGwedWMAA==" data-type="subscription">
+<form id="sib-form" data-redirect="/kit/merci/" method="POST" action="https://962d435b.sibforms.com/serve/MUIFANcggFG-Toxcwrulv87nZ6NM5kg7gbaoer8v1BHz0B0KM_dsq3Vwr6Uu8Q1l7wOLiartPsriOlYkNulSsVaoWn3sg5qrDPaBjMYf6pi5pkiIHIf9mSqjzue-uVixwde64JRJLXh_dVSL-f6gvQPGhXITFlxt31x-RDJSf2erAnQ4dEFXJt3QY7zWYqL1uqdJ0GwdHdGwedWMAA==" data-type="subscription">
 <div class="sib-input sib-form-block" style="display:contents">
 <div class="form__entry entry_block" style="display:contents">
 <label class="entry__label" for="EMAIL" data-required="*" hidden>Adresse email</label>
@@ -132,7 +132,27 @@ window.REQUIRED_MULTISELECT_MESSAGE='Veuillez choisir au moins une option';
 window.translation={common:{selectedList:'{quantity} liste sélectionnée',selectedLists:'{quantity} listes sélectionnées',selectedOption:'{quantity} sélectionné',selectedOptions:'{quantity} sélectionnés'}};
 var AUTOHIDE=Boolean(0);
 </script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script>
+/* Envoi géré par SecureGuide : on poste l'inscription à Brevo en arrière-plan, puis on confirme toujours à l'écran
+   (redirection vers la page de remerciement si le formulaire a data-redirect, sinon message de succès). */
+(function(){
+  var f=document.getElementById("sib-form"); if(!f) return;
+  var box=f.closest(".sg-form"), ok=box.querySelector("#success-message"), ko=box.querySelector("#error-message"), btn=f.querySelector("button[type=submit]");
+  f.addEventListener("submit",function(e){
+    e.preventDefault(); e.stopImmediatePropagation();
+    if(f.querySelector("[name=email_address_check]").value) return;
+    var label=btn.innerHTML; btn.disabled=true; btn.textContent="Envoi…";
+    var done=function(){
+      var to=f.getAttribute("data-redirect");
+      if(to){ location.href=to; return; }
+      f.style.display="none"; ok.style.display="block"; ko.style.display="none";
+    };
+    fetch(f.action,{method:"POST",mode:"no-cors",body:new URLSearchParams(new FormData(f))}).then(done).catch(function(){
+      btn.disabled=false; btn.innerHTML=label; ko.style.display="block";
+    });
+  },true);
+})();
+</script>
 </div>
 <p class="note">Gratuit. Vous recevez aussi le Radar des arnaques chaque dimanche. Désinscription en un clic.</p>
 </div>
@@ -178,11 +198,6 @@ var AUTOHIDE=Boolean(0);
 <p style="margin:18px 0 0"><a class="btn-y" href="#kit-form" style="display:inline-block">Je veux le kit gratuit</a></p>
 </div>
 </main>
-<script>
-// Après une inscription réussie, on ouvre la page de téléchargement.
-(function(){var s=document.getElementById("success-message");if(!s)return;
-new MutationObserver(function(){if(getComputedStyle(s).display!=="none")location.href="/kit/merci/"+location.search}).observe(s,{attributes:true,attributeFilter:["style","class"]});})();
-</script>
 
 <footer class="foot"><div class="foot-in">
 <div><a class="brand foot-brand" href="/" aria-label="SecureGuide.fr, accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
