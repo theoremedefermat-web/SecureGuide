@@ -1,0 +1,197 @@
+{
+ "out": "001v5-faux-conseiller",
+ "dir": "v4",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.55,
+   "subs": [
+    [
+     0,
+     1.2,
+     "Si votre banque vous appelle,",
+     [
+      "banque"
+     ]
+    ],
+    [
+     1.48,
+     null,
+     "ne faites surtout pas ça.",
+     [
+      "surtout"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.98,
+     "Le numéro affiché",
+     [
+      "numéro"
+     ]
+    ],
+    [
+     1.14,
+     null,
+     "est bien celui de votre banque.",
+     [
+      "banque"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     null,
+     "Mais il est falsifié.",
+     [
+      "falsifié"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.38,
+     "On vous parle d'un paiement suspect,",
+     [
+      "suspect"
+     ]
+    ],
+    [
+     2.14,
+     3.99,
+     "et on vous demande de valider une opération",
+     [
+      "valider"
+     ]
+    ],
+    [
+     4.13,
+     null,
+     "pour l'annuler.",
+     [
+      "annuler"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     null,
+     "En réalité, c'est vous qui autorisez le virement.",
+     [
+      "vous",
+      "virement"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     null,
+     "Le bon réflexe : raccrochez.",
+     [
+      "raccrochez"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     2.25,
+     "Puis rappelez vous-même le numéro au dos de votre carte.",
+     [
+      "rappelez",
+      "vous-même"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t9.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "001v2-img1.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "001v2-img2.jpg",
+   "from_sentence": 4
+  },
+  {
+   "src": "001v2-img3.jpg",
+   "from_sentence": 6
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 3,
+   "offset": -0.05,
+   "end_sentence": 4,
+   "text": "⚠ NUMÉRO FALSIFIÉ"
+  },
+  {
+   "sentence": 5,
+   "offset": 0,
+   "end_sentence": 6,
+   "text": "516 M€ volés en 2025",
+   "sub": "Fraude par manipulation, France · source OSMP"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 8
+ }
+}

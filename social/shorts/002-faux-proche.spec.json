@@ -1,0 +1,194 @@
+{
+ "out": "002-faux-proche",
+ "dir": "s002",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.59,
+     "« Coucou maman,",
+     [
+      "maman"
+     ]
+    ],
+    [
+     0.83,
+     null,
+     "j'ai changé de numéro. »",
+     [
+      "numéro"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     null,
+     "Ce message arrive sur WhatsApp, d'un numéro inconnu.",
+     [
+      "WhatsApp,",
+      "inconnu"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.42,
+     "Puis : « J'ai un souci urgent.",
+     [
+      "urgent"
+     ]
+    ],
+    [
+     1.82,
+     null,
+     "Tu peux payer cette facture pour moi ? »",
+     [
+      "payer",
+      "facture"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     1.33,
+     "C'est l'arnaque au faux proche.",
+     [
+      "faux",
+      "proche"
+     ]
+    ],
+    [
+     1.66,
+     3.55,
+     "L'escroc joue sur l'urgence",
+     [
+      "urgence"
+     ]
+    ],
+    [
+     3.71,
+     null,
+     "et sur vos sentiments.",
+     [
+      "sentiments"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     0.74,
+     "Le bon réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.44,
+     null,
+     "appelez votre enfant sur son numéro habituel.",
+     [
+      "appelez",
+      "habituel"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     null,
+     "Et convenez d'un mot code en famille.",
+     [
+      "mot",
+      "code"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "img1.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "img2.jpg",
+   "from_sentence": 3
+  },
+  {
+   "src": "img3.jpg",
+   "from_sentence": 5
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 2,
+   "offset": 0.9,
+   "end_sentence": 3,
+   "text": "⚠ NUMÉRO INCONNU"
+  },
+  {
+   "sentence": 4,
+   "offset": 1.6,
+   "end_sentence": 5,
+   "text": "URGENCE + ÉMOTION",
+   "sub": "= signal d'arnaque"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 7
+ }
+}

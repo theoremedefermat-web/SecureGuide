@@ -1,21 +1,21 @@
 {
 "label": "ALERTE ARNAQUE",
-"audio": "002-voix.mp3",
+"audio": "002-faux-proche-voix.mp3",
 "images": [
 {
-"src": "002-img1.jpg",
+"src": "002-faux-proche-img1.jpg",
 "from": 0,
 "to": 5.446576
 },
 {
-"src": "002-img2.jpg",
+"src": "002-faux-proche-img2.jpg",
 "from": 5.446576,
 "to": 14.483197
 },
 {
-"src": "002-img3.jpg",
+"src": "002-faux-proche-img3.jpg",
 "from": 14.483197,
-"to": 20.679319
+"to": 24.029319
 }
 ],
 "phrases": [
@@ -114,8 +114,16 @@
 },
 {
 "from": 20.68,
-"to": 22.31,
-"text": "Un guide anti-arnaque est sur notre site.",
+"to": 23.16,
+"text": "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+"hi": [
+"répandues,"
+]
+},
+{
+"from": 23.66,
+"to": 25.67,
+"text": "un guide est disponible sur notre site.",
 "hi": [
 "guide"
 ]
@@ -135,10 +143,10 @@
 }
 ],
 "cta": {
-"from": 20.579318999999998,
 "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
 "title": "Le kit <em>anti-arnaques</em> 2026",
 "url": "www.secureguide.fr/kit",
-"sub": "Les arnaques du moment · France · Belgique · Luxembourg"
+"sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+"from": 23.529319
 }
 }
