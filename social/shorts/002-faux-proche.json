@@ -1,0 +1,144 @@
+{
+"label": "ALERTE ARNAQUE",
+"audio": "002-voix.mp3",
+"images": [
+{
+"src": "002-img1.jpg",
+"from": 0,
+"to": 5.446576
+},
+{
+"src": "002-img2.jpg",
+"from": 5.446576,
+"to": 14.483197
+},
+{
+"src": "002-img3.jpg",
+"from": 14.483197,
+"to": 20.679319
+}
+],
+"phrases": [
+{
+"from": 0.3,
+"to": 0.89,
+"text": "« Coucou maman,",
+"hi": [
+"maman"
+]
+},
+{
+"from": 1.13,
+"to": 1.98,
+"text": "j'ai changé de numéro. »",
+"hi": [
+"numéro"
+]
+},
+{
+"from": 2.58,
+"to": 4.85,
+"text": "Ce message arrive sur WhatsApp, d'un numéro inconnu.",
+"hi": [
+"WhatsApp,",
+"inconnu"
+]
+},
+{
+"from": 5.45,
+"to": 6.87,
+"text": "Puis : « J'ai un souci urgent.",
+"hi": [
+"urgent"
+]
+},
+{
+"from": 7.27,
+"to": 8.6,
+"text": "Tu peux payer cette facture pour moi ? »",
+"hi": [
+"payer",
+"facture"
+]
+},
+{
+"from": 9.2,
+"to": 10.53,
+"text": "C'est l'arnaque au faux proche.",
+"hi": [
+"faux",
+"proche"
+]
+},
+{
+"from": 10.86,
+"to": 12.75,
+"text": "L'escroc joue sur l'urgence",
+"hi": [
+"urgence"
+]
+},
+{
+"from": 12.91,
+"to": 13.78,
+"text": "et sur vos sentiments.",
+"hi": [
+"sentiments"
+]
+},
+{
+"from": 14.48,
+"to": 15.22,
+"text": "Le bon réflexe :",
+"hi": [
+"réflexe"
+]
+},
+{
+"from": 15.92,
+"to": 17.95,
+"text": "appelez votre enfant sur son numéro habituel.",
+"hi": [
+"appelez",
+"habituel"
+]
+},
+{
+"from": 18.45,
+"to": 19.88,
+"text": "Et convenez d'un mot code en famille.",
+"hi": [
+"mot",
+"code"
+]
+},
+{
+"from": 20.68,
+"to": 22.31,
+"text": "Un guide anti-arnaque est sur notre site.",
+"hi": [
+"guide"
+]
+}
+],
+"stickers": [
+{
+"from": 3.476644,
+"to": 5.296576,
+"text": "⚠ NUMÉRO INCONNU"
+},
+{
+"from": 10.796054,
+"to": 14.333197,
+"text": "URGENCE + ÉMOTION",
+"sub": "= signal d'arnaque"
+}
+],
+"cta": {
+"from": 20.579318999999998,
+"kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+"title": "Le kit <em>anti-arnaques</em> 2026",
+"url": "www.secureguide.fr/kit",
+"sub": "Les arnaques du moment · France · Belgique · Luxembourg"
+}
+}
