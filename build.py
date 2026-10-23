@@ -288,8 +288,7 @@ def build():
         "Recevez gratuitement le Kit anti-arnaques 2026 : les 6 arnaques du moment, la carte des numéros utiles et 10 points pour protéger la famille.",
         kit, minimal=True))
     fe = PROD["seniors"]
-    merci = ((SRC / "kit_merci.html").read_text().replace("<!--PRICE-->", "5,99 €")
-             .replace("<!--URL-->", fe["url"] + "?utm_source=site&utm_medium=merci&utm_campaign=kit2026").replace("<!--COVER-->", cover(fe)))
+    merci = (SRC / "kit_merci.html").read_text()
     page("/kit/merci/", "Votre kit est prêt · SecureGuide.fr", "Téléchargez votre Kit anti-arnaques 2026.", merci, minimal=True, noindex=True)
 
     pages.append(page("/mentions-legales/", "Mentions légales · SecureGuide.fr",

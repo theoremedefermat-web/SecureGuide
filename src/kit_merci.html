@@ -23,36 +23,33 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ty-k{color:var(--signal)}}
 @media (max-width:680px){.ty-ok{grid-template-columns:1fr}.ty-ok img{width:120px}.ty-offer{grid-template-columns:1fr}.ty-offer .cv-wrap{order:-1;max-width:170px}.ty-more{grid-template-columns:1fr}}
 </style>
+<style>
+.ty-steps2{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px;counter-reset:s}
+.ty-steps2 li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;color:#EAF3F7;font-size:17px;line-height:1.45}
+.ty-steps2 li:before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--signal);color:var(--signal-ink);font-family:var(--wide);font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}
+.ty-steps2 b{color:#fff}
+.ty-mail{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.ty-mail a{background:#fff;color:#0A2533;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:15px}
+.ty-note{margin-top:18px;font-size:14.5px;color:#9FBAC6}
+</style>
 <main class="ty">
 <section class="ty-ok">
 <img src="/assets/kit/kit-p1.jpg" alt="Couverture du Kit anti-arnaques 2026" width="560" height="792">
 <div>
-<span class="kicker">Merci, c'est bien reçu</span>
-<h1>Votre kit est <em>prêt</em></h1>
-<p>Téléchargez-le maintenant. Imprimez la page 5 et posez-la près du téléphone de vos parents : c'est celle qui sert le plus.</p>
-<a class="btn-y" href="/assets/kit/kit-anti-arnaques-2026.pdf" download>Télécharger le kit (PDF)</a>
-<p class="ty-steps"><b style="color:#fff">Dernière étape :</b> confirmez votre adresse en cliquant sur le lien de l'email « Veuillez valider votre inscription » (pensez aux spams). Vous recevrez ensuite le kit par email et le Radar des arnaques chaque dimanche.</p>
+<span class="kicker">Merci pour votre inscription</span>
+<h1>Votre kit vous attend <em>dans votre boîte email</em></h1>
+<ol class="ty-steps2">
+<li><span>Ouvrez l'email <b>«&nbsp;Veuillez valider votre inscription&nbsp;»</b> que nous venons de vous envoyer.</span></li>
+<li><span>Cliquez sur <b>«&nbsp;Oui, m'inscrire&nbsp;»</b> pour confirmer votre adresse.</span></li>
+<li><span>Vous recevez aussitôt l'email <b>«&nbsp;Votre Kit anti-arnaques 2026&nbsp;»</b> avec le lien de téléchargement.</span></li>
+</ol>
+<div class="ty-mail"><a href="https://mail.google.com/" target="_blank" rel="noopener">Ouvrir Gmail</a><a href="https://outlook.live.com/mail/" target="_blank" rel="noopener">Ouvrir Outlook</a></div>
+<p class="ty-note">Rien reçu d'ici quelques minutes ? Regardez dans les dossiers <b style="color:#fff">Spam</b> ou <b style="color:#fff">Promotions</b>, et ajoutez radar@secureguide.fr à vos contacts.</p>
 </div>
-</section>
-
-<section class="ty-offer">
-<div>
-<span class="ty-k">Pour aller plus loin</span>
-<h2>Vos parents liront-ils ce kit&nbsp;? Offrez-leur le guide fait pour eux</h2>
-<p style="margin:0">Le kit vous alerte. Le <b>Guide anti-arnaques seniors</b> va plus loin : un format simple, pensé pour ceux qui ne suivent pas les alertes en ligne.</p>
-<ul>
-<li>Reconnaître un faux conseiller bancaire au téléphone</li>
-<li>Repérer les SMS et emails piégés</li>
-<li>Les bons réflexes en cas de doute</li>
-</ul>
-<div class="ty-price"><b><!--PRICE--></b><span>PDF en français · téléchargement immédiat · paiement sécurisé par Etsy</span></div>
-<a class="btn-y" href="<!--URL-->" target="_blank" rel="noopener" style="display:inline-block">Voir le guide sur Etsy</a>
-</div>
-<div class="cv-wrap"><!--COVER--></div>
 </section>
 
 <div class="ty-more">
-<a href="/test-protection/"><b>Faites le test en 2 minutes →</b><span>Votre score de protection sur 100 et vos 3 priorités.</span></a>
+<a href="/test-protection/"><b>En attendant, faites le test en 2 minutes →</b><span>Votre score de protection sur 100 et vos 3 priorités.</span></a>
 <a href="/radar/"><b>Voir le Radar de la semaine →</b><span>Les nouvelles arnaques en France, en Belgique et au Luxembourg.</span></a>
 </div>
 </main>
