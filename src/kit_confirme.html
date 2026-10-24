@@ -1,0 +1,30 @@
+<style>
+.cf{max-width:760px;margin:0 auto;padding:48px 16px 24px}
+.cf-box{background:var(--night);color:#EAF3F7;border-radius:18px;padding:32px;text-align:center}
+.cf-ok{width:76px;height:76px;border-radius:50%;background:var(--ok);margin:0 auto 18px;display:flex;align-items:center;justify-content:center}
+.cf-ok svg{width:40px;height:40px}
+.cf h1{font-family:var(--wide);font-stretch:120%;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4.4vw,40px);line-height:1.02;margin:6px 0 14px}
+.cf h1 em{font-style:normal;color:var(--signal)}
+.cf-box p{margin:0 auto 10px;max-width:520px;color:#CFE0E7}
+.cf-mail{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.cf-mail a{background:#fff;color:#0A2533;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:15px}
+.cf-more{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.cf-more a{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-decoration:none;display:block}
+.cf-more b{display:block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:18px;margin-bottom:4px}
+.cf-more span{color:var(--muted);font-size:15px}
+@media (max-width:640px){.cf-more{grid-template-columns:1fr}}
+</style>
+<main class="cf">
+<section class="cf-box">
+<div class="cf-ok"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+<span class="kicker">Adresse confirmée</span>
+<h1>Votre kit est <em>en route</em></h1>
+<p>L'email <b style="color:#fff">«&nbsp;Votre Kit anti-arnaques 2026&nbsp;»</b> arrive dans votre boîte dans quelques instants, avec le lien de téléchargement.</p>
+<p style="font-size:14.5px;color:#9FBAC6">Pas reçu ? Regardez dans les dossiers Spam ou Promotions, et ajoutez radar@secureguide.fr à vos contacts.</p>
+<div class="cf-mail"><a href="https://mail.google.com/" target="_blank" rel="noopener">Ouvrir Gmail</a><a href="https://outlook.live.com/mail/" target="_blank" rel="noopener">Ouvrir Outlook</a></div>
+</section>
+<div class="cf-more">
+<a href="/test-protection/"><b>Faites le test en 2 minutes →</b><span>Votre score de protection sur 100 et vos 3 priorités.</span></a>
+<a href="/radar/"><b>Voir le Radar de la semaine →</b><span>Les nouvelles arnaques en France, en Belgique et au Luxembourg.</span></a>
+</div>
+</main>

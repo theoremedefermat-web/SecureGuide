@@ -289,6 +289,7 @@ def build():
         kit, minimal=True))
     fe = PROD["seniors"]
     merci = (SRC / "kit_merci.html").read_text()
+    page("/kit/confirme/", "Adresse confirmée · SecureGuide.fr", "Votre Kit anti-arnaques 2026 arrive par email.", (SRC / "kit_confirme.html").read_text(), minimal=True, noindex=True)
     page("/kit/merci/", "Votre kit est prêt · SecureGuide.fr", "Téléchargez votre Kit anti-arnaques 2026.", merci, minimal=True, noindex=True)
 
     pages.append(page("/mentions-legales/", "Mentions légales · SecureGuide.fr",
