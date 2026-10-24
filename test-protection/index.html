@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Test : votre famille est-elle protégée en ligne ? · SecureGuide.fr</title>
-<meta name="description" content="10 questions, 2 minutes : obtenez votre score de protection sur 100 et les 3 failles à corriger en priorité.">
+<title>Test : vos habitudes en ligne vous protègent-elles ? · SecureGuide.fr</title>
+<meta name="description" content="5 questions, environ 1 minute : un bilan de vos habitudes en ligne, avec un score sur 100 et vos priorités. Résultat immédiat, sans email.">
 <link rel="canonical" href="https://secureguide.fr/test-protection/">
-<meta property="og:title" content="Test : votre famille est-elle protégée en ligne ? · SecureGuide.fr">
-<meta property="og:description" content="10 questions, 2 minutes : obtenez votre score de protection sur 100 et les 3 failles à corriger en priorité.">
+<meta property="og:title" content="Test : vos habitudes en ligne vous protègent-elles ? · SecureGuide.fr">
+<meta property="og:description" content="5 questions, environ 1 minute : un bilan de vos habitudes en ligne, avec un score sur 100 et vos priorités. Résultat immédiat, sans email.">
 <meta property="og:url" content="https://secureguide.fr/test-protection/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -36,7 +36,7 @@
   </g>
   <path d="M32 4 55 12.6v18.6c0 14.6-9.8 26.2-23 30.3C18.8 57.4 9 45.8 9 31.2V12.6z" fill="none" stroke="#F2B33D" stroke-width="3" stroke-linejoin="round"/>
 </svg>
-<span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><div class="links"><a href="/radar/">Radar</a><a href="/guides/">Guides</a><a href="/boutique/">Boutique</a><a href="/test-protection/" aria-current="page" class="cta-s">Faire le test</a></div></div></nav><a class="kit-bar" href="/kit/?utm_source=site&amp;utm_medium=bandeau&amp;utm_campaign=kit2026"><b>Gratuit</b><span>Le Kit anti-arnaques 2026 : les 6 arnaques du moment et la carte des numéros utiles</span><i>Le recevoir →</i></a>
+<span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><div class="links"><a href="/radar/">Radar</a><a href="/guides/">Guides</a><a href="/ebooks/">E-books</a><a href="/test-protection/" aria-current="page" class="cta-s">Faire le test</a></div></div></nav><a class="kit-bar" href="/kit/?utm_source=site&amp;utm_medium=bandeau&amp;utm_campaign=kit2026"><b>Gratuit</b><span>Le Kit anti-arnaques 2026 : les 6 arnaques du moment et la carte des numéros utiles</span><i>Le recevoir →</i></a>
 <style>
 /* Concept : un instrument de mesure. Bandeau bleu nuit façon tableau de bord de sécurité, jauge de score à aiguille, étiquettes jaune signalisation. */
 :root{
@@ -61,7 +61,7 @@
 .logo{display:flex;align-items:center;gap:8px;font-weight:700;color:#fff}
 .logo svg{width:20px;height:20px}
 .tape{background:var(--signal);color:var(--signal-ink);padding:3px 8px;border-radius:3px;font-weight:700}
-h1{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:clamp(34px,8.6vw,54px);line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+h1{font-family:var(--wide);font-stretch:108%;font-weight:800;letter-spacing:-.012em;text-wrap:balance;font-size:clamp(28px,5.2vw,42px);line-height:1.12;margin:0}
 h1 em{font-style:normal;color:var(--signal)}
 .sub{color:#B9CCD5;max-width:34ch;font-size:18px}
 .specs{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:13px;color:#CFE0E7}
@@ -76,14 +76,15 @@ h1 em{font-style:normal;color:var(--signal)}
 @media (max-width:520px){.radar{width:160px;height:160px;right:-50px;top:20px;opacity:.35}}
 
 main{padding:0 16px}
+.hero[hidden]+main .wrap{margin-top:24px}
 .wrap{max-width:640px;margin:-20px auto 0;padding-block:0 48px;display:flex;flex-direction:column;gap:16px;position:relative}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:0 10px 30px -18px rgba(10,37,51,.35)}
 .qhead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
-.qnum{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:44px;line-height:.9;font-variant-numeric:tabular-nums}
+.qnum{font-family:var(--wide);font-stretch:110%;font-weight:800;font-size:38px;line-height:.9;font-variant-numeric:tabular-nums}
 .qnum small{font-size:18px;color:var(--muted);font-weight:700}
 .chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--night);color:var(--signal);padding:5px 9px;border-radius:4px;white-space:nowrap}
-.segs{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
-.segs i{height:6px;border-radius:2px;background:var(--line);transition:background .25s}
+.segs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.segs i{height:7px;border-radius:2px;background:var(--line);transition:background .25s}
 .segs i.on{background:var(--signal)}
 .qtext{font-family:var(--wide);font-stretch:112%;font-weight:700;font-size:clamp(21px,4.8vw,26px);line-height:1.2;margin:0;text-wrap:balance}
 .why{font-size:15.5px;color:var(--muted);margin:0;padding-left:12px;border-left:3px solid var(--signal)}
@@ -91,7 +92,8 @@ main{padding:0 16px}
 .opt{display:flex;align-items:center;gap:14px;font:inherit;font-weight:500;text-align:left;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);cursor:pointer;transition:border-color .15s,transform .12s,background .15s}
 .opt kbd{font-family:var(--mono);font-size:13px;font-weight:700;width:30px;height:30px;display:grid;place-items:center;border-radius:6px;background:var(--bg);border:1px solid var(--line);flex:none}
 .opt:hover{border-color:var(--ink);transform:translateX(3px)}
-.opt:hover kbd{background:var(--signal);color:var(--signal-ink);border-color:var(--signal)}
+.opt:hover kbd,.opt.sel kbd{background:var(--signal);color:var(--signal-ink);border-color:var(--signal)}
+.opt.sel{border-color:var(--ink)}
 .opt:focus-visible,.cta:focus-visible,.btn:focus-visible,.link:focus-visible,input:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
 .link{font:inherit;font-size:15px;background:none;border:0;color:var(--muted);cursor:pointer;align-self:flex-start;padding:0;text-decoration:underline;text-underline-offset:3px}
 
@@ -104,9 +106,14 @@ main{padding:0 16px}
 .gauge .val{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:58px;fill:#fff}
 .gauge .over{fill:#8FAAB6;font-family:var(--mono);font-size:12px}
 .gauge .arc{transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1)}
-.level{font-family:var(--wide);font-stretch:112%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:15px;padding:6px 14px;border-radius:4px;color:var(--night)}
-.verdict{max-width:40ch;color:#C9DAE1}
-h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(20px,4.4vw,24px);line-height:1.15;margin:0;text-wrap:balance;text-transform:uppercase}
+.level{font-family:var(--wide);font-stretch:108%;font-weight:800;font-size:16px;padding:6px 14px;border-radius:4px;color:var(--night)}
+.verdict{max-width:42ch;color:#C9DAE1;margin:0}
+.disclaim{max-width:46ch;margin:0;font-size:13.5px;color:#9FBAC6}
+.res .link{color:#B9CCD5;align-self:center}
+.free{margin:0;color:var(--muted)}
+.free a{color:var(--ink);font-weight:600;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px}
+.prio-note{margin:0;font-size:14.5px;color:var(--muted)}
+h2{font-family:var(--wide);font-stretch:108%;font-weight:800;letter-spacing:-.012em;text-wrap:balance;font-size:clamp(20px,3.6vw,24px);line-height:1.22;margin:0}
 .fixes{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none;counter-reset:f}
 .fix{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:16px;border:1px solid var(--line);border-radius:10px;counter-increment:f;position:relative;overflow:hidden}
 .fix::before{content:counter(f);grid-row:1/span 4;font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:34px;line-height:1;color:var(--sev)}
@@ -117,7 +124,8 @@ h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(20p
 .fix a{color:var(--ink);font-weight:600;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px}
 .reco{display:grid;grid-template-columns:1fr auto;gap:12px 16px;align-items:center;background:var(--night);color:#EAF3F7;border-radius:12px;padding:18px 20px;border-left:5px solid var(--signal)}
 .reco .k{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
-.reco b{display:block;font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:18px;margin:4px 0}
+.reco .why2{display:block;margin-top:6px;font-size:13.5px;color:#9FBAC6}
+.reco b{display:block;font-family:var(--wide);font-stretch:108%;font-weight:800;font-size:18px;margin:4px 0}
 .reco p{margin:0;color:#B9CCD5;font-size:14.5px}
 .reco a{font-family:var(--wide);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:14px;text-decoration:none;background:var(--signal);color:var(--signal-ink);padding:12px 16px;border-radius:8px;white-space:nowrap}
 @media (max-width:560px){.reco{grid-template-columns:1fr}.reco a{justify-self:start}}
@@ -145,18 +153,18 @@ input{flex:1 1 220px;min-width:0;font:inherit;padding:14px;border:1.5px solid va
     <div class="top">
       <span class="tape">Test gratuit</span>
     </div>
-    <h1>Votre famille est-elle <em>vraiment</em> protégée ?</h1>
-    <p class="sub">Scannez vos habitudes en 2 minutes. Vous obtenez votre score et les 3 failles à fermer en priorité.</p>
-    <div class="specs"><span><b>10</b> questions</span><span><b>2</b> min</span><span>score sur <b>100</b></span><span><b>0</b> jargon</span></div>
-    <button class="cta" id="start">Lancer le scan</button>
+    <h1>Vos habitudes en ligne vous <em>protègent-elles</em> ?</h1>
+    <p class="sub">5 questions sur vos comptes, les messages suspects et la famille. Vous voyez tout de suite votre score et vos priorités.</p>
+    <div class="specs"><span><b>5</b> questions</span><span>environ <b>1</b> min</span><span>score sur <b>100</b></span><span>sans email</span></div>
+    <button class="cta" id="start">Commencer le test</button>
   </div>
 </header>
 
 <main>
 <div class="wrap">
-  <section id="quiz" class="card" hidden>
-    <div class="qhead"><div class="qnum" id="qnum">01<small>/10</small></div><span class="chip" id="qcat"></span></div>
-    <div class="segs" id="segs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <section id="quiz" class="card" hidden aria-live="polite">
+    <div class="qhead"><div class="qnum" id="qnum">01<small>/5</small></div><span class="chip" id="qcat"></span></div>
+    <div class="segs" id="segs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     <h2 class="qtext" id="qtext"></h2>
     <p class="why" id="qwhy"></p>
     <div class="opts" id="opts"></div>
@@ -164,7 +172,7 @@ input{flex:1 1 220px;min-width:0;font:inherit;padding:14px;border:1.5px solid va
   </section>
 
   <section id="result" class="card res" hidden>
-    <span class="label">Résultat du scan</span>
+    <span class="label">Bilan de vos habitudes déclarées</span>
     <svg class="gauge" viewBox="-14 0 328 190" role="img" aria-labelledby="gt">
       <title id="gt">Jauge de score</title>
       <path class="track" d="M40 160 A110 110 0 0 1 260 160" fill="none" stroke-width="18" stroke-linecap="round"/>
@@ -175,19 +183,22 @@ input{flex:1 1 220px;min-width:0;font:inherit;padding:14px;border:1.5px solid va
     </svg>
     <span class="level" id="level"></span>
     <p class="verdict" id="verdict"></p>
+    <p class="disclaim">Ce score repose uniquement sur vos réponses. Il ne vérifie pas vos appareils ni vos comptes.</p>
+    <button class="link" id="edit">← Modifier mes réponses</button>
   </section>
 
   <section id="prio" class="card" hidden>
-    <h2>Vos 3 failles à fermer</h2>
+    <h2 id="prioh">Vos priorités</h2>
     <ul class="fixes" id="fixes"></ul>
+    <p class="prio-note" id="prionote" hidden></p>
     <div id="reco"></div>
   </section>
 
   <section id="capture" class="card cap" hidden>
-    <h2>Recevez le Radar chaque dimanche</h2>
+    <h2>Facultatif : recevez le Radar chaque dimanche</h2>
     <ul class="perks">
       <li>Les nouvelles arnaques de la semaine en France, en Belgique et au Luxembourg</li>
-      <li>Le bon réflexe pour chacune, en 2 minutes de lecture</li>
+      <li>Le bon réflexe pour chacune, en quelques minutes de lecture</li>
       <li>Gratuit, sans spam, désinscription en un clic</li>
     </ul>
     <div class="sib-form sg-form">
@@ -260,48 +271,47 @@ var AUTOHIDE=Boolean(0);
 </div>
     <p class="note">Gratuit. Désinscription en un clic.</p>
     <div class="trust"><span>Gratuit</span><span>·</span><span>Sans spam</span><span>·</span><span>Rédigé par un expert réseau certifié Cisco CCNP</span></div>
-    <button class="link" id="again">Refaire le scan</button>
+    <button class="link" id="again">Refaire le test</button>
   </section>
 </div>
 </main>
 
 <script>
+// 5 questions retenues dans le questionnaire d'origine. Poids sur 100 ; une question « ne s'applique pas » est retirée du total.
+// g = guide conseillé quand cette question arrive en tête des priorités.
 const Q=[
- {c:"Mots de passe",w:15,t:"Utilisez-vous un mot de passe différent pour chaque compte important ?",y:"Un seul mot de passe volé ouvre tous les comptes qui le partagent.",f:"Un mot de passe unique par compte",d:"Commencez par votre email et votre banque : ce sont les clés de tout le reste.",l:"Voir notre comparatif des gestionnaires",u:"/guides/meilleur-gestionnaire-mots-de-passe/"},
- {c:"Comptes",w:15,t:"La double authentification est-elle activée sur votre email principal ?",y:"C'est le compte qui permet de réinitialiser tous les autres.",f:"Activer la double authentification",d:"Dix minutes dans les réglages de votre messagerie bloquent la grande majorité des piratages de compte."},
- {c:"Mots de passe",w:10,t:"Utilisez-vous un gestionnaire de mots de passe ?",y:"Il retient tout pour vous et repère les mots de passe réutilisés.",f:"Adopter un gestionnaire de mots de passe",d:"NordPass ou 1Password retiennent tout à votre place sur téléphone et ordinateur.",l:"Comparer les gestionnaires",u:"/guides/meilleur-gestionnaire-mots-de-passe/"},
- {c:"Appareils",w:10,t:"Les mises à jour automatiques sont-elles activées sur vos téléphones et ordinateurs ?",y:"La plupart des attaques exploitent des failles déjà corrigées.",f:"Activer les mises à jour automatiques",d:"Un réglage à faire une fois sur chaque appareil, y compris la tablette des enfants."},
- {c:"Données",w:10,t:"Vos photos et documents sont-ils sauvegardés ailleurs que sur l'appareil ?",y:"Un téléphone perdu ou un rançongiciel, et tout disparaît.",f:"Sauvegarder photos et documents",d:"Activez la sauvegarde cloud de votre téléphone et gardez une copie sur un disque externe."},
- {c:"Maison",w:8,t:"Avez-vous changé le mot de passe Wi-Fi d'origine de votre box ?",y:"Celui imprimé sous la box est souvent visible par les visiteurs.",f:"Changer le mot de passe Wi-Fi de la box",d:"Choisissez une phrase longue et activez le réseau invité pour les visiteurs."},
- {c:"Arnaques",w:10,t:"Vérifiez-vous l'expéditeur avant de cliquer sur un lien reçu par SMS ou email ?",y:"Faux colis, fausse banque, faux impôts : le lien est l'hameçon.",f:"Le réflexe anti-arnaque",d:"Ne cliquez jamais un lien d'urgence : ouvrez vous-même l'application ou le site officiel.",l:"Reconnaître un SMS frauduleux",u:"/radar/"},
- {c:"Appareils",w:8,t:"Votre téléphone est-il verrouillé par un code d'au moins 6 chiffres ou la biométrie ?",y:"Un téléphone ouvert donne accès à vos emails, photos et paiements.",f:"Verrouiller votre téléphone",d:"Un code à 6 chiffres minimum, et l'effacement à distance activé en cas de perte."},
- {c:"Réseaux",w:6,t:"Utilisez-vous un VPN sur les Wi-Fi publics (gare, hôtel, café) ?",y:"Sur un réseau ouvert, vos échanges peuvent être observés.",f:"Utiliser un VPN hors de chez vous",d:"Un VPN comme NordVPN chiffre votre connexion en un clic sur les réseaux publics.",l:"Faut-il un VPN ? Notre guide",u:"/guides/vpn-famille/"},
- {c:"Famille",w:8,t:"Si vous avez des enfants : ont-ils des règles et un contrôle parental adaptés à leur âge ?",y:"Les ados sont la cible privilégiée des arnaques sur les réseaux.",f:"Protéger les enfants en ligne",d:"Contrôle parental intégré au téléphone, et une règle simple : on en parle avant de cliquer.",na:true}
+ {c:"Comptes",w:20,g:"famille",t:"Utilisez-vous un mot de passe différent pour chaque compte important ?",y:"Un seul mot de passe volé ouvre tous les comptes qui le partagent.",f:"Un mot de passe unique par compte",d:"Commencez par votre email et votre banque : ce sont les clés de tout le reste. Un gestionnaire de mots de passe peut les retenir pour vous.",l:"Voir notre comparatif des gestionnaires",u:"/guides/meilleur-gestionnaire-mots-de-passe/"},
+ {c:"Comptes",w:25,g:"famille",t:"La double authentification est-elle activée sur votre email principal ?",y:"C'est le compte qui permet de réinitialiser tous les autres.",f:"Activer la double authentification sur votre email",d:"Quelques minutes dans les réglages de votre messagerie suffisent : un code ou une validation sur le téléphone est alors demandé à chaque nouvelle connexion."},
+ {c:"Messages suspects",w:25,g:"seniors",t:"Vérifiez-vous l'expéditeur avant de cliquer sur un lien reçu par SMS ou email ?",y:"Faux colis, fausse banque, faux impôts : le lien est l'hameçon.",f:"Le réflexe face aux messages suspects",d:"Ne cliquez pas sur un lien qui presse d'agir : ouvrez vous-même l'application ou le site officiel. En cas de doute, appelez l'organisme au numéro que vous connaissez.",l:"Voir les arnaques du moment",u:"/radar/"},
+ {c:"Appareils",w:15,g:"famille",t:"Les mises à jour automatiques sont-elles activées sur vos téléphones et ordinateurs ?",y:"La plupart des attaques exploitent des failles déjà corrigées par les mises à jour.",f:"Activer les mises à jour automatiques",d:"Un réglage à faire une fois sur chaque appareil, y compris la tablette des enfants."},
+ {c:"Famille",w:15,g:"parents",t:"Si vous avez des enfants : ont-ils des règles et un contrôle parental adaptés à leur âge ?",y:"Les enfants et les ados sont souvent visés par les arnaques sur les réseaux.",f:"Accompagner les enfants en ligne",d:"Activez le contrôle parental intégré au téléphone, et posez une règle simple : on en parle avant de cliquer.",na:"Pas d'enfants concernés"}
 ];
 const A=[["Oui",1],["En partie ou parfois",.5],["Non",0]];
 let i=0,ans=[];
 const $=id=>document.getElementById(id);
 const pad=n=>String(n).padStart(2,"0");
-function show(ids){["quiz","result","prio","capture"].forEach(s=>$(s).hidden=!ids.includes(s))}
+function show(ids){["quiz","result","prio","capture"].forEach(s=>$(s).hidden=!ids.includes(s));document.querySelector(".hero").hidden=ids.length>0}
 (function ticks(){const g=$("ticks");let h="";for(let v=0;v<=100;v+=10){const a=Math.PI*(1-v/100),r1=124,r2=v%50?131:136,cx=150,cy=160;h+=`<line class="tick" x1="${cx+r1*Math.cos(a)}" y1="${cy-r1*Math.sin(a)}" x2="${cx+r2*Math.cos(a)}" y2="${cy-r2*Math.sin(a)}" stroke-width="${v%50?1:2}"/>`;if(v%50===0)h+=`<text class="ticktxt" x="${cx+146*Math.cos(a)}" y="${cy-146*Math.sin(a)+4}" text-anchor="middle">${v}</text>`}g.innerHTML=h})();
 function render(){
   const q=Q[i];
-  $("qnum").innerHTML=`${pad(i+1)}<small>/${Q.length}</small>`;
+  $("qnum").innerHTML=`${pad(i+1)}<small>/${pad(Q.length)}</small>`;
   $("qcat").textContent=q.c;
   [...$("segs").children].forEach((s,k)=>s.classList.toggle("on",k<i));
   $("qtext").textContent=q.t;$("qwhy").textContent=q.y;
   const o=$("opts");o.replaceChildren();
-  const list=q.na?[...A,["Pas d'enfants",null]]:A;
-  list.forEach(([lab,v],k)=>{const b=document.createElement("button");b.className="opt";b.id=`opt-${i}-${k}`;b.innerHTML=`<kbd>${"ABCD"[k]}</kbd><span></span>`;b.lastChild.textContent=lab;b.onclick=()=>pick(v);o.append(b)});
+  const list=q.na?[...A,[q.na,null]]:A;
+  list.forEach(([lab,v],k)=>{const b=document.createElement("button");b.className="opt";b.id=`opt-${i}-${k}`;b.innerHTML=`<kbd>${"ABCD"[k]}</kbd><span></span>`;b.lastChild.textContent=lab;
+    const sel=i in ans&&ans[i]===v;b.classList.toggle("sel",sel);b.setAttribute("aria-pressed",sel?"true":"false");b.onclick=()=>pick(v);o.append(b)});
   $("back").hidden=i===0;
 }
 function pick(v){ans[i]=v;i++;i<Q.length?render():finish()}
-document.addEventListener("keydown",e=>{if($("quiz").hidden)return;const k="abcd".indexOf(e.key.toLowerCase());const b=$("opts").children[k];if(b)b.click()});
+document.addEventListener("keydown",e=>{if($("quiz").hidden||e.altKey||e.ctrlKey||e.metaKey)return;const k="abcd".indexOf(e.key.toLowerCase());const b=$("opts").children[k];if(b)b.click()});
+function score(){let got=0,max=0;Q.forEach((q,k)=>{if(ans[k]===null)return;max+=q.w;got+=q.w*ans[k]});return max?Math.round(got/max*100):100}
 function finish(){
-  let got=0,max=0;
-  Q.forEach((q,k)=>{if(ans[k]===null)return;max+=q.w;got+=q.w*ans[k]});
-  const s=Math.round(got/max*100);
-  const lv=s>=80?["Bien protégé","--ok","Vous avez les bons réflexes. Fermez les derniers points pour être tranquille."]:s>=55?["Protection partielle","--warn","Les bases sont là, mais quelques failles laissent la porte entrouverte."]:["Exposé","--crit","Plusieurs portes sont ouvertes. Les 3 corrections ci-dessous changent tout, et aucune ne prend plus de 15 minutes."];
+  const s=score();
+  const lv=s>=80?["Bonnes habitudes","--ok","Vos habitudes déclarées couvrent l'essentiel. Gardez ces réflexes et suivez les nouvelles arnaques."]
+    :s>=50?["Des bases à consolider","--warn","Une partie des bons réflexes est en place. Les points ci-dessous se règlent en quelques minutes chacun."]
+    :["Plusieurs habitudes à renforcer","--crit","Pas d'inquiétude : chaque point ci-dessous se met en place simplement, en commençant par le premier."];
   const L=$("level");L.textContent=lv[0];L.style.background=`var(${lv[1]})`;
   $("verdict").textContent=lv[2];
   const arc=$("arc");arc.style.stroke=`var(${lv[1]})`;arc.style.strokeDashoffset=100;
@@ -310,25 +320,34 @@ function finish(){
   requestAnimationFrame(()=>requestAnimationFrame(()=>{arc.style.strokeDashoffset=100-s}));
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,t0=performance.now();
   (function count(t){const p=reduce?1:Math.min(1,(t-t0)/1400);sc.textContent=Math.round(s*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(count)})(t0);
-  const gaps=Q.map((q,k)=>({q,lost:ans[k]===null?0:q.w*(1-ans[k])})).filter(g=>g.lost>0).sort((a,b)=>b.lost-a.lost).slice(0,3);
+  // Priorités : uniquement les points réellement signalés par les réponses (« Non » ou « En partie »), du plus important au moins important.
+  const all=Q.map((q,k)=>({q,k,lost:ans[k]===null?0:q.w*(1-ans[k]),part:ans[k]===.5})).filter(g=>g.lost>0).sort((a,b)=>b.lost-a.lost||a.k-b.k);
+  const gaps=all.slice(0,3);
+  $("prioh").textContent=!gaps.length?"Aucune priorité ne ressort de vos réponses":gaps.length===1?"Votre priorité":`Vos ${gaps.length} priorités`;
   const F=$("fixes");F.replaceChildren();
-  if(!gaps.length){const li=document.createElement("li");li.className="done";li.textContent="Aucune faille détectée. Refaites le scan une fois par an.";F.append(li)}
-  gaps.forEach(g=>{
-    const sev=g.lost>=10?["Critique","--crit"]:g.lost>=5?["Important","--warn"]:["Vigilance","--ok"];
+  if(!gaps.length){const li=document.createElement("li");li.className="done";li.textContent="Vous avez répondu « Oui » partout où la question s'appliquait. Refaites le test de temps en temps, vos usages évoluent.";F.append(li)}
+  gaps.forEach((g,n)=>{
+    const sev=g.part?["À compléter","--warn"]:["À mettre en place","--crit"];
     const li=document.createElement("li");li.className="fix";li.style.setProperty("--sev",`var(${sev[1]})`);
     li.innerHTML=`<span class="tag"></span><strong></strong><p></p><a></a>`;
     li.querySelector(".tag").textContent=`${sev[0]} · ${g.q.c}`;li.querySelector("strong").textContent=g.q.f;li.querySelector("p").textContent=g.q.d;const A2=li.querySelector("a");if(g.q.u){A2.href=g.q.u;A2.textContent=g.q.l+" →"}else A2.remove();
     F.append(li)});
+  const N=$("prionote");N.hidden=all.length<=3;if(all.length>3)N.textContent=`${all.length-3} autre${all.length-3>1?"s":""} point${all.length-3>1?"s":""} ressort${all.length-3>1?"ent":""} de vos réponses : commencez par ces trois-là.`;
 
-  const PROD={"seniors": {"t": "Guide anti-arnaques pour les seniors", "d": "Faux conseillers bancaires, SMS piégés, hameçonnage : un guide simple à offrir à ses parents pour qu'ils reconnaissent les arnaques et sachent quoi faire.", "u": "https://www.etsy.com/fr/listing/4542889118/guide-anti-arnaques-seniors-o-proteger"}, "parents": {"t": "Parents, enfants et écrans", "d": "Contrôle parental, réseaux sociaux, cyberharcèlement : les réglages et les règles qui comptent, expliqués pas à pas. Avec 2 bonus.", "u": "https://www.etsy.com/fr/listing/4539975996/guide-parents-enfants-ecrans-o-proteger"}, "famille": {"t": "Guide cybersécurité en famille", "d": "Mots de passe, arnaques, protection des données : les 16 gestes essentiels pour toute la famille, avec une checklist à cocher.", "u": "https://www.etsy.com/fr/listing/4535917671/guide-cybersecurite-famille-pdf-francais"}, "ia50": {"t": "Guide de l'IA après 50 ans", "d": "Découvrir ChatGPT sans jargon, avec 100 exemples de demandes prêtes à l'emploi pour le quotidien. Un guide illustré.", "u": "https://www.etsy.com/fr/listing/4582715965/guide-ia-apres-50-ans-pdf-o-chatgpt-pour"}};
-  const cats=gaps.map(g=>g.q.c), pid=cats.includes("Famille")?"parents":cats.includes("Arnaques")?"seniors":"famille", pr=PROD[pid];
+  const PROD={"seniors": {"t": "Guide anti-arnaques pour les seniors", "d": "Faux conseillers bancaires, SMS piégés, hameçonnage : un guide simple à offrir à ses parents pour qu'ils reconnaissent les arnaques et sachent quoi faire.", "u": "https://www.etsy.com/fr/listing/4542889118/guide-anti-arnaques-seniors-o-proteger", "f": "Pour vos parents ou grands-parents"}, "parents": {"t": "Parents, enfants et écrans", "d": "Contrôle parental, réseaux sociaux, cyberharcèlement : les réglages et les règles qui comptent, expliqués pas à pas. Avec 2 bonus.", "u": "https://www.etsy.com/fr/listing/4539975996/guide-parents-enfants-ecrans-o-proteger", "f": "Pour les parents d'enfants et d'ados"}, "famille": {"t": "Guide cybersécurité en famille", "d": "Mots de passe, arnaques, protection des données : les 16 gestes essentiels pour toute la famille, avec une checklist à cocher.", "u": "https://www.etsy.com/fr/listing/4535917671/guide-cybersecurite-famille-pdf-francais", "f": "Pour toute la famille, débutants compris"}, "ia50": {"t": "Guide de l'IA après 50 ans", "d": "Découvrir ChatGPT sans jargon, avec 100 exemples de demandes prêtes à l'emploi pour le quotidien. Un guide illustré.", "u": "https://www.etsy.com/fr/listing/4582715965/guide-ia-apres-50-ans-pdf-o-chatgpt-pour", "f": "Pour découvrir l'IA après 50 ans"}};
   const R=$("reco");R.replaceChildren();
-  if(pr){const d=document.createElement("div");d.className="reco";d.innerHTML='<div><span class="k">Pour aller plus loin · Guide PDF</span><b></b><p></p></div><a target="_blank" rel="noopener">Voir le guide</a>';
-    d.querySelector("b").textContent=pr.t;d.querySelector("p").textContent=pr.d;d.querySelector("a").href=pr.u;R.append(d)}
+  if(gaps.length){
+    const top=gaps[0], pr=PROD[top.q.g];
+    if(pr){const d=document.createElement("div");d.className="reco";d.innerHTML='<div><span class="k">Guide conseillé · E-book payant</span><b></b><p></p><span class="why2"></span></div><a target="_blank" rel="noopener">Voir le guide sur Etsy</a>';
+      d.querySelector("b").textContent=pr.t;d.querySelector("p").textContent=pr.d;d.querySelector(".why2").textContent=`Conseillé d'après votre priorité n°1 : ${top.q.f.charAt(0).toLowerCase()+top.q.f.slice(1)}.`;d.querySelector("a").href=pr.u;R.append(d)}
+  } else {
+    const p=document.createElement("p");p.className="free";p.innerHTML='Pour garder une longueur d\'avance, consultez chaque semaine le <a href="/radar/">Radar des arnaques</a>, gratuit.';R.append(p)
+  }
 }
-function begin(){i=0;ans=[];show(["quiz"]);render();$("quiz").scrollIntoView({behavior:"smooth",block:"start"})}
+function begin(){i=0;ans=[];show(["quiz"]);render();window.scrollTo({top:0})}
 $("start").onclick=begin;$("again").onclick=begin;
 $("back").onclick=()=>{i--;render()};
+$("edit").onclick=()=>{i=Q.length-1;show(["quiz"]);render();window.scrollTo({top:0})};
 $("mail")?.addEventListener("submit",e=>{e.preventDefault();$("mailnote").textContent="Adresse valide. Dans cet aperçu rien n'est envoyé : l'envoi se fera via Brevo sur SecureGuide.fr."});
 </script>
 
@@ -352,7 +371,7 @@ $("mail")?.addEventListener("submit",e=>{e.preventDefault();$("mailnote").textCo
 </svg>
 <span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
 <p>Contact : <span>secureguide2024@gmail.com</span></p></div>
-<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/boutique/">Guides PDF</a></li></ul></div>
+<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/ebooks/">E-books</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
 </div></footer>
