@@ -29,7 +29,7 @@ a{color:inherit}
 .live{display:flex;align-items:center;gap:8px;color:var(--signal);font-weight:700}
 .live i{width:8px;height:8px;border-radius:50%;background:var(--crit);box-shadow:0 0 0 0 var(--crit);animation:ping 1.8s infinite}
 @keyframes ping{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
-h1{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:clamp(38px,9vw,64px);line-height:.95;letter-spacing:-.01em;margin:0;text-transform:uppercase;text-wrap:balance}
+h1{font-family:var(--wide);font-stretch:108%;font-weight:800;letter-spacing:-.012em;text-wrap:balance;font-size:clamp(30px,5.4vw,46px);line-height:1.12;margin:0}
 h1 em{font-style:normal;color:var(--signal)}
 .week{font-family:var(--mono);font-size:13.5px;color:#CFE0E7}
 .sub{color:#B9CCD5;max-width:46ch;font-size:18px;margin:0}
@@ -50,7 +50,7 @@ main{padding:0 16px}
 @media (max-width:560px){.stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}}
 
 .sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
-h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(21px,4.6vw,26px);line-height:1.1;margin:0;text-transform:uppercase}
+h2{font-family:var(--wide);font-stretch:108%;font-weight:800;letter-spacing:-.012em;text-wrap:balance;font-size:clamp(20px,3.4vw,24px);line-height:1.22;margin:0}
 .filters{display:flex;gap:6px;flex-wrap:wrap}
 .f{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .f[aria-pressed="true"]{background:var(--night);color:var(--signal);border-color:var(--night)}
@@ -81,7 +81,7 @@ h2{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:clamp(21p
 .ref{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:640px){.ref{grid-template-columns:1fr}}
 .cty{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.cty h3{font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:17px;margin:0;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.cty h3{font-family:var(--wide);font-stretch:108%;font-weight:800;font-size:17px;margin:0;display:flex;align-items:center;gap:8px}
 .cty ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
 .cty li{display:flex;flex-direction:column}
 .cty li span{color:var(--muted);font-size:13.5px}
@@ -170,7 +170,7 @@ input::placeholder{color:#8FAAB6}
     <p class="note" id="mailnote">Aperçu : ce formulaire sera relié à Brevo une fois installé sur SecureGuide.fr.</p>
   </section>
 
-  <p class="foot">Veille réalisée à partir des alertes officielles et de la presse, vérifiée par un expert réseau et sécurité certifié CCNP. Pas sûr d'être protégé ? <a href="https://secureguide.fr" target="_blank" rel="noopener">Faites le test en 2 minutes</a>.</p>
+  <p class="foot">Veille réalisée à partir des alertes officielles et de la presse, vérifiée par un expert réseau et sécurité certifié CCNP. Pas sûr d'être protégé ? <a href="https://secureguide.fr" target="_blank" rel="noopener">Faites le test en 1 minute</a>.</p>
 </div>
 </main>
 

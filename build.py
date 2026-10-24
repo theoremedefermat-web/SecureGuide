@@ -65,40 +65,51 @@ def cover(p, size=""):
             f'<span class="cv-k">SecureGuide.fr</span><span class="cv-t">{l1}<br>{l2}<br><em>{l3}</em></span>'
             f'<span class="cv-f">{mark("cv-" + p["id"] + size)}<span>Guide PDF</span></span></div>')
 
-def shop_page():
-    fe, side, bonus = PROD["seniors"], [PROD["parents"], PROD["famille"]], PROD["ia50"]
+def ebooks_page():
     li = lambda xs: "".join(f"<li>{x}</li>" for x in xs)
-    feat = (f'<section class="sh-feat"><div class="sh-feat-cv">{cover(fe, "lg")}</div><div class="sh-feat-tx">'
-            f'<span class="sh-k">Le plus utile en ce moment</span><h2>{fe["title"]}</h2><p class="sh-for">{fe["for"]}</p>'
-            f'<p>{fe["desc"]}</p><ul class="sh-in">{li(fe["inside"])}</ul>'
-            f'<a class="btn-y" href="{fe["url"]}" target="_blank" rel="noopener">Voir le guide et son prix sur Etsy</a>'
-            f'<p class="sh-why">En 2025, les demandes d\'aide liées aux faux conseillers bancaires ont augmenté de 159 % en France, selon Cybermalveillance.gouv.fr.</p></div></section>')
+    order = ["seniors", "parents", "famille", "ia50"]
     cards = "".join(
-        f'<article class="sh-card">{cover(p)}<div class="sh-card-tx"><p class="sh-for">{p["for"]}</p><h3>{p["title"]}</h3>'
-        f'<ul class="sh-in">{li(p["inside"])}</ul><a class="sh-link" href="{p["url"]}" target="_blank" rel="noopener">Voir sur Etsy →</a></div></article>'
-        for p in side)
+        f'<article class="eb" id="{p["id"]}"><div class="eb-cv">{cover(p)}</div><div class="eb-tx">'
+        f'<span class="eb-pay">E-book payant · PDF</span><h2>{p["title"]}</h2><p class="eb-for">{p["for"]}</p>'
+        f'<p>{p["desc"]}</p><h3>Les principaux sujets</h3><ul class="sh-in">{li(p["inside"])}</ul>'
+        f'<a class="btn-y" href="{p["url"]}" target="_blank" rel="noopener">Voir le guide et son prix sur Etsy</a></div></article>'
+        for p in (PROD[k] for k in order))
     return f"""
 <header class="sh-hero"><div class="sh-hero-in">
-<span class="kicker">Boutique</span>
-<h1>Des guides simples pour protéger vos proches</h1>
-<p>Rédigés par un expert réseau et sécurité certifié Cisco CCNP, en français et sans jargon.</p>
+<span class="kicker">E-books</span>
+<h1>Des e-books simples pour protéger vos proches</h1>
+<p>Rédigés par un expert réseau et sécurité certifié Cisco CCNP, en français et sans jargon. Chaque e-book est un guide PDF payant, vendu sur Etsy.</p>
 <ul class="sh-pts"><li>PDF en français</li><li>Téléchargement immédiat</li><li>Paiement sécurisé par Etsy</li></ul>
 </div></header>
 <main class="sh-main"><div class="sh-wrap">
-{feat}
-<section><h2 class="sh-h">Selon votre situation</h2><div class="sh-grid">{cards}</div></section>
+<nav class="eb-toc" aria-label="Les e-books"><a href="#seniors">Seniors</a><a href="#parents">Parents et enfants</a><a href="#famille">Toute la famille</a><a href="#ia50">IA après 50 ans</a></nav>
+<section class="eb-list">{cards}</section>
 <section class="sh-steps"><h2 class="sh-h">Comment ça marche</h2><ol>
-<li><b>Choisissez votre guide</b><span>Cliquez sur « Voir sur Etsy » pour consulter le détail et le prix.</span></li>
+<li><b>Choisissez votre e-book</b><span>Cliquez sur « Voir le guide et son prix sur Etsy » pour consulter le détail et le prix.</span></li>
 <li><b>Payez sur Etsy</b><span>Paiement sécurisé par carte ou PayPal, géré entièrement par Etsy.</span></li>
 <li><b>Téléchargez le PDF</b><span>Le fichier est disponible tout de suite. Lisible sur téléphone et ordinateur, ou à imprimer.</span></li>
 </ol></section>
-<section class="sh-bonus"><div class="sh-bonus-cv">{cover(bonus, "sm")}</div><div><span class="sh-k">Hors cybersécurité</span><h3>{bonus["title"]}</h3>
-<p>{bonus["desc"]}</p><a class="sh-link" href="{bonus["url"]}" target="_blank" rel="noopener">Voir sur Etsy →</a></div></section>
-<p class="sh-note">Tous nos guides sont aussi visibles sur notre <a href="https://www.etsy.com/fr/shop/SecureGuideFR" target="_blank" rel="noopener">boutique SecureGuideFR sur Etsy</a>.</p>
+<section class="eb-free"><span class="eb-freek">Gratuit</span><h2 class="sh-h">Conseils et comparatifs gratuits</h2>
+<p>Sans achat ni inscription : nos contenus gratuits pour vous protéger dès aujourd'hui.</p>
+<div class="eb-free-grid">
+<a href="/test-protection/"><b>Faire le test</b><span>5 questions, un score sur 100 et vos priorités.</span></a>
+<a href="/radar/"><b>Le Radar des arnaques</b><span>Les arnaques de la semaine et le bon réflexe pour chacune.</span></a>
+<a href="/guides/"><b>Guides et comparatifs</b><span>Gestionnaires de mots de passe, VPN, antivirus, alertes détaillées.</span></a>
+<a href="/kit/?utm_source=site&amp;utm_medium=ebooks&amp;utm_campaign=kit2026"><b>Le Kit anti-arnaques 2026</b><span>Un PDF gratuit, reçu par email.</span></a>
+</div></section>
+<p class="sh-note">Tous nos e-books sont aussi visibles sur notre <a href="https://www.etsy.com/fr/shop/SecureGuideFR" target="_blank" rel="noopener">boutique SecureGuideFR sur Etsy</a>.</p>
 </div></main>"""
 
+REDIRECT = """<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-books · SecureGuide.fr</title><meta name="robots" content="noindex"><link rel="canonical" href="{site}{to}">
+<meta http-equiv="refresh" content="0; url={to}"><script>location.replace("{to}"+location.hash)</script>
+<style>body{{margin:0;font-family:system-ui,sans-serif;background:#0A2533;color:#EAF3F7;display:grid;place-items:center;min-height:100vh;padding:16px}}a{{color:#F2B33D}}</style></head>
+<body><p>La boutique s'appelle désormais « E-books » : <a href="{to}">continuer vers les e-books</a>.</p></body></html>
+"""
+
 def nav(active):
-    items = [("/radar/", "Radar", "radar"), ("/guides/", "Guides", "guides"), ("/boutique/", "Boutique", "shop"),
+    items = [("/radar/", "Radar", "radar"), ("/guides/", "Guides", "guides"), ("/ebooks/", "E-books", "shop"),
              ("/test-protection/", "Faire le test", "test")]
     links = "".join(
         f'<a href="{h}"{" aria-current=\"page\"" if k == active else ""}{" class=\"cta-s\"" if k == "test" else ""}>{t}</a>'
@@ -123,12 +134,12 @@ def kit_form():
 FOOT = f'''<footer class="foot"><div class="foot-in">
 <div><a class="brand foot-brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("foot")}{WORDMARK}</a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
 <p>Contact : <span>secureguide2024@gmail.com</span></p></div>
-<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/boutique/">Guides PDF</a></li></ul></div>
+<div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/ebooks/">E-books</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
 </div></footer>'''
 
-def page(path, title, desc, body, active="", extra_head="", og_type="website", minimal=False, noindex=False):
+def page(path, title, desc, body, active="", extra_head="", og_type="website", minimal=False, noindex=False, kit_bar=True):
     url = SITE + path
     html = f'''<!doctype html>
 <html lang="fr">
@@ -151,7 +162,7 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website", m
 {extra_head}{'<meta name="robots" content="noindex">' if noindex else ""}
 </head>
 <body>
-{MINI_NAV if minimal else nav(active) + KIT_BAR}
+{MINI_NAV if minimal else nav(active) + (KIT_BAR if kit_bar else '')}
 {body}
 {FOOT}
 <div hidden>Impact-Site-Verification: 9298fb5c-374a-40b3-9497-a3e6edbdf582</div>
@@ -201,7 +212,7 @@ def build():
     # Accueil
     pages.append(page("/", "SecureGuide.fr · Le radar des arnaques",
         "Les arnaques qui circulent en France, en Belgique et au Luxembourg, expliquées simplement, avec le bon réflexe pour chacune.",
-        (SRC / "home.html").read_text()))
+        (SRC / "home.html").read_text(), kit_bar=False))
 
     # Radar : données dans /assets/alerts.js, partagées avec l'accueil
     radar = strip_head((SRC / "radar.html").read_text())
@@ -209,8 +220,8 @@ def build():
     radar = must_sub(r"const ALERTS=\[.*?\];\n", "const ALERTS=window.ALERTS||[];\n", radar, re.S)
     radar = must_sub(r"<script>", '<script src="/assets/alerts.js"></script>\n<script>', radar)
     radar = radar.replace('class="foot"', 'class="endnote"').replace(".foot{", ".endnote{").replace(".foot a{", ".endnote a{")
-    radar = must_sub(r'<a href="https://secureguide.fr" target="_blank" rel="noopener">Faites le test en 2 minutes</a>',
-                     '<a href="/test-protection/">Faites le test en 2 minutes</a>', radar)
+    radar = must_sub(r'<a href="https://secureguide.fr" target="_blank" rel="noopener">Faites le test en 1 minute</a>',
+                     '<a href="/test-protection/">Faites le test en 1 minute</a>', radar)
     radar = must_sub(r"body\{background:var\(--bg\);[^}]*\}", "", radar)
     pages.append(page("/radar/", "Radar des arnaques · SecureGuide.fr",
         "Les arnaques en circulation cette semaine en France, en Belgique et au Luxembourg, le piège et le bon réflexe, avec les sources officielles.",
@@ -221,9 +232,7 @@ def build():
     quiz = must_sub(r'<span class="logo">.*?</span>\s*', "", quiz, re.S)
     quiz = must_sub(r"body\{background:var\(--bg\);[^}]*\}", "", quiz)
     links = {"Voir notre comparatif des gestionnaires": "/guides/meilleur-gestionnaire-mots-de-passe/",
-             "Comparer les gestionnaires": "/guides/meilleur-gestionnaire-mots-de-passe/",
-             "Faut-il un VPN ? Notre guide": "/guides/vpn-famille/",
-             "Reconnaître un SMS frauduleux": "/radar/"}
+             "Voir les arnaques du moment": "/radar/"}
     for label, url in links.items():
         quiz = must_sub(re.escape(f'l:"{label}"'), f'l:"{label}",u:"{url}"', quiz)
     # Sans page dédiée, pas de lien : on retire les autres libellés
@@ -232,9 +241,9 @@ def build():
     quiz = must_sub(re.escape('li.querySelector("a").textContent=g.q.l+" →";'),
                     'const A2=li.querySelector("a");if(g.q.u){A2.href=g.q.u;A2.textContent=g.q.l+" →"}else A2.remove();', quiz)
     quiz = quiz.replace("Rédigé par un expert réseau certifié CCNP", "Rédigé par un expert réseau certifié Cisco CCNP")
-    quiz = quiz.replace("/*PRODUCTS*/[]", json.dumps({k: {"t": v["title"], "d": v["desc"], "u": v["url"]} for k, v in PROD.items()}, ensure_ascii=False))
-    pages.append(page("/test-protection/", "Test : votre famille est-elle protégée en ligne ? · SecureGuide.fr",
-        "10 questions, 2 minutes : obtenez votre score de protection sur 100 et les 3 failles à corriger en priorité.",
+    quiz = quiz.replace("/*PRODUCTS*/[]", json.dumps({k: {"t": v["title"], "d": v["desc"], "u": v["url"], "f": v["for"]} for k, v in PROD.items()}, ensure_ascii=False))
+    pages.append(page("/test-protection/", "Test : vos habitudes en ligne vous protègent-elles ? · SecureGuide.fr",
+        "5 questions, environ 1 minute : un bilan de vos habitudes en ligne, avec un score sur 100 et vos priorités. Résultat immédiat, sans email.",
         quiz, active="test"))
 
     # Guides
@@ -262,7 +271,7 @@ def build():
         html = (f'<header class="art-hero"><div class="art-hero-in"><span class="kicker">{kind}</span><h1>{h1}</h1>'
                 f'<span class="byline">Par SecureGuide.fr · mis à jour le {datetime.date.today().strftime("%d/%m/%Y")}</span></div></header>'
                 f'<main class="art-wrap"><article class="art">{body}</article>'
-                f'<aside class="promo"><div><b>Êtes-vous bien protégé ?</b><span>10 questions, un score sur 100, vos 3 priorités.</span></div>'
+                f'<aside class="promo"><div><b>Êtes-vous bien protégé ?</b><span>5 questions, un score sur 100 et vos priorités, sans email.</span></div>'
                 f'<a class="btn-y" href="/test-protection/">Faire le test</a></aside>'
                 f'<aside class="promo"><div><b>Le Kit anti-arnaques 2026, gratuit</b><span>Les 6 arnaques du moment, la carte des numéros utiles, 10 points à cocher.</span></div>'
                 f'<a class="btn-y" href="/kit/?utm_source=site&amp;utm_medium=article&amp;utm_campaign=kit2026">Recevoir le kit</a></aside>' + product_promo("seniors" if kind == "Alerte arnaque" else "famille", "Protégez vos proches" if kind == "Alerte arnaque" else "Allez plus loin") + '</main>')
@@ -279,9 +288,12 @@ def build():
         '.g-card b{font-family:var(--wide);font-stretch:112%;font-weight:800;font-size:20px;line-height:1.2}.g-card p{margin:0;color:var(--muted);font-size:15.5px}</style>'
         f'<main class="page"><h1>Guides et comparatifs</h1><div class="g-list">{cards}</div></main>', active="guides"))
 
-    pages.append(page("/boutique/", "Guides PDF de cybersécurité · SecureGuide.fr",
-        "Des guides PDF simples, en français, pour protéger ses parents, ses enfants et toute la famille des arnaques en ligne.",
-        shop_page(), active="shop"))
+    pages.append(page("/ebooks/", "E-books de cybersécurité pour la famille · SecureGuide.fr",
+        "Quatre e-books PDF en français, sans jargon : arnaques et seniors, enfants et écrans, cybersécurité en famille, IA après 50 ans. Disponibles sur Etsy.",
+        ebooks_page(), active="shop"))
+    # Ancienne adresse : redirection vers /ebooks/ (GitHub Pages n'a pas de redirection serveur)
+    (OUT / "boutique").mkdir(parents=True, exist_ok=True)
+    (OUT / "boutique/index.html").write_text(REDIRECT.format(site=SITE, to="/ebooks/"))
     # Tunnel : page de capture du kit gratuit, puis page de téléchargement avec l'offre
     kit = (SRC / "kit.html").read_text().replace("<!--FORM-->", kit_form()).replace("<!--MARK-->", mark("kit"))
     pages.append(page("/kit/", "Kit anti-arnaques 2026 gratuit · SecureGuide.fr",
