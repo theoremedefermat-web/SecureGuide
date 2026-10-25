@@ -1,0 +1,104 @@
+# Passation SecureGuide.fr
+
+À lire en premier par toute nouvelle conversation Claude qui reprend le projet.
+Dernière mise à jour : 25/10/2026.
+
+**Aucun mot de passe, jeton ni clé API ne figure ici, et il ne faut jamais en ajouter.** Les accès passent par les connecteurs de Stéphane (Brevo, Adspirer, invideo, Google Drive, Canva) et par son navigateur Chrome, déjà connecté à Facebook, Brevo, YouTube et Etsy.
+
+## Le projet
+
+- **Quoi** : SecureGuide.fr, « le Radar des arnaques » pour la France, la Belgique et le Luxembourg.
+- **Pour qui** : Stéphane, expert réseau et sécurité certifié Cisco CCNP, qui travaille au Luxembourg.
+- **Comment ça rapporte** : affiliation (NordVPN, NordPass, Bitdefender, 1Password) et e-books PDF vendus sur Etsy.
+- **Budget** : 100 € par mois.
+- **Ton** : simple, rassurant, sans jargon ni alarmisme. Aucun chiffre sans source, aucun faux témoignage, aucun prix inventé.
+- **Règle de travail** : Stéphane veut que Claude fasse tout lui-même. Il faut toutefois **son « ok » explicite avant** :
+  - toute publication sur Facebook ;
+  - tout déploiement du site ;
+  - toute dépense.
+
+## Le site
+
+- **Dépôt** : https://github.com/theoremedefermat-web/SecureGuide.
+- **Branches** :
+  - `main` : les sources ;
+  - `gh-pages` : le site publié (GitHub Pages, domaine secureguide.fr).
+- **Générer** : `python3 build.py` produit `dist/`.
+- **Publier** : `./publish.sh "message"` génère le site puis pousse `dist/` sur `gh-pages`. Uniquement après validation de Stéphane.
+- **Pages** :
+  - `/` : accueil, avec « Faire le test » comme bouton principal ;
+  - `/radar/` : le Radar (données dans `src/alerts.js`) ;
+  - `/test-protection/` : le test en 5 questions (`src/quiz.html`) ;
+  - `/ebooks/` : les e-books ; l'ancienne adresse `/boutique/` y redirige ;
+  - `/guides/…` : les articles (`src/guides/*.html`) ;
+  - `/kit/`, `/kit/merci/` : le tunnel du kit gratuit.
+- **Fichiers de données** :
+  - `src/products.json` : les 4 e-books et leurs liens Etsy (boutique SecureGuideFR) ;
+  - `src/affiliate.json` : les liens d'affiliation ;
+  - `src/brevo_form.html` : le formulaire Brevo, avec un script d'envoi maison.
+- **Tests du parcours** : `outils/test.js` (Playwright, mobile et ordinateur). Il suppose `python3 -m http.server 8765 -d dist`.
+- **Outils de génération** (`outils/`) : `kit.js` (PDF du kit), `ads.js` et `adkit.js` (visuels des pubs), `logo.js`. Les chemins y sont écrits pour `/home/claude/` : il faut les adapter sur l'ordinateur.
+
+## E-mails : Brevo
+
+- **Liste** : n°2 « Votre première liste ».
+- **Expéditeur** : id 2, SecureGuide, radar@secureguide.fr.
+- **Formulaire** « Radar des arnaques » : id `6ad127192a018b8e9ad7b3c0`, inscription simple sans double opt-in. Après inscription, la page `/kit/merci/` renvoie vers la boîte email.
+- **Automatisation n°1** « Tunnel kit gratuit » (active) :
+  1. déclenchement : ajout à la liste 2 ;
+  2. modèle 9 (le kit) ;
+  3. attente de 2 jours, puis modèle 10 (seniors) ;
+  4. attente de 3 jours, puis modèle 11 (test et guides).
+- **Sources des emails** : `emails/e1.html`, `e2.html`, `e3.html`.
+- **Attention** : une adresse déjà présente dans la liste ne redéclenche pas l'automatisation. Pour tester, utiliser une adresse nouvelle (par exemple avec `+test`).
+
+## Publicité Meta (via Adspirer, offre gratuite de 15 actions par mois)
+
+- **Compte** : 988056564712575.
+- **Campagne** : 120251361275970185 « SecureGuide - Guide anti-arnaques seniors - Sprint 14j ».
+- **Ensemble A (35-60 ans)** : 120251361276130185, pub kit A 120251365319900185.
+- **Ensemble B (62 ans et plus)** : 120251361277540185, pub kit B 120251365320320185.
+- **Visuel** : `src/ads/pub-4-kit.png`. Les anciennes pubs sont désactivées.
+
+## Facebook
+
+- **Page** : « SecureGuide », id 1239294215931177.
+- **Fonctionnement** : un post par jour, toujours validé par Stéphane avant publication.
+- **Où est tout** :
+  - posts : `social/posts/AAAA-MM-JJ.{json,png,txt}` ;
+  - générateur de visuel : `social/post.js` ;
+  - calendrier et règles : `social/README.md`.
+- **Post du 22/10 (« 516 M€ »)** : validé par Stéphane, mais sa publication n'a jamais été confirmée. À vérifier sur la page avant de le republier.
+
+## YouTube
+
+- **Chaîne** : SecureGuide, id `UCK884YEWXcYr2x-3N4_dUqg`.
+- **Réglages faits** :
+  - mots-clés (arnaque, faux conseiller bancaire, phishing, Wero, itsme…) ;
+  - pays : Luxembourg ;
+  - chaîne déclarée non destinée aux enfants.
+- **Shorts publiés le 24/10** :
+  - « Votre banque vous appelle ? » ;
+  - « Coucou maman, j'ai changé de numéro ».
+- **Fichiers** : `social/shorts/`. Rendu avec `social/short2.js`, assemblage avec `social/assemble.py`. Voix ElevenLabs « Sébastien » via invideo, images Nano Banana en 9:16.
+- **Visuels de la chaîne** : `social/youtube/`.
+- **Piège** : l'extension vidIQ bloque l'automatisation de la fenêtre d'envoi. Il faut agir en un seul script JavaScript juste après l'ouverture.
+- **À faire par Stéphane** : la validation par téléphone (Paramètres → Chaîne → Accès aux fonctionnalités), sinon les liens des descriptions ne sont pas cliquables.
+- **Rythme prévu** : 3 Shorts par semaine, chacun validé par Stéphane.
+
+## Tâches planifiées (elles tournent dans le cloud, indépendamment des conversations)
+
+| Tâche | Quand | Rôle |
+|---|---|---|
+| Post Facebook du jour SecureGuide (`trig_01RX6XbETPZDWtRoLPqSm178`) | tous les jours à 7 h 47, heure du Luxembourg | prépare le post, attend le « ok », puis publie |
+| Radar des arnaques hebdo (`trig_011UUSQCs3zYchYQWJyp8uan`) | dimanche à 6 h 50, heure de Bruxelles | veille, Radar, 2 articles, publication, newsletter, bilan |
+| Bilan J+5 campagne Meta (`trig_013CNpdjirpvZHApUnf66LWa`) | 25/10 à 17 h, heure de Bruxelles | compare A et B, coupe la plus chère, envoie le bilan |
+
+Le bilan Meta arrive dans l'ancienne conversation cloud, pas dans la nouvelle.
+
+## Points ouverts
+
+- Vérifier si le post Facebook du 22/10 a bien été publié.
+- Ne plus utiliser « 16 fiches » pour le guide seniors : ce chiffre n'est pas vérifié. L'ancienne pub B, désactivée, le contient encore.
+- Validation téléphone YouTube (par Stéphane).
+- Prochains Shorts : 3 par semaine, à faire valider.
