@@ -6,7 +6,7 @@
 //   "stickers": [ { "from": 7, "to": 11, "text": "516 M€ volés en 2025", "sub": "Source : OSMP" } ],
 //   "cta": { "from": 27.5, "title": "Kit gratuit", "url": "secureguide.fr/kit" } }
 const fs = require('fs'); const path = require('path'); const os = require('os'); const { execFileSync } = require('child_process');
-const { chromium } = require('playwright');
+let chromium; try { ({ chromium } = require('playwright')); } catch { ({ chromium } = require('playwright-core')); }
 const dir = __dirname;
 const FF = fs.readFileSync(path.join(dir, 'fonts.html'), 'utf8');
 const mark = fs.readFileSync(path.join(dir, '../src/brand/mark.svg'), 'utf8');
@@ -77,7 +77,8 @@ frame(0);
 (async () => {
   // Rendu image par image (déterministe) : chaque frame est calculée à son temps exact, puis encodée avec la voix.
   const { spawn } = require('child_process');
-  const exe = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+  // Chromium : variable CHROME (ex. Chrome installé sous Windows), sinon celui de l'environnement cloud.
+  const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
   const b = await chromium.launch(fs.existsSync(exe) ? { executablePath: exe } : {});
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   await p.setContent(html); await p.evaluate(() => document.fonts.ready);
