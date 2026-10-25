@@ -1,0 +1,44 @@
+{
+ "out": "004-reservation-hotel",
+ "dir": "s004",
+ "label": "ALERTE ARNAQUE",
+ "sentences": [
+  { "wav": "t1.wav", "gap": 0.6, "subs": [
+   [0, 0.85, "Un message WhatsApp", ["WhatsApp"]],
+   [0.9, 2.59, "cite votre vraie réservation d'hôtel.", ["vraie", "réservation"]] ] },
+  { "wav": "t2.wav", "gap": 0.6, "subs": [
+   [0, 1.4, "Il réclame un paiement urgent,", ["paiement", "urgent"]],
+   [1.55, 2.71, "pour confirmer votre séjour.", ["confirmer"]] ] },
+  { "wav": "t3.wav", "gap": 0.7, "subs": [
+   [0, 1.16, "Les détails sont exacts :", ["exacts"]],
+   [2.23, 3.69, "les escrocs utilisent", ["escrocs"]],
+   [4.0, 4.92, "des données volées", ["volées"]],
+   [5.35, 6.79, "chez des plateformes de réservation.", ["plateformes"]] ] },
+  { "wav": "t4.wav", "gap": 0.5, "subs": [
+   [0, 0.79, "Le bon réflexe :", ["réflexe"]],
+   [1.31, 3.37, "ne payez jamais via un lien reçu par message.", ["jamais", "lien"]] ] },
+  { "wav": "t5.wav", "gap": 0.8, "subs": [
+   [0, 1.65, "Vérifiez dans l'appli de réservation,", ["appli"]],
+   [2.14, 3.56, "ou appelez directement l'hôtel.", ["appelez", "hôtel"]] ] },
+  { "wav": "../s002/t8.wav", "gap": 1.2, "subs": [
+   [0, 2.48, "Pour en savoir plus sur ces arnaques de plus en plus répandues,", ["répandues,"]],
+   [2.98, null, "un guide est disponible sur notre site.", ["guide"]] ] }
+ ],
+ "images": [
+  { "src": "img1.jpg", "from_sentence": 1 },
+  { "src": "img2.jpg", "from_sentence": 2 },
+  { "src": "img3.jpg", "from_sentence": 5 }
+ ],
+ "stickers": [
+  { "sentence": 1, "offset": 0.9, "end_sentence": 3, "text": "⚠ VRAIE RÉSERVATION", "sub": "faux message · Source : Safeonweb" },
+  { "sentence": 4, "offset": 1.3, "end_sentence": 6, "text": "JAMAIS VIA UN LIEN", "sub": "vérifiez dans l'appli ou auprès de l'hôtel" }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

@@ -80,7 +80,8 @@ Dernière mise à jour : 25/10/2026.
 - **Shorts publiés le 24/10** :
   - « Votre banque vous appelle ? » ;
   - « Coucou maman, j'ai changé de numéro ».
-- **Short n°3** « Passez à Wero » (`social/shorts/003-wero.*`) : programmé le 25/10 à 18 h.
+- **Short n°3** « Passez à Wero » (`social/shorts/003-wero.*`) : publié le 25/10 à 18 h.
+- **Short n°4** « Fausse confirmation de réservation d'hôtel » (`social/shorts/004-reservation-hotel.*`) : programmé le 26/10 à 18 h.
 - **Fichiers** : `social/shorts/`. Rendu avec `social/short2.js`, assemblage avec `social/assemble.py` ou `social/assemble.js` (même chose en Node, pour un poste sans Python). Voix ElevenLabs « Sébastien » via invideo, images Nano Banana en 9:16.
 - **Sous Windows** : `short2.js` prend Chrome via la variable `CHROME` et accepte `playwright-core` ; ffmpeg/ffprobe doivent être dans le PATH. Garder les outils dans un dossier au chemin court (limite de 260 caractères).
 - **Programmer un Short** : vidIQ bloque l'outil dès que la fenêtre d'édition s'ouvre. Lancer un script en tâche de fond dans la page, qui écrit son journal dans `localStorage` puis recharge la page. Date : `ytcp-date-picker.validateDateText()` puis `commitDate(value)`. Heure : `ytcp-datetime-picker.commitTimeOfDay(secondes)`, 18:00 = 64800 ; `validateTimeOfDayText` renvoie une heure de trop.
