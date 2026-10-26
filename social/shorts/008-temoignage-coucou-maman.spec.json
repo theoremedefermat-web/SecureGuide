@@ -1,0 +1,195 @@
+{
+ "out": "008-temoignage-coucou-maman",
+ "dir": "s008",
+ "label": "TÉMOIGNAGE",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.2,
+     "Elle voulait aider sa fille.",
+     [
+      "aider"
+     ]
+    ],
+    [
+     1.53,
+     2.69,
+     "La justice lui a donné tort.",
+     [
+      "justice",
+      "tort"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     2.82,
+     "Un SMS : téléphone cassé, nouveau numéro.",
+     [
+      "cassé,",
+      "nouveau"
+     ]
+    ],
+    [
+     3.21,
+     4.64,
+     "Puis trois heures de messages sur WhatsApp.",
+     [
+      "trois",
+      "heures"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.98,
+     "Cette mère de 75 ans fait deux virements.",
+     [
+      "virements"
+     ]
+    ],
+    [
+     2.41,
+     3.71,
+     "4 200 euros.",
+     [
+      "4",
+      "200"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     3.58,
+     "Le tribunal de Paris a estimé qu'elle avait commis une négligence grave.",
+     [
+      "négligence",
+      "grave"
+     ]
+    ],
+    [
+     4.1,
+     4.9,
+     "Pas de remboursement.",
+     [
+      "Pas"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     0.7,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.1,
+     1.99,
+     "avant tout virement,",
+     [
+      "avant"
+     ]
+    ],
+    [
+     2.26,
+     4.32,
+     "appelez votre enfant sur son numéro habituel.",
+     [
+      "appelez",
+      "habituel"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "img2.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "img1.jpg",
+   "from_sentence": 2
+  },
+  {
+   "src": "img2.jpg",
+   "from_sentence": 4
+  },
+  {
+   "src": "img3.jpg",
+   "from_sentence": 5
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 3,
+   "offset": 2.3,
+   "end_sentence": 4,
+   "text": "4 221 € PERDUS",
+   "sub": "Tribunal judiciaire de Paris, oct. 2026"
+  },
+  {
+   "sentence": 5,
+   "offset": 1.1,
+   "end_sentence": 6,
+   "text": "APPELEZ-LA",
+   "sub": "sur son numéro habituel"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

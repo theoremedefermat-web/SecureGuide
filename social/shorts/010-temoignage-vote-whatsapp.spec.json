@@ -1,0 +1,204 @@
+{
+ "out": "010-temoignage-vote-whatsapp",
+ "dir": "s010",
+ "label": "TÉMOIGNAGE",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.79,
+     "Un simple vote.",
+     [
+      "vote"
+     ]
+    ],
+    [
+     1.58,
+     3.77,
+     "Et ses proches reçoivent une demande d'argent,",
+     [
+      "proches",
+      "d'argent,"
+     ]
+    ],
+    [
+     4.03,
+     4.38,
+     "de sa part.",
+     [
+      "part"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.11,
+     "Le message vient d'un ami :",
+     [
+      "ami"
+     ]
+    ],
+    [
+     1.62,
+     2.48,
+     "vote pour Sophie,",
+     [
+      "Sophie,"
+     ]
+    ],
+    [
+     2.91,
+     3.71,
+     "la fille de mes amis.",
+     [
+      "fille"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.73,
+     "Le lien fait autoriser une connexion.",
+     [
+      "connexion"
+     ]
+    ],
+    [
+     2.26,
+     4.41,
+     "Et les escrocs prennent le compte WhatsApp.",
+     [
+      "compte",
+      "WhatsApp"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     0.79,
+     "Selon l'AFP,",
+     [
+      "l'AFP,"
+     ]
+    ],
+    [
+     1.25,
+     4.86,
+     "ses proches ont ensuite reçu une demande de virement urgent,",
+     [
+      "virement",
+      "urgent,"
+     ]
+    ],
+    [
+     5.45,
+     6.6,
+     "envoyée depuis son compte.",
+     [
+      "compte"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     1.54,
+     "Le réflexe : ne votez pas.",
+     [
+      "votez"
+     ]
+    ],
+    [
+     2.12,
+     3.91,
+     "Et activez la vérification en deux étapes.",
+     [
+      "deux",
+      "étapes"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "img1.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "img2.jpg",
+   "from_sentence": 3
+  },
+  {
+   "src": "img3.jpg",
+   "from_sentence": 4
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 2,
+   "offset": 1.6,
+   "end_sentence": 3,
+   "text": "⚠ FAUX CONCOURS"
+  },
+  {
+   "sentence": 4,
+   "offset": 0.3,
+   "end_sentence": 5,
+   "text": "TÉMOIGNAGE RÉEL",
+   "sub": "AFP via Clubic, oct. 2026"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

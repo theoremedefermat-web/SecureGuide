@@ -1,0 +1,200 @@
+{
+ "out": "006-temoignage-luxtrust",
+ "dir": "s006",
+ "label": "TÉMOIGNAGE",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.75,
+     "Elle a tout donné.",
+     [
+      "tout"
+     ]
+    ],
+    [
+     1.24,
+     2.48,
+     "Ses cartes, ses codes,",
+     [
+      "cartes,",
+      "codes,"
+     ]
+    ],
+    [
+     2.8,
+     4.33,
+     "et 12 500 euros.",
+     [
+      "12",
+      "500"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.68,
+     "Au Luxembourg,",
+     [
+      "Luxembourg,"
+     ]
+    ],
+    [
+     1.14,
+     3.58,
+     "Estelle reçoit l'appel d'un faux employé LuxTrust.",
+     [
+      "faux",
+      "LuxTrust"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.95,
+     "Pendant qu'un complice la garde au téléphone,",
+     [
+      "complice"
+     ]
+    ],
+    [
+     2.6,
+     3.91,
+     "un homme vient chercher ses cartes,",
+     [
+      "cartes,"
+     ]
+    ],
+    [
+     4.64,
+     5.87,
+     "sur son lieu de travail.",
+     [
+      "travail"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     1.9,
+     "Elle raconte avoir agi comme sous hypnose.",
+     [
+      "hypnose"
+     ]
+    ],
+    [
+     2.46,
+     4.33,
+     "Sa banque a refusé de la rembourser.",
+     [
+      "refusé"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     1.39,
+     "Le réflexe : raccrochez.",
+     [
+      "raccrochez"
+     ]
+    ],
+    [
+     2.22,
+     4.57,
+     "LuxTrust n'envoie jamais personne chercher vos cartes.",
+     [
+      "jamais"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "img2.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "img1.jpg",
+   "from_sentence": 2
+  },
+  {
+   "src": "img2.jpg",
+   "from_sentence": 3
+  },
+  {
+   "src": "img3.jpg",
+   "from_sentence": 5
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 1,
+   "offset": 0.3,
+   "end_sentence": 2,
+   "text": "12 500 € PERDUS",
+   "sub": "Témoignage réel · L'essentiel, mai 2024"
+  },
+  {
+   "sentence": 5,
+   "offset": 2.2,
+   "end_sentence": 6,
+   "text": "PERSONNE NE VIENT",
+   "sub": "chercher vos cartes à domicile ou au travail"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

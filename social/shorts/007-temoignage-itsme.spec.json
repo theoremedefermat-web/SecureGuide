@@ -1,0 +1,193 @@
+{
+ "out": "007-temoignage-itsme",
+ "dir": "s007",
+ "label": "TÉMOIGNAGE",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.48,
+     "Le numéro de sa banque s'affiche.",
+     [
+      "banque"
+     ]
+    ],
+    [
+     1.6,
+     2.46,
+     "Ce n'est pas sa banque.",
+     [
+      "pas"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.75,
+     "Alexis, 40 ans, à Uccle,",
+     [
+      "Alexis,"
+     ]
+    ],
+    [
+     1.97,
+     3.67,
+     "croit parler à son agence Belfius.",
+     [
+      "croit"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     2.51,
+     "On lui demande de valider des opérations dans itsme.",
+     [
+      "valider",
+      "itsme"
+     ]
+    ],
+    [
+     3.24,
+     4.43,
+     "Soi-disant pour se protéger.",
+     [
+      "Soi-disant"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     0.5,
+     "Résultat :",
+     [
+      "Résultat"
+     ]
+    ],
+    [
+     0.85,
+     2.04,
+     "6 500 euros perdus.",
+     [
+      "6",
+      "500"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     0.53,
+     "La règle :",
+     [
+      "règle"
+     ]
+    ],
+    [
+     0.84,
+     3.5,
+     "une validation itsme, c'est vous qui la lancez.",
+     [
+      "vous"
+     ]
+    ],
+    [
+     3.73,
+     5.07,
+     "Jamais quelqu'un au téléphone.",
+     [
+      "Jamais"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "img1.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "img2.jpg",
+   "from_sentence": 3
+  },
+  {
+   "src": "img3.jpg",
+   "from_sentence": 4
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 1,
+   "offset": 1.5,
+   "end_sentence": 2,
+   "text": "NUMÉRO FALSIFIÉ",
+   "sub": "l'appel imite le vrai numéro de la banque"
+  },
+  {
+   "sentence": 2,
+   "offset": 0.3,
+   "end_sentence": 3,
+   "text": "TÉMOIGNAGE RÉEL",
+   "sub": "La Libre, juillet 2025"
+  },
+  {
+   "sentence": 4,
+   "offset": 0.85,
+   "end_sentence": 5,
+   "text": "6 500 € PERDUS"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

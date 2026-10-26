@@ -1,0 +1,191 @@
+{
+ "out": "005-temoignage-faux-conseiller",
+ "dir": "s005",
+ "label": "TÉMOIGNAGE",
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     0.73,
+     "Vingt mille euros.",
+     [
+      "Vingt",
+      "mille"
+     ]
+    ],
+    [
+     1.06,
+     1.85,
+     "Envolés en une nuit.",
+     [
+      "nuit"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.58,
+     "Mireille, 73 ans,",
+     [
+      "Mireille,"
+     ]
+    ],
+    [
+     1.9,
+     3.63,
+     "reçoit l'appel de son conseiller bancaire.",
+     [
+      "conseiller"
+     ]
+    ],
+    [
+     3.89,
+     5.29,
+     "Enfin, c'est ce qu'elle croit.",
+     [
+      "croit"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     1.58,
+     "Il lui demande de couper sa carte en deux.",
+     [
+      "couper",
+      "carte"
+     ]
+    ],
+    [
+     2.25,
+     3.45,
+     "Un coursier passera la chercher.",
+     [
+      "coursier"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.7,
+   "subs": [
+    [
+     0,
+     2.46,
+     "Le lendemain, ses comptes sont vides.",
+     [
+      "vides"
+     ]
+    ],
+    [
+     3.07,
+     4.86,
+     "Et sa banque refuse de la rembourser.",
+     [
+      "refuse"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.8,
+   "subs": [
+    [
+     0,
+     0.76,
+     "Retenez ceci :",
+     [
+      "Retenez"
+     ]
+    ],
+    [
+     1.19,
+     3.37,
+     "votre banque ne vient jamais chercher votre carte.",
+     [
+      "jamais"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [
+  {
+   "src": "img3.jpg",
+   "from_sentence": 1
+  },
+  {
+   "src": "img1.jpg",
+   "from_sentence": 2
+  },
+  {
+   "src": "img2.jpg",
+   "from_sentence": 3
+  },
+  {
+   "src": "img3.jpg",
+   "from_sentence": 4
+  }
+ ],
+ "stickers": [
+  {
+   "sentence": 1,
+   "offset": 0.2,
+   "end_sentence": 2,
+   "text": "20 000 € PERDUS",
+   "sub": "Témoignage réel · ICI Poitou, sept. 2026"
+  },
+  {
+   "sentence": 5,
+   "offset": 1.2,
+   "end_sentence": 6,
+   "text": "JAMAIS DE COURSIER",
+   "sub": "votre banque ne récupère pas vos cartes"
+  }
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Les arnaques du moment · France · Belgique · Luxembourg",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}
