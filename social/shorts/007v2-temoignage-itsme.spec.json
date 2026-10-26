@@ -1,0 +1,462 @@
+{
+ "out": "007v2-temoignage-itsme",
+ "dir": "s007",
+ "label": "TÉMOIGNAGE",
+ "speed": 1.07,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.4,
+   "subs": [
+    [
+     0,
+     1.48,
+     "Le numéro de sa banque s'affiche.",
+     [
+      "banque"
+     ]
+    ],
+    [
+     1.6,
+     2.46,
+     "Ce n'est pas sa banque.",
+     [
+      "pas"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.3,
+   "subs": [
+    [
+     0,
+     1.75,
+     "Alexis, 40 ans, à Uccle,",
+     [
+      "Alexis,"
+     ]
+    ],
+    [
+     1.97,
+     3.67,
+     "croit parler à son agence Belfius.",
+     [
+      "croit"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.3,
+   "subs": [
+    [
+     0,
+     2.51,
+     "On lui demande de valider des opérations dans itsme.",
+     [
+      "valider",
+      "itsme"
+     ]
+    ],
+    [
+     3.24,
+     4.43,
+     "Soi-disant pour se protéger.",
+     [
+      "Soi-disant"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     0.5,
+     "Résultat :",
+     [
+      "Résultat"
+     ]
+    ],
+    [
+     0.85,
+     2.04,
+     "6 500 euros perdus.",
+     [
+      "6",
+      "500"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     0.53,
+     "La règle :",
+     [
+      "règle"
+     ]
+    ],
+    [
+     0.84,
+     3.5,
+     "une validation itsme, c'est vous qui la lancez.",
+     [
+      "vous"
+     ]
+    ],
+    [
+     3.73,
+     5.07,
+     "Jamais quelqu'un au téléphone.",
+     [
+      "Jamais"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.45,
+    0.4,
+    1.5
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "dark"
+  },
+  {
+   "type": "phone",
+   "name": "Votre agence",
+   "sub": "Numéro de votre banque",
+   "flip": 1.6,
+   "badName": "⚠ NUMÉRO USURPÉ",
+   "badSt": "Ce n'est pas votre banque",
+   "s": 1,
+   "o": 0.02,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.35,
+    0.55,
+    1
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 2,
+   "eo": 1.9
+  },
+  {
+   "type": "tag",
+   "text": "TÉMOIGNAGE RÉEL",
+   "sub": "Alexis, Uccle · La Libre, juillet 2025",
+   "s": 2,
+   "o": 0.1,
+   "es": 2,
+   "eo": 1.9
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.45,
+    0.42,
+    1.8
+   ],
+   "move": "left",
+   "s": 2,
+   "o": 1.9,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.82,
+    0.6,
+    2
+   ],
+   "move": "in",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "confirm",
+   "title": "Confirmer l'opération ?",
+   "sub": "Demande de validation itsme",
+   "btn": "Confirmer",
+   "presses": [
+    1,
+    1.7,
+    2.4
+   ],
+   "s": 3,
+   "o": 0.1,
+   "es": 3,
+   "eo": 3.2
+  },
+  {
+   "type": "tag",
+   "text": "« POUR VOUS PROTÉGER »",
+   "sub": "le prétexte des escrocs",
+   "s": 3,
+   "o": 3.2,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.6,
+    0.35,
+    1
+   ],
+   "move": "out",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "counter",
+   "value": 6500,
+   "suffix": " €",
+   "label": "PERDUS",
+   "count": 0.7,
+   "s": 4,
+   "o": 0.8,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LA RÈGLE",
+   "big": "JAMAIS",
+   "bigAt": 3.75,
+   "items": [
+    [
+     "✓",
+     "Une validation itsme, c'est vous qui la lancez",
+     1
+    ],
+    [
+     "✗",
+     "Jamais à la demande d'un appel",
+     4.2
+    ],
+    [
+     "✓",
+     "Raccrochez et rappelez votre banque",
+     4.9
+    ]
+   ],
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 2.85
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "ring"
+  },
+  {
+   "s": 1,
+   "o": 0.02,
+   "sfx": "impact",
+   "flash": "#fff",
+   "shake": [
+    0.3,
+    10
+   ]
+  },
+  {
+   "s": 1,
+   "o": 1.55,
+   "sfx": "glitch",
+   "glitch": 0.45,
+   "flash": "#D2453A",
+   "shake": [
+    0.4,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.1,
+   "sfx": "pop"
+  },
+  {
+   "s": 2,
+   "o": 1.85,
+   "sfx": "whoosh"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": 1,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 1.7,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 2.4,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 3.2,
+   "sfx": "glitch",
+   "glitch": 0.3
+  },
+  {
+   "s": 3,
+   "o": 3.25,
+   "sfx": "pop"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "boom",
+   "flash": "#000"
+  },
+  {
+   "s": 4,
+   "o": 0.8,
+   "sfx": "tick"
+  },
+  {
+   "s": 4,
+   "o": 1.6,
+   "sfx": "impact",
+   "shake": [
+    0.5,
+    24
+   ],
+   "flash": "#D2453A"
+  },
+  {
+   "s": 5,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": 1,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 3.75,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 5,
+   "o": 4.2,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 4.9,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 2.8,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   4,
+   -0.05,
+   5,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Partagez cette vidéo à vos proches.",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

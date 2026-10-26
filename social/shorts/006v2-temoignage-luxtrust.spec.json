@@ -1,0 +1,493 @@
+{
+ "out": "006v2-temoignage-luxtrust",
+ "dir": "s006",
+ "label": "TÉMOIGNAGE",
+ "speed": 1.07,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.4,
+   "subs": [
+    [
+     0,
+     0.75,
+     "Elle a tout donné.",
+     [
+      "tout"
+     ]
+    ],
+    [
+     1.24,
+     2.48,
+     "Ses cartes, ses codes,",
+     [
+      "cartes,",
+      "codes,"
+     ]
+    ],
+    [
+     2.8,
+     4.33,
+     "et 12 500 euros.",
+     [
+      "12",
+      "500"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.3,
+   "subs": [
+    [
+     0,
+     0.68,
+     "Au Luxembourg,",
+     [
+      "Luxembourg,"
+     ]
+    ],
+    [
+     1.14,
+     3.58,
+     "Estelle reçoit l'appel d'un faux employé LuxTrust.",
+     [
+      "faux",
+      "LuxTrust"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.3,
+   "subs": [
+    [
+     0,
+     1.95,
+     "Pendant qu'un complice la garde au téléphone,",
+     [
+      "complice"
+     ]
+    ],
+    [
+     2.6,
+     3.91,
+     "un homme vient chercher ses cartes,",
+     [
+      "cartes,"
+     ]
+    ],
+    [
+     4.64,
+     5.87,
+     "sur son lieu de travail.",
+     [
+      "travail"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     1.9,
+     "Elle raconte avoir agi comme sous hypnose.",
+     [
+      "hypnose"
+     ]
+    ],
+    [
+     2.46,
+     4.33,
+     "Sa banque a refusé de la rembourser.",
+     [
+      "refusé"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     1.39,
+     "Le réflexe : raccrochez.",
+     [
+      "raccrochez"
+     ]
+    ],
+    [
+     2.22,
+     4.57,
+     "LuxTrust n'envoie jamais personne chercher vos cartes.",
+     [
+      "jamais"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.62,
+    0.3,
+    1.9
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "dark"
+  },
+  {
+   "type": "tag",
+   "text": "💳 CARTES + CODES",
+   "sub": "tout remis aux escrocs",
+   "s": 1,
+   "o": 1.2,
+   "es": 1,
+   "eo": 2.7
+  },
+  {
+   "type": "counter",
+   "value": 12500,
+   "suffix": " €",
+   "label": "PERDUS",
+   "count": 0.7,
+   "s": 1,
+   "o": 2.75,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 2,
+   "eo": 4
+  },
+  {
+   "type": "tag",
+   "text": "🇱🇺 LUXEMBOURG",
+   "sub": "Témoignage réel · L'essentiel, mai 2024",
+   "s": 2,
+   "o": 0.05,
+   "es": 2,
+   "eo": 1
+  },
+  {
+   "type": "phone",
+   "name": "LuxTrust",
+   "sub": "Service sécurité",
+   "flip": 1.6,
+   "badName": "⚠ FAUX EMPLOYÉ",
+   "badSt": "Escroquerie en cours",
+   "s": 2,
+   "o": 1.05,
+   "es": 3,
+   "eo": 2.5
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.45,
+    0.42,
+    1.9
+   ],
+   "move": "left",
+   "s": 3,
+   "o": 0,
+   "es": 3,
+   "eo": 2.5,
+   "tint": "red"
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1
+   ],
+   "move": "in",
+   "s": 3,
+   "o": 2.5,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "🏢 AU BUREAU",
+   "sub": "un homme vient chercher ses cartes",
+   "s": 3,
+   "o": 4.6,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "quote",
+   "text": "Elle raconte avoir agi comme sous hypnose.",
+   "nocap": true,
+   "s": 4,
+   "o": 0,
+   "es": 4,
+   "eo": 2.2
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.62,
+    0.3,
+    1.8
+   ],
+   "move": "in",
+   "s": 4,
+   "o": 2.2,
+   "es": 5,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "stamp",
+   "text": "REMBOURSEMENT<br>REFUSÉ",
+   "sub": "par sa banque",
+   "s": 4,
+   "o": 3.5,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "JAMAIS",
+   "bigAt": 3,
+   "items": [
+    [
+     "✓",
+     "Raccrochez, même si l'appel semble officiel",
+     0.6
+    ],
+    [
+     "✗",
+     "Personne ne vient chercher vos cartes",
+     3.5
+    ],
+    [
+     "✗",
+     "Ne donnez jamais vos codes",
+     4.3
+    ]
+   ],
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 2.85
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "impact",
+   "flash": "#fff",
+   "shake": [
+    0.4,
+    18
+   ]
+  },
+  {
+   "s": 1,
+   "o": 1.2,
+   "sfx": "pop"
+  },
+  {
+   "s": 1,
+   "o": 2.75,
+   "sfx": "tick"
+  },
+  {
+   "s": 1,
+   "o": 3.5,
+   "sfx": "impact",
+   "shake": [
+    0.4,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 2,
+   "o": 1.1,
+   "sfx": "ring"
+  },
+  {
+   "s": 2,
+   "o": 2.65,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "flash": "#D2453A",
+   "shake": [
+    0.35,
+    14
+   ]
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh"
+  },
+  {
+   "s": 3,
+   "o": 0.2,
+   "sfx": "heartbeat"
+  },
+  {
+   "s": 3,
+   "o": 2.45,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": 4.6,
+   "sfx": "pop"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "boom",
+   "flash": "#000"
+  },
+  {
+   "s": 4,
+   "o": 0.05,
+   "sfx": "type"
+  },
+  {
+   "s": 4,
+   "o": 2.15,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": 3.5,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": 0.6,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 3,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 5,
+   "o": 3.5,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 4.3,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 2.8,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   4,
+   -0.05,
+   5,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Partagez cette vidéo à vos proches.",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

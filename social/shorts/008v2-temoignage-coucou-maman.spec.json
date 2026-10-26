@@ -1,0 +1,481 @@
+{
+ "out": "008v2-temoignage-coucou-maman",
+ "dir": "s008",
+ "label": "TÉMOIGNAGE",
+ "speed": 1.07,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.4,
+   "subs": [
+    [
+     0,
+     1.2,
+     "Elle voulait aider sa fille.",
+     [
+      "aider"
+     ]
+    ],
+    [
+     1.53,
+     2.69,
+     "La justice lui a donné tort.",
+     [
+      "justice",
+      "tort"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.3,
+   "subs": [
+    [
+     0,
+     2.82,
+     "Un SMS : téléphone cassé, nouveau numéro.",
+     [
+      "cassé,",
+      "nouveau"
+     ]
+    ],
+    [
+     3.21,
+     4.64,
+     "Puis trois heures de messages sur WhatsApp.",
+     [
+      "trois",
+      "heures"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.3,
+   "subs": [
+    [
+     0,
+     1.98,
+     "Cette mère de 75 ans fait deux virements.",
+     [
+      "virements"
+     ]
+    ],
+    [
+     2.41,
+     3.71,
+     "4 200 euros.",
+     [
+      "4",
+      "200"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     1.55,
+     "Le tribunal de Paris a estimé",
+     [
+      "tribunal"
+     ]
+    ],
+    [
+     1.6,
+     3.58,
+     "qu'elle avait commis une négligence grave.",
+     [
+      "négligence",
+      "grave"
+     ]
+    ],
+    [
+     4.1,
+     4.9,
+     "Pas de remboursement.",
+     [
+      "Pas"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.5,
+   "subs": [
+    [
+     0,
+     0.7,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.1,
+     1.99,
+     "avant tout virement,",
+     [
+      "avant"
+     ]
+    ],
+    [
+     2.26,
+     4.32,
+     "appelez votre enfant sur son numéro habituel.",
+     [
+      "appelez",
+      "habituel"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "../s002/t8.wav",
+   "gap": 1.2,
+   "subs": [
+    [
+     0,
+     2.48,
+     "Pour en savoir plus sur ces arnaques de plus en plus répandues,",
+     [
+      "répandues,"
+     ]
+    ],
+    [
+     2.98,
+     null,
+     "un guide est disponible sur notre site.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.55,
+    0.4,
+    1.4
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 1,
+   "eo": 1.5
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 1.5,
+   "es": 2,
+   "eo": 0,
+   "tint": "dark"
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.4,
+    0.45,
+    1.3
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "Numéro inconnu",
+   "icon": "💬",
+   "items": [
+    [
+     "in",
+     "Coucou maman, mon téléphone est cassé 📱",
+     0.2
+    ],
+    [
+     "in",
+     "C'est mon nouveau numéro. Écris-moi sur WhatsApp !",
+     1.5
+    ]
+   ],
+   "s": 2,
+   "o": 0,
+   "es": 2,
+   "eo": 3.15
+  },
+  {
+   "type": "tag",
+   "text": "⏱ 3 HEURES",
+   "sub": "de messages sur WhatsApp",
+   "s": 2,
+   "o": 3.2,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.3,
+    0.62,
+    2
+   ],
+   "move": "right",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "counter",
+   "value": 4221,
+   "suffix": " €",
+   "label": "2 VIREMENTS",
+   "count": 0.7,
+   "s": 3,
+   "o": 2.35,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.45,
+    0.72,
+    1.6
+   ],
+   "move": "in",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0,
+   "tint": "dark"
+  },
+  {
+   "type": "stamp",
+   "text": "NÉGLIGENCE<br>GRAVE",
+   "sub": "Tribunal judiciaire de Paris · oct. 2026",
+   "s": 4,
+   "o": 2.6,
+   "es": 4,
+   "eo": 4.05
+  },
+  {
+   "type": "stamp",
+   "text": "PAS DE<br>REMBOURSEMENT",
+   "sub": "pour cette mère de 75 ans",
+   "s": 4,
+   "o": 4.1,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "APPELEZ",
+   "bigSize": 165,
+   "bigAt": 2.3,
+   "items": [
+    [
+     "✗",
+     "Ne virez rien sur un simple message",
+     1.2
+    ],
+    [
+     "✓",
+     "Appelez votre enfant sur son numéro habituel",
+     2.9
+    ],
+    [
+     "✓",
+     "Convenez d'un mot code en famille",
+     3.9
+    ]
+   ],
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 2.85
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "impact",
+   "flash": "#fff",
+   "shake": [
+    0.3,
+    10
+   ]
+  },
+  {
+   "s": 1,
+   "o": 1.5,
+   "sfx": "impact",
+   "flash": "#000",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.2,
+   "sfx": "msg"
+  },
+  {
+   "s": 2,
+   "o": 1.5,
+   "sfx": "msg"
+  },
+  {
+   "s": 2,
+   "o": 3.2,
+   "sfx": "pop"
+  },
+  {
+   "s": 2,
+   "o": 3.4,
+   "sfx": "type"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": 0.2,
+   "sfx": "heartbeat"
+  },
+  {
+   "s": 3,
+   "o": 2.35,
+   "sfx": "tick"
+  },
+  {
+   "s": 3,
+   "o": 3.1,
+   "sfx": "impact",
+   "shake": [
+    0.4,
+    18
+   ],
+   "flash": "#D2453A"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "boom",
+   "flash": "#000"
+  },
+  {
+   "s": 4,
+   "o": 2.6,
+   "sfx": "impact",
+   "shake": [
+    0.5,
+    24
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": 4.1,
+   "sfx": "impact",
+   "shake": [
+    0.5,
+    24
+   ]
+  },
+  {
+   "s": 5,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": 1.2,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 2.3,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 5,
+   "o": 2.9,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 3.9,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 2.8,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   4,
+   -0.05,
+   5,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Partagez cette vidéo à vos proches.",
+  "offset": 2.85,
+  "sentence": 6
+ }
+}

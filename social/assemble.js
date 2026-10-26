@@ -28,6 +28,13 @@ const imgs = S.images; const images = imgs.map((im, k) => {
 });
 const stickers = (S.stickers || []).map(x => ({ from: st(x.sentence) + (x.offset || 0), to: st(x.end_sentence) - 0.15, text: x.text, ...(x.sub ? { sub: x.sub } : {}) }));
 const { sentence, offset, ...c } = S.cta; c.from = st(sentence) + (offset ?? -0.1);
-const R = { label: S.label || 'ALERTE ARNAQUE', audio, images, phrases, stickers, cta: c };
+// v3 (short3.js) : scènes et effets placés par phrase (s = n° de phrase, o = décalage), convertis en temps absolus.
+const at = (s, o) => r2(st(s) + (o || 0));
+const scenes = (S.scenes || []).map(({ s, o, es, eo, ...x }) => {
+  if (x.type === 'img') { const name = `${S.out}-${x.src}`; fs.copyFileSync(path.join(src, x.src), path.join(base, name)); x.src = name; }
+  return { ...x, from: at(s, o), to: at(es ?? s, eo) };
+});
+const fx = (S.fx || []).map(({ s, o, ...x }) => ({ ...x, at: at(s, o) }));
+const R = { label: S.label || 'ALERTE ARNAQUE', audio, images, phrases, stickers, cta: c, ...(S.scenes ? { scenes, fx, speed: S.speed, quiet: (S.quiet || []).map(([a, b, c2, d]) => [at(a, b), at(c2, d)]) } : {}) };
 fs.writeFileSync(path.join(base, `${S.out}.json`), JSON.stringify(R, null, 0));
 console.log(path.join(base, `${S.out}.json`), `${t.toFixed(1)}s`);
