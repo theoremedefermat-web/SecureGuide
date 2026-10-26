@@ -100,6 +100,9 @@ Dernière mise à jour : 25/10/2026.
 
 Le bilan Meta arrive dans l'ancienne conversation cloud, pas dans la nouvelle.
 
+- **Radar hebdo, correction du 26/10** : le dépôt manquait dans les sources de la tâche, si bien que le Radar n°2 n'a pas pu être publié le 25/10. Il a été republié le 26/10 par une tâche ponctuelle (« Radar n°2 – rattrapage ponctuel », désactivée, à supprimer sur claude.ai/code/routines). Le dépôt est maintenant dans les sources de la tâche du dimanche.
+- **Attention** : via l'API, la mise à jour d'une tâche (`job_config`) remplace toute la configuration ; il faut renvoyer la configuration complète (événements, modèle, sources, mode auto).
+
 ## Points ouverts
 
 - Vérifier si le post Facebook du 22/10 a bien été publié.
