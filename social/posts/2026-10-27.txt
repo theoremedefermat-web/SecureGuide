@@ -1,0 +1,13 @@
+🔐 Le bon réflexe du mardi : verrouillez votre WhatsApp.
+
+Pour voler un compte WhatsApp, l'escroc a besoin du code à 6 chiffres que vous recevez par SMS. Il le réclame en se faisant passer pour un proche (« je t'ai envoyé un code par erreur ») ou via un faux concours.
+
+✅ Le réflexe : activez la vérification en deux étapes. Paramètres → Compte → Vérification en deux étapes → Activer, puis choisissez un code personnel à 6 chiffres. Sans ce code, le voleur reste bloqué, même s'il a obtenu le SMS. (Source : aide WhatsApp ; la double authentification est aussi recommandée par Cybermalveillance.gouv.fr)
+
+⚠️ Et ne transmettez jamais un code reçu par SMS, à personne.
+
+Pensez aussi au téléphone de vos parents. 🙏
+
+👉 Notre kit gratuit : https://secureguide.fr/kit/?utm_source=facebook&utm_medium=organic&utm_campaign=posts
+
+#WhatsApp #arnaque #cybersécurité #prévention
