@@ -1,0 +1,24 @@
+# Publie le site (build.py puis publish.sh) à chaque push sur main qui touche le site.
+# Les posts et vidéos (social/) et la passation ne déclenchent rien.
+name: Publier le site
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['social/**', 'PASSATION.md']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publier
+  cancel-in-progress: false
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: ./publish.sh "${{ github.event.head_commit.message || 'Publication manuelle' }}"
