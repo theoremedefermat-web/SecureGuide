@@ -68,7 +68,10 @@ Dernière mise à jour : 25/10/2026.
   - posts : `social/posts/AAAA-MM-JJ.{json,png,txt}` ;
   - générateur de visuel : `social/post.js` ;
   - calendrier et règles : `social/README.md`.
-- **Post du 22/10 (« 516 M€ »)** : validé par Stéphane, mais sa publication n'a jamais été confirmée. À vérifier sur la page avant de le republier.
+- **Constat du 27/10** : aucun post quotidien n'a été publié sur la page ; le dernier post date du 20 août. La routine cloud préparait les posts sans pouvoir publier, faute d'accès à Chrome. Les posts du 22 au 26/10 restent dans `social/posts/`, et on peut les réutiliser.
+- **Depuis le 27/10** : une tâche planifiée tourne sur le PC de Stéphane, « Post Facebook du jour SecureGuide » (`post-facebook-secureguide`), tous les jours vers 7 h 45. Elle prépare le post, attend le « ok », puis publie via Claude in Chrome. L'application Claude doit être ouverte. La routine cloud `trig_01RX6XbETPZDWtRoLPqSm178` est désactivée.
+- **Piège Meta Business Suite** : sur Facebook, read_page, find et les captures échouent. Il faut piloter la page en JavaScript : un ClipboardEvent 'paste' dans le `[contenteditable]` pour le texte. L'ajout automatique du visuel n'est pas encore résolu ; en cas d'échec, Stéphane ajoute l'image et clique sur « Publier ».
+- **Visuel sous Windows** : `post.js` prend Chrome via `CHROME`, avec `PW_MODULE=playwright-core` et `NODE_PATH` pointant sur les outils.
 
 ## YouTube
 
@@ -94,7 +97,7 @@ Dernière mise à jour : 25/10/2026.
 
 | Tâche | Quand | Rôle |
 |---|---|---|
-| Post Facebook du jour SecureGuide (`trig_01RX6XbETPZDWtRoLPqSm178`) | tous les jours à 7 h 47, heure du Luxembourg | prépare le post, attend le « ok », puis publie |
+| Post Facebook du jour SecureGuide (tâche locale `post-facebook-secureguide`, sur le PC) | tous les jours vers 7 h 45 | prépare le post, attend le « ok », puis publie via Chrome (l'ancienne routine cloud est désactivée) |
 | Radar des arnaques hebdo (`trig_011UUSQCs3zYchYQWJyp8uan`) | dimanche à 6 h 50, heure de Bruxelles | veille, Radar, 2 articles, publication, newsletter, bilan |
 | Bilan J+5 campagne Meta (`trig_013CNpdjirpvZHApUnf66LWa`) | 25/10 à 17 h, heure de Bruxelles | compare A et B, coupe la plus chère, envoie le bilan |
 
@@ -105,7 +108,6 @@ Le bilan Meta arrive dans l'ancienne conversation cloud, pas dans la nouvelle.
 
 ## Points ouverts
 
-- Vérifier si le post Facebook du 22/10 a bien été publié.
 - Ne plus utiliser « 16 fiches » pour le guide seniors : ce chiffre n'est pas vérifié. L'ancienne pub B, désactivée, le contient encore.
 - Validation téléphone YouTube (par Stéphane).
 - Prochains Shorts : 3 par semaine, à faire valider.

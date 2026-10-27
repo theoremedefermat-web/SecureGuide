@@ -38,7 +38,7 @@ ${P.lines ? `<ul>${P.lines.map(l => `<li>${nb(l)}</li>`).join('')}</ul>` : ''}
 <div class="cta"><span>${nb(P.cta || 'Les arnaques de la semaine, chaque dimanche')}</span><b>secureguide.fr</b></div>
 </div></body></html>`;
 (async () => {
-  const exe = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome'].find(p => fs.existsSync(p));
+  const exe = [process.env.CHROME, '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'].find(p => p && fs.existsSync(p));
   const b = await chromium.launch(exe ? { executablePath: exe } : {});
   const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });
   await p.setContent(html); await p.evaluate(() => document.fonts.ready);
