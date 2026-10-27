@@ -54,8 +54,13 @@
 .bigradar circle{fill:none;stroke:#2C5468}
 .bigradar .sweep{transform-origin:200px 200px;animation:sweep 5s linear infinite}
 @keyframes sweep{to{transform:rotate(360deg)}}
-.blip{animation:blip 5s infinite}
-@keyframes blip{0%,100%{opacity:.25}20%{opacity:1}}
+/* Chaque point s'allume quand l'antenne passe dessus (délai = angle / 360 × 5 s), puis s'éteint lentement. */
+.blip,.ping{transform-box:fill-box;transform-origin:center;animation:5s linear infinite;animation-delay:var(--d)}
+.bigradar .blip{fill:var(--c);stroke:none;animation-name:blip}
+.bigradar .ping{fill:none;stroke:var(--c);stroke-width:2;animation-name:ping}
+.bigradar .hub{fill:#F2B33D;stroke:none}
+@keyframes blip{0%{opacity:1;transform:scale(1.4)}6%{transform:scale(1)}75%,100%{opacity:.14}}
+@keyframes ping{0%{opacity:.9;transform:scale(1)}35%,100%{opacity:0;transform:scale(3.4)}}
 @media (max-width:760px){.h-in{grid-template-columns:1fr;padding-block:28px 72px}.bigradar{display:none}.h-in p{font-size:17px;margin-bottom:20px}}
 .h-main{padding:0 16px}
 .h-wrap{max-width:1040px;margin:-44px auto 0;display:flex;flex-direction:column;gap:48px;position:relative}
@@ -100,7 +105,7 @@
 .why h2{font-family:var(--wide);font-stretch:108%;font-weight:800;letter-spacing:-.012em;text-wrap:balance;font-size:20px;line-height:1.25;margin:0 0 6px}
 .why p{margin:0;color:var(--muted)}
 @media (max-width:560px){.why{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.sweep,.blip{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.sweep,.blip,.ping{animation:none!important}.blip{opacity:.8}.ping{opacity:0}}
 </style>
 
 <header class="h-hero">
@@ -117,11 +122,21 @@
     <svg class="bigradar" viewBox="0 0 400 400" aria-hidden="true">
       <circle cx="200" cy="200" r="180"/><circle cx="200" cy="200" r="125"/><circle cx="200" cy="200" r="70"/>
       <line x1="20" y1="200" x2="380" y2="200" stroke="#1C3D4E"/><line x1="200" y1="20" x2="200" y2="380" stroke="#1C3D4E"/>
-      <g class="sweep"><path d="M200 200 L200 20 A180 180 0 0 1 355 110 Z" fill="#F2B33D" opacity=".16"/><line x1="200" y1="200" x2="200" y2="20" stroke="#F2B33D" stroke-width="2"/></g>
-      <circle class="blip" cx="290" cy="120" r="7" fill="#D2453A"/>
-      <circle class="blip" cx="120" cy="270" r="6" fill="#F2B33D" style="animation-delay:1.6s"/>
-      <circle class="blip" cx="250" cy="300" r="5" fill="#F2B33D" style="animation-delay:3.1s"/>
-      <circle class="blip" cx="140" cy="140" r="5" fill="#D2453A" style="animation-delay:4.2s"/>
+      <g class="sweep">
+        <path d="M200 200 L200 20 A180 180 0 0 0 62 84 Z" fill="#F2B33D" opacity=".05"/>
+        <path d="M200 200 L200 20 A180 180 0 0 0 110 44 Z" fill="#F2B33D" opacity=".08"/>
+        <path d="M200 200 L200 20 A180 180 0 0 0 156 25 Z" fill="#F2B33D" opacity=".14"/>
+        <line x1="200" y1="200" x2="200" y2="20" stroke="#F2B33D" stroke-width="2"/>
+      </g>
+      <g style="--d:-4.51s;--c:#F0706A"><circle class="ping" cx="269" cy="102" r="6"/><circle class="blip" cx="269" cy="102" r="6"/></g>
+      <g style="--d:-3.89s;--c:#4CC488"><circle class="ping" cx="259" cy="190" r="4"/><circle class="blip" cx="259" cy="190" r="4"/></g>
+      <g style="--d:-3.22s;--c:#F2B33D"><circle class="ping" cx="318" cy="292" r="5"/><circle class="blip" cx="318" cy="292" r="5"/></g>
+      <g style="--d:-2.64s;--c:#F0706A"><circle class="ping" cx="217" cy="294" r="5"/><circle class="blip" cx="217" cy="294" r="5"/></g>
+      <g style="--d:-2.01s;--c:#4CC488"><circle class="ping" cx="123" cy="311" r="4"/><circle class="blip" cx="123" cy="311" r="4"/></g>
+      <g style="--d:-1.36s;--c:#F2B33D"><circle class="ping" cx="121" cy="211" r="4.5"/><circle class="blip" cx="121" cy="211" r="4.5"/></g>
+      <g style="--d:-0.76s;--c:#F0706A"><circle class="ping" cx="73" cy="111" r="6"/><circle class="blip" cx="73" cy="111" r="6"/></g>
+      <g style="--d:-0.28s;--c:#F2B33D"><circle class="ping" cx="185" cy="158" r="3.5"/><circle class="blip" cx="185" cy="158" r="3.5"/></g>
+      <circle class="hub" cx="200" cy="200" r="4"/>
     </svg>
   </div>
 </header>
