@@ -111,6 +111,13 @@ Le bilan Meta arrive dans l'ancienne conversation cloud, pas dans la nouvelle.
 - **Radar hebdo, correction du 26/10** : le dépôt manquait dans les sources de la tâche, si bien que le Radar n°2 n'a pas pu être publié le 25/10. Il a été republié le 26/10 par une tâche ponctuelle (« Radar n°2 – rattrapage ponctuel », désactivée, à supprimer sur claude.ai/code/routines). Le dépôt est maintenant dans les sources de la tâche du dimanche.
 - **Attention** : via l'API, la mise à jour d'une tâche (`job_config`) remplace toute la configuration ; il faut renvoyer la configuration complète (événements, modèle, sources, mode auto).
 
+## Publication automatique du site (depuis le 27/10)
+
+- **Fonctionnement** : chaque push sur `main` lance GitHub Actions (`.github/workflows/publier.yml`), qui exécute `build.py` puis `publish.sh`. Aucun push à faire depuis le PC ou le cloud, et pas besoin de Python en local.
+- **Ce qui ne déclenche rien** : `social/**` et `PASSATION.md`. On peut aussi relancer la publication à la main dans l'onglet Actions (« Run workflow »).
+- **Validation** : Stéphane l'a demandé le 27/10, donc tout push qui touche le site est publié sans nouvelle confirmation. Il ne faut donc pousser sur `main` que des modifications validées.
+- **Sur le PC** : la règle qui autorise `git push` est dans `.claude/settings.local.json`, non versionné.
+
 ## Points ouverts
 
 - Ne plus utiliser « 16 fiches » pour le guide seniors : ce chiffre n'est pas vérifié. L'ancienne pub B, désactivée, le contient encore.
