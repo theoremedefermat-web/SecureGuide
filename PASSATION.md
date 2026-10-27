@@ -68,7 +68,12 @@ Dernière mise à jour : 25/10/2026.
   - posts : `social/posts/AAAA-MM-JJ.{json,png,txt}` ;
   - générateur de visuel : `social/post.js` ;
   - calendrier et règles : `social/README.md`.
-- **Constat du 27/10** : aucun post quotidien n'a été publié sur la page ; le dernier post date du 20 août. La routine cloud préparait les posts sans pouvoir publier, faute d'accès à Chrome. Les posts du 22 au 26/10 restent dans `social/posts/`, et on peut les réutiliser.
+- **Constat du 27/10**, d'après la liste des posts publiés dans Meta Business Suite :
+  - publiés : le 25/10 (« Radar de la semaine ») et le 27/10 (« verrouillez votre WhatsApp », publié par Stéphane depuis son téléphone) ;
+  - jamais publiés : le 22/10 (« 516 M€ »), le 23/10, le 24/10 et le 26/10. Ils sont dans `social/posts/` et peuvent être réutilisés ;
+  - avant ça, le dernier post datait du 26 août.
+- **Cause** : la routine cloud préparait les posts mais ne pouvait pas les publier, faute d'accès à Chrome.
+- **Pour vérifier ce qui est publié** : ouvrir https://business.facebook.com/latest/posts/published_posts?asset_id=1239294215931177. Le profil public charge mal les posts.
 - **Depuis le 27/10** : une tâche planifiée tourne sur le PC de Stéphane, « Post Facebook du jour SecureGuide » (`post-facebook-secureguide`), tous les jours vers 7 h 45. Elle prépare le post, attend le « ok », puis publie via Claude in Chrome. L'application Claude doit être ouverte. La routine cloud `trig_01RX6XbETPZDWtRoLPqSm178` est désactivée.
 - **Piège Meta Business Suite** : sur Facebook, read_page, find et les captures échouent. Il faut piloter la page en JavaScript : un ClipboardEvent 'paste' dans le `[contenteditable]` pour le texte. L'ajout automatique du visuel n'est pas encore résolu ; en cas d'échec, Stéphane ajoute l'image et clique sur « Publier ».
 - **Visuel sous Windows** : `post.js` prend Chrome via `CHROME`, avec `PW_MODULE=playwright-core` et `NODE_PATH` pointant sur les outils.
