@@ -96,7 +96,15 @@ Dernière mise à jour : 25/10/2026.
 - **Visuels de la chaîne** : `social/youtube/`.
 - **Piège** : l'extension vidIQ bloque l'automatisation de la fenêtre d'envoi. Il faut agir en un seul script JavaScript juste après l'ouverture.
 - **À faire par Stéphane** : la validation par téléphone (Paramètres → Chaîne → Accès aux fonctionnalités), sinon les liens des descriptions ne sont pas cliquables.
-- **Rythme prévu** : 3 Shorts par semaine, chacun validé par Stéphane.
+- **Shorts témoignages v2** (moteur `social/short3.js`), programmés le 27/10 à la demande de Stéphane, à 17 h :
+  - 28/10 : n°5, Mireille et le faux conseiller ;
+  - 29/10 : n°7, itsme ;
+  - 30/10 : n°10, le vote WhatsApp ;
+  - 31/10 : n°8, « Coucou maman » ;
+  - 01/11 : n°6, LuxTrust ;
+  - 02/11 : n°9, Booking et l'hôtel.
+- **Rythme demandé (27/10)** : un Short par jour à 17 h. Après le 2/11, il n'y a plus de Short prêt.
+- **Envoi depuis le PC** : `file_upload` est limité à 10 Mo et n'accepte que les fichiers du projet. Il faut donc ré-encoder en copie légère (ffmpeg, `-b:v 2000k`, environ 7 Mo) dans un dossier temporaire du projet, puis le supprimer après l'envoi. Le titre doit faire 100 caractères au plus, sinon « Suivant » reste grisé. Heure : `commitTimeOfDay(61200)` = 17:00. Passer à l'étape Visibilité avec `#next-button` (les badges d'étape ne marchent pas pendant le traitement). Le script finit par recharger la liste, et le journal se lit dans `localStorage.sgLog`.
 
 ## Tâches planifiées (elles tournent dans le cloud, indépendamment des conversations)
 
