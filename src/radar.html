@@ -197,8 +197,8 @@ function draw(f){
     el.querySelector("h3").textContent=a.t;
     el.querySelector(".bait").append(a.bait);
     el.querySelector(".tr").textContent=a.trap;el.querySelector(".dd").textContent=a.do;
-    const s=el.querySelector(".src a");s.href=a.u;s.textContent=a.src;
-    if(a.a){const r=document.createElement("a");r.href=a.a;r.className="more";r.textContent="Lire la fiche complète →";el.append(r)}
+    const s=el.querySelector(".src a");if(/^https:\/\//.test(a.u))s.href=a.u;s.textContent=a.src;
+    if(/^\/[^\/]/.test(a.a||"")){const r=document.createElement("a");r.href=a.a;r.className="more";r.textContent="Lire la fiche complète →";el.append(r)}
     box.append(el)});
 }
 document.querySelectorAll(".f").forEach(b=>b.onclick=()=>{document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));draw(b.dataset.c)});

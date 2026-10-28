@@ -126,6 +126,21 @@ Le bilan Meta arrive dans l'ancienne conversation cloud, pas dans la nouvelle.
 - **Validation** : Stéphane l'a demandé le 27/10, donc tout push qui touche le site est publié sans nouvelle confirmation. Il ne faut donc pousser sur `main` que des modifications validées.
 - **Sur le PC** : la règle qui autorise `git push` est dans `.claude/settings.local.json`, non versionné.
 
+## Sécurité (audit du 28/10)
+
+- **Dans le code** :
+  - CSP, Referrer et refus d'affichage dans un cadre sont posés par `build.py` (`SECURITY_HEAD`). Toute nouvelle ressource externe (script, image, formulaire) doit y être ajoutée, sinon le navigateur la bloque. Si l'adresse du formulaire Brevo change, il faut mettre à jour `BREVO_HOST`.
+  - Les polices sont hébergées sur le site (`src/fonts/`, `src/fonts.css`), sans appel à Google.
+  - L'adresse de contact est assemblée en JavaScript (`MAIL`), pour la cacher aux robots.
+  - Le Radar n'accepte que des sources en `https://` et des fiches internes commençant par `/`.
+  - La publication automatique passe le message de commit par une variable, et les modules GitHub sont figés par leur empreinte.
+- **À faire chez OVH et GitHub (comptes de Stéphane)** :
+  - SPF `v=spf1 include:spf.brevo.com ~all` ;
+  - DMARC à passer en `quarantine` après surveillance ;
+  - CAA `0 issue "letsencrypt.org"` ;
+  - vérifier le domaine dans GitHub (Settings → Pages → domaine vérifié + TXT `_github-pages-challenge-…`) ;
+  - activer la double authentification sur GitHub, OVH, Brevo et Gmail.
+
 ## Points ouverts
 
 - Ne plus utiliser « 16 fiches » pour le guide seniors : ce chiffre n'est pas vérifié. L'ancienne pub B, désactivée, le contient encore.

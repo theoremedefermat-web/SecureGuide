@@ -11,10 +11,24 @@ TODAY = datetime.date.today().isoformat()
 # Liens d'affiliation : remplacer chaque URL par le lien affilié dès qu'il est fourni.
 AFFILIATE = json.loads((SRC / "affiliate.json").read_text())
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900'
-         '&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">')
+# Polices hébergées sur le site (src/fonts/) : aucune adresse IP de visiteur n'est envoyée à Google.
+FONTS = ('<link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>'
+         '<link rel="stylesheet" href="/assets/fonts.css">')
+
+# Sécurité côté page (GitHub Pages ne permet pas d'en-têtes HTTP) : CSP, Referrer, et refus d'être affiché dans un cadre.
+BREVO_HOST = "https://962d435b.sibforms.com"
+CSP = ("default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; "
+       "img-src 'self' data:; font-src 'self'; media-src 'self'; "
+       f"connect-src 'self' {BREVO_HOST}; form-action 'self' {BREVO_HOST}; "
+       "object-src 'none'; base-uri 'self'; upgrade-insecure-requests")
+SECURITY_HEAD = (f'<meta http-equiv="Content-Security-Policy" content="{CSP}">'
+                 '<meta name="referrer" content="strict-origin-when-cross-origin">'
+                 '<script>if(self!==top){try{top.location.replace(location.href)}catch(e){document.documentElement.hidden=true}}</script>')
+
+# Adresse de contact assemblée par le navigateur, pour qu'elle ne soit pas lue par les robots à spam.
+MAIL = '<span class="mail" data-u="secureguide2024" data-d="gmail.com">secureguide2024 [arobase] gmail.com</span>'
+MAIL_JS = ('<script>document.querySelectorAll(".mail[data-u]").forEach(function(s){var m=s.dataset.u+"@"+s.dataset.d,'
+           'a=document.createElement("a");a.href="mailto:"+m;a.textContent=m;s.replaceWith(a)})</script>')
 
 MARK = (SRC / "brand/mark.svg").read_text().replace('role="img" aria-label="SecureGuide"', 'aria-hidden="true"')
 def mark(uid):
@@ -133,7 +147,7 @@ def kit_form():
 
 FOOT = f'''<footer class="foot"><div class="foot-in">
 <div><a class="brand foot-brand" href="/" aria-label="SecureGuide.fr, accueil">{mark("foot")}{WORDMARK}</a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
-<p>Contact : <span>secureguide2024@gmail.com</span></p></div>
+<p>Contact : {MAIL}</p></div>
 <div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/ebooks/">E-books</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
@@ -146,6 +160,7 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website", m
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{SECURITY_HEAD}
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
@@ -165,6 +180,7 @@ def page(path, title, desc, body, active="", extra_head="", og_type="website", m
 {MINI_NAV if minimal else nav(active) + (KIT_BAR if kit_bar else '')}
 {body}
 {FOOT}
+{MAIL_JS}
 <div hidden>Impact-Site-Verification: 9298fb5c-374a-40b3-9497-a3e6edbdf582</div>
 </body>
 </html>
@@ -201,6 +217,8 @@ def build():
         shutil.rmtree(OUT)
     (OUT / "assets").mkdir(parents=True)
     shutil.copy(SRC / "site.css", OUT / "assets/site.css")
+    shutil.copy(SRC / "fonts.css", OUT / "assets/fonts.css")
+    shutil.copytree(SRC / "fonts", OUT / "assets/fonts")
     shutil.copy(SRC / "alerts.js", OUT / "assets/alerts.js")
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/favicon.svg")
     shutil.copy(SRC / "brand/mark.svg", OUT / "assets/logo.svg")
@@ -306,7 +324,8 @@ def build():
 
     pages.append(page("/mentions-legales/", "Mentions légales · SecureGuide.fr",
         "Mentions légales, affiliation et données personnelles de SecureGuide.fr.",
-        (SRC / "legal.html").read_text()))
+        (SRC / "legal.html").read_text().replace("secureguide2024@gmail.com", MAIL)))
+    assert BREVO_HOST in BREVO_FORM, "l'adresse du formulaire Brevo a changé : mettre à jour BREVO_HOST (CSP)"
 
     page("/404.html", "Page introuvable · SecureGuide.fr", "Cette page n'existe pas.",
          '<main class="page"><h1>Page introuvable</h1><p>Cette page n\'existe pas ou a été déplacée.</p>'
