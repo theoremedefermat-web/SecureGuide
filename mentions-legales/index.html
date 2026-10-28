@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self' https://962d435b.sibforms.com; form-action 'self' https://962d435b.sibforms.com; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script>if(self!==top){try{top.location.replace(location.href)}catch(e){document.documentElement.hidden=true}}</script>
 <title>Mentions légales · SecureGuide.fr</title>
 <meta name="description" content="Mentions légales, affiliation et données personnelles de SecureGuide.fr.">
 <link rel="canonical" href="https://secureguide.fr/mentions-legales/">
@@ -14,7 +15,7 @@
 <meta name="theme-color" content="#0A2533">
 <meta name="impact-site-verification" value="9298fb5c-374a-40b3-9497-a3e6edbdf582">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts.css">
 <link rel="stylesheet" href="/assets/site.css">
 
 </head>
@@ -42,7 +43,7 @@
 
 <h2>Éditeur du site</h2>
 <p>SecureGuide.fr est un site d'information édité à titre personnel par Stéphane Etienne Raoul.<br>
-Contact : secureguide2024@gmail.com</p>
+Contact : <span class="mail" data-u="secureguide2024" data-d="gmail.com">secureguide2024 [arobase] gmail.com</span></p>
 
 <h2>Hébergement</h2>
 <p>GitHub Pages, service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
@@ -53,8 +54,9 @@ Contact : secureguide2024@gmail.com</p>
 
 <h2 id="donnees">Données personnelles</h2>
 <p>Le test de protection fonctionne entièrement dans votre navigateur : vos réponses ne sont ni envoyées ni conservées.</p>
-<p>Si vous vous inscrivez à la newsletter, votre adresse email sert uniquement à vous envoyer le Radar des arnaques et nos conseils. Elle n'est jamais revendue. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque email, ou en écrivant à secureguide2024@gmail.com pour demander l'accès, la rectification ou la suppression de vos données, conformément au RGPD.</p>
-<p>Le site n'utilise pas de cookies publicitaires.</p>
+<p>Si vous vous inscrivez à la newsletter, votre adresse email sert uniquement à vous envoyer le Radar des arnaques et nos conseils. Elle n'est jamais revendue. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque email, ou en écrivant à <span class="mail" data-u="secureguide2024" data-d="gmail.com">secureguide2024 [arobase] gmail.com</span> pour demander l'accès, la rectification ou la suppression de vos données, conformément au RGPD.</p>
+<p>Les inscriptions sont gérées par Brevo (Sendinblue SAS, France), qui héberge les adresses dans l'Union européenne et n'agit que pour l'envoi de nos emails.</p>
+<p>Le site n'utilise ni cookies, ni outil de mesure d'audience. Les polices de caractères sont hébergées sur le site lui-même : votre navigateur ne contacte aucun service tiers en affichant nos pages.</p>
 
 <h2>Contenu</h2>
 <p>Les informations publiées ont un but de prévention et de sensibilisation. Elles ne remplacent pas les conseils de votre banque, de la police ou d'un professionnel. En cas d'arnaque en cours, contactez immédiatement votre banque.</p>
@@ -79,11 +81,12 @@ Contact : secureguide2024@gmail.com</p>
   <path d="M32 4 55 12.6v18.6c0 14.6-9.8 26.2-23 30.3C18.8 57.4 9 45.8 9 31.2V12.6z" fill="none" stroke="#F2B33D" stroke-width="3" stroke-linejoin="round"/>
 </svg>
 <span class="wm"><span class="wm-a">Secure</span><span class="wm-b">Guide</span><span class="wm-c">.fr</span></span></a><p>La veille des arnaques en France, en Belgique et au Luxembourg, et les bons réflexes pour s'en protéger.</p>
-<p>Contact : <span>secureguide2024@gmail.com</span></p></div>
+<p>Contact : <span class="mail" data-u="secureguide2024" data-d="gmail.com">secureguide2024 [arobase] gmail.com</span></p></div>
 <div><h4>Le site</h4><ul><li><a href="/radar/">Radar des arnaques</a></li><li><a href="/test-protection/">Test de protection</a></li><li><a href="/guides/">Guides et comparatifs</a></li><li><a href="/ebooks/">E-books</a></li></ul></div>
 <div><h4>Infos</h4><ul><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/mentions-legales/#affiliation">Affiliation</a></li><li><a href="/mentions-legales/#donnees">Données personnelles</a></li></ul></div>
 <p class="small">Certains liens du site sont affiliés : SecureGuide.fr peut toucher une commission, sans surcoût pour vous. En cas d'arnaque en cours, contactez d'abord votre banque.</p>
 </div></footer>
+<script>document.querySelectorAll(".mail[data-u]").forEach(function(s){var m=s.dataset.u+"@"+s.dataset.d,a=document.createElement("a");a.href="mailto:"+m;a.textContent=m;s.replaceWith(a)})</script>
 <div hidden>Impact-Site-Verification: 9298fb5c-374a-40b3-9497-a3e6edbdf582</div>
 </body>
 </html>
