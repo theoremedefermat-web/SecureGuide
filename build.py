@@ -116,10 +116,10 @@ def ebooks_page():
 
 REDIRECT = """<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>E-books · SecureGuide.fr</title><meta name="robots" content="noindex"><link rel="canonical" href="{site}{to}">
+<title>{title} · SecureGuide.fr</title><meta name="robots" content="noindex"><link rel="canonical" href="{site}{to}">
 <meta http-equiv="refresh" content="0; url={to}"><script>location.replace("{to}"+location.hash)</script>
 <style>body{{margin:0;font-family:system-ui,sans-serif;background:#0A2533;color:#EAF3F7;display:grid;place-items:center;min-height:100vh;padding:16px}}a{{color:#F2B33D}}</style></head>
-<body><p>La boutique s'appelle désormais « E-books » : <a href="{to}">continuer vers les e-books</a>.</p></body></html>
+<body><p>{msg} <a href="{to}">{link}</a>.</p></body></html>
 """
 
 def nav(active):
@@ -309,9 +309,15 @@ def build():
     pages.append(page("/ebooks/", "E-books de cybersécurité pour la famille · SecureGuide.fr",
         "Quatre e-books PDF en français, sans jargon : arnaques et seniors, enfants et écrans, cybersécurité en famille, IA après 50 ans. Disponibles sur Etsy.",
         ebooks_page(), active="shop"))
-    # Ancienne adresse : redirection vers /ebooks/ (GitHub Pages n'a pas de redirection serveur)
-    (OUT / "boutique").mkdir(parents=True, exist_ok=True)
-    (OUT / "boutique/index.html").write_text(REDIRECT.format(site=SITE, to="/ebooks/"))
+    # Anciennes adresses encore connues de Google : redirections (GitHub Pages n'a pas de redirection serveur)
+    OLD_URLS = [("boutique", "/ebooks/", "E-books", "La boutique s'appelle désormais « E-books » :", "continuer vers les e-books"),
+                ("antivirus", "/guides/meilleur-antivirus-windows-11/", "Antivirus", "Cette page a déménagé :", "continuer vers notre guide des antivirus"),
+                ("password-managers", "/guides/meilleur-gestionnaire-mots-de-passe/", "Gestionnaires de mots de passe", "Cette page a déménagé :", "continuer vers notre guide des gestionnaires de mots de passe"),
+                ("vpn", "/guides/vpn-famille/", "VPN", "Cette page a déménagé :", "continuer vers notre guide des VPN"),
+                ("politique-de-confidentialite", "/mentions-legales/#donnees", "Données personnelles", "Cette page a déménagé :", "continuer vers les données personnelles")]
+    for old, to, title, msg, link in OLD_URLS:
+        (OUT / old).mkdir(parents=True, exist_ok=True)
+        (OUT / old / "index.html").write_text(REDIRECT.format(site=SITE, to=to, title=title, msg=msg, link=link))
     # Tunnel : page de capture du kit gratuit, puis page de téléchargement avec l'offre
     kit = (SRC / "kit.html").read_text().replace("<!--FORM-->", kit_form()).replace("<!--MARK-->", mark("kit"))
     pages.append(page("/kit/", "Kit anti-arnaques 2026 gratuit · SecureGuide.fr",
