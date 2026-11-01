@@ -134,12 +134,20 @@ Le bilan Meta arrive dans l'ancienne conversation cloud, pas dans la nouvelle.
   - L'adresse de contact est assemblée en JavaScript (`MAIL`), pour la cacher aux robots.
   - Le Radar n'accepte que des sources en `https://` et des fiches internes commençant par `/`.
   - La publication automatique passe le message de commit par une variable, et les modules GitHub sont figés par leur empreinte.
-- **À faire chez OVH et GitHub (comptes de Stéphane)** :
-  - SPF `v=spf1 include:spf.brevo.com ~all` ;
-  - DMARC à passer en `quarantine` après surveillance ;
-  - CAA `0 issue "letsencrypt.org"` ;
-  - vérifier le domaine dans GitHub (Settings → Pages → domaine vérifié + TXT `_github-pages-challenge-…`) ;
-  - activer la double authentification sur GitHub, OVH, Brevo et Gmail.
+- **Fait le 01/11 chez OVH et GitHub** :
+  - SPF `v=spf1 include:spf.brevo.com ~all` et CAA `0 issue "letsencrypt.org"` ajoutés ;
+  - domaine vérifié sur GitHub (TXT `_github-pages-challenge-theoremedefermat-web`, à ne pas supprimer).
+- **Reste à faire** :
+  - DMARC à passer en `quarantine` vers mi-novembre, après surveillance ;
+  - double authentification : **non activée** sur GitHub et OVH au 01/11 (Stéphane l'active lui-même) ; Brevo et Gmail non contrôlés.
+- **OVH dans Chrome** : la zone DNS est dans une iframe, et les captures d'écran échouent. Il faut piloter le formulaire en JavaScript et relire l'écran de confirmation avant « Valider ».
+
+## Référencement (Search Console, 01/11)
+
+- **Accès** : propriété de domaine `secureguide.fr` validée pour nzeale.stephane@gmail.com (TXT `google-site-verification=Xg5z…`, à ne pas supprimer). Une autre balise Google (`B4_G…`) existait déjà et a été laissée en place. Sitemap envoyé.
+- **Chiffres du 12 au 30/10** : 1 clic, 107 impressions, position moyenne 36,2. 15 pages indexées, 26 non indexées.
+- **Anciennes adresses** : le domaine portait un site WordPress avant le site actuel. Google montre encore `/antivirus/` (65 impressions), `/password-managers/` (17) et `/vpn/` (6), qui renvoient une erreur 404.
+- **Bing Webmaster Tools** : pas fait, Stéphane n'y est pas connecté.
 
 ## Points ouverts
 
