@@ -50,6 +50,7 @@ Dernière mise à jour : 25/10/2026.
   3. attente de 2 jours, puis modèle 10 (seniors) ;
   4. attente de 3 jours, puis modèle 11 (test et guides).
 - **Sources des emails** : `emails/e1.html`, `e2.html`, `e3.html`.
+- **Suite prévue (validée le 02/11)** : modèle 13 (`emails/e4.html`, « Faut-il payer un antivirus ? », bouton vers l'avis Bitdefender) 4 jours après le modèle 11, puis modèle 14 (`emails/e5.html`, les 4 e-books) 5 jours après. Les deux modèles sont créés mais inactifs : il faut les activer et les ajouter dans l'éditeur d'automatisation (glisser-déposer, non pilotable par Claude).
 - **Attention** : une adresse déjà présente dans la liste ne redéclenche pas l'automatisation. Pour tester, utiliser une adresse nouvelle (par exemple avec `+test`).
 
 ## Publicité Meta (via Adspirer, offre gratuite de 15 actions par mois)
