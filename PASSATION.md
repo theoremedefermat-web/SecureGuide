@@ -48,9 +48,11 @@ Dernière mise à jour : 25/10/2026.
   1. déclenchement : ajout à la liste 2 ;
   2. modèle 9 (le kit) ;
   3. attente de 2 jours, puis modèle 10 (seniors) ;
-  4. attente de 3 jours, puis modèle 11 (test et guides).
-- **Sources des emails** : `emails/e1.html`, `e2.html`, `e3.html`.
-- **Suite prévue (validée le 02/11)** : modèle 13 (`emails/e4.html`, « Faut-il payer un antivirus ? », bouton vers l'avis Bitdefender) 4 jours après le modèle 11, puis modèle 14 (`emails/e5.html`, les 4 e-books) 5 jours après. Les deux modèles sont créés mais inactifs : il faut les activer et les ajouter dans l'éditeur d'automatisation (glisser-déposer, non pilotable par Claude).
+  4. attente de 3 jours, puis modèle 11 (test et guides) ;
+  5. attente de 4 jours, puis modèle 15 (« Faut-il payer un antivirus ? », bouton vers l'avis Bitdefender) ;
+  6. attente de 5 jours, puis modèle 16 (les 4 e-books). Étapes 5 et 6 ajoutées le 02/11.
+- **Sources des emails** : `emails/e1.html` à `e5.html`. Les modèles 13 et 14 sont les originaux de e4 et e5 ; l'automatisation utilise leurs copies 15 et 16, à modifier en priorité.
+- **Piloter l'éditeur d'automatisation** (captures d'écran impossibles) : en JavaScript, onglet « Règles » ou « Actions », DragEvent `dragstart` sur l'élément, `dragover` sur `.react-flow__pane` pour faire apparaître les zones `[class*="dropzoneWrapper"]`, puis `drop` sur la zone voulue. Pour un e-mail : « Ajouter un message » → « Créer un nouveau message » → « Utiliser ce template » → « Utiliser ce modèle pour l'automatisation », puis remplir le nom d'expéditeur « SecureGuide » et « Enregistrer ».
 - **Attention** : une adresse déjà présente dans la liste ne redéclenche pas l'automatisation. Pour tester, utiliser une adresse nouvelle (par exemple avec `+test`).
 
 ## Publicité Meta (via Adspirer, offre gratuite de 15 actions par mois)
