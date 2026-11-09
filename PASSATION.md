@@ -78,7 +78,16 @@ Dernière mise à jour : 25/10/2026.
 - **Cause** : la routine cloud préparait les posts mais ne pouvait pas les publier, faute d'accès à Chrome.
 - **Pour vérifier ce qui est publié** : ouvrir https://business.facebook.com/latest/posts/published_posts?asset_id=1239294215931177. Le profil public charge mal les posts.
 - **Depuis le 27/10** : une tâche planifiée tourne sur le PC de Stéphane, « Post Facebook du jour SecureGuide » (`post-facebook-secureguide`), tous les jours vers 7 h 45. Elle prépare le post, attend le « ok », puis publie via Claude in Chrome. L'application Claude doit être ouverte. La routine cloud `trig_01RX6XbETPZDWtRoLPqSm178` est désactivée.
-- **Piège Meta Business Suite** : sur Facebook, read_page, find et les captures échouent. Il faut piloter la page en JavaScript : un ClipboardEvent 'paste' dans le `[contenteditable]` pour le texte. L'ajout automatique du visuel n'est pas encore résolu ; en cas d'échec, Stéphane ajoute l'image et clique sur « Publier ».
+- **Piège Meta Business Suite** : sur Facebook, read_page, find et les captures échouent. Il faut piloter la page en JavaScript : un ClipboardEvent 'paste' dans le `[contenteditable]` pour le texte. L'outil `file_upload` ne marche pas sur Facebook, et la page bloque fetch, iframes et images extérieures.
+- **Visuel du post (résolu le 09/11)** :
+  1. Réduire le PNG (ffmpeg palettegen/paletteuse, 64 couleurs, environ 45 Ko).
+  2. Le servir en local avec un petit serveur Node.
+  3. Ouvrir une page locale qui lit l'image et redirige vers `business.facebook.com/latest/composer?asset_id=…#sgimg=<base64>`.
+  4. Dans l'éditeur, relire le fragment avec `performance.getEntriesByType('navigation')[0].name` et en faire un `File`.
+  5. Remplacer `HTMLInputElement.prototype.click` pour capturer l'input créé par « Ajouter une photo/vidéo ».
+  6. L'insérer dans le DOM à côté du bouton, lui donner le fichier (DataTransfer) et déclencher `change`. « 1080 x 1350 » s'affiche alors.
+- **Programmer un post** : cocher « Définir la date et l'heure ». Pour la date, focus sur l'input `jj/mm/aaaa`, puis taper au clavier et appuyer sur Entrée. Pour l'heure, focus sur les spinbuttons `heures` et `minutes`, puis taper au clavier.
+- **Posts du 09/11** : Engie publié le 09/11 vers 21 h 30, quiz IBAN programmé le 10/11 à 10 h.
 - **Visuel sous Windows** : `post.js` prend Chrome via `CHROME`, avec `PW_MODULE=playwright-core` et `NODE_PATH` pointant sur les outils.
 
 ## YouTube
@@ -106,7 +115,12 @@ Dernière mise à jour : 25/10/2026.
   - 31/10 : n°8, « Coucou maman » ;
   - 01/11 : n°6, LuxTrust ;
   - 02/11 : n°9, Booking et l'hôtel.
-- **Rythme demandé (27/10)** : un Short par jour à 17 h. Après le 2/11, il n'y a plus de Short prêt.
+- **Rythme demandé (27/10)** : un Short par jour à 17 h.
+- **Shorts alertes, version gratuite** (03/11) : invideo refuse désormais les générations gratuites (`free_generation_gate`). Voix Windows « Hortense » phrase par phrase et images reprises des Shorts précédents. Programmés à 17 h :
+  - 03/11 : n°11, le faux livreur (`011-faux-livreur.*`) ;
+  - 04/11 : n°12, les faux pompiers et le calendrier (`012-faux-pompiers-calendrier.*`).
+- **Style demandé (03/11)** : intro « Attention, voici une nouvelle arnaque… », outro différente à chaque Short.
+- **Piège à l'envoi** : si le script remplit le titre dès que le champ apparaît, YouTube l'écrase avec le nom du fichier et la vidéo reste en brouillon. Attendre 4 s, puis vérifier le titre et réessayer. Un brouillon se reprend avec « Modifier le brouillon ».
 - **Envoi depuis le PC** : `file_upload` est limité à 10 Mo et n'accepte que les fichiers du projet. Il faut donc ré-encoder en copie légère (ffmpeg, `-b:v 2000k`, environ 7 Mo) dans un dossier temporaire du projet, puis le supprimer après l'envoi. Le titre doit faire 100 caractères au plus, sinon « Suivant » reste grisé. Heure : `commitTimeOfDay(61200)` = 17:00. Passer à l'étape Visibilité avec `#next-button` (les badges d'étape ne marchent pas pendant le traitement). Le script finit par recharger la liste, et le journal se lit dans `localStorage.sgLog`.
 
 ## Tâches planifiées (elles tournent dans le cloud, indépendamment des conversations)

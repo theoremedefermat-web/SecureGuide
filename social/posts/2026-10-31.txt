@@ -1,0 +1,16 @@
+🖥️ Le bon réflexe du samedi : votre ordinateur fait des choses bizarres ?
+
+Un ralentissement ou un blocage anormal, des fenêtres ou des messages d'erreur qui s'affichent sans raison, une alerte de l'antivirus… Ce sont des signes possibles d'un virus.
+
+✅ Le réflexe :
+1. Vérifiez que votre antivirus est à jour, puis lancez une analyse complète de l'appareil.
+2. Au moindre doute, changez vos mots de passe.
+3. Si ça continue, restaurez le système, ou réinstallez-le en dernier recours.
+(Source : fiche « Les virus informatiques », Cybermalveillance.gouv.fr)
+
+Pensez aussi à l'ordinateur de vos parents. 🙏
+
+👉 Pas d'antivirus ? Notre guide, avec un essai gratuit de 30 jours pour analyser votre PC :
+https://secureguide.fr/guides/meilleur-antivirus-windows-11/?utm_source=facebook&utm_medium=organic&utm_campaign=posts
+
+#antivirus #virus #cybersécurité #prévention
