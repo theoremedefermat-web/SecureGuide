@@ -1,0 +1,482 @@
+{
+ "out": "013-sms-controle-technique",
+ "dir": "s013",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.61,
+     "Attention,",
+     [
+      "Attention,"
+     ]
+    ],
+    [
+     0.75,
+     2.06,
+     "voici une nouvelle arnaque,",
+     [
+      "nouvelle",
+      "arnaque,"
+     ]
+    ],
+    [
+     2.2,
+     null,
+     "qui vise les automobilistes.",
+     [
+      "automobilistes."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.42,
+     "Vous recevez un SMS.",
+     [
+      "SMS."
+     ]
+    ],
+    [
+     1.7,
+     3.63,
+     "« Votre contrôle technique a expiré. »",
+     [
+      "expiré."
+     ]
+    ],
+    [
+     3.77,
+     null,
+     "« Régularisez sous 48 h. »",
+     [
+      "48",
+      "h."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.77,
+     "Le message cite votre vraie plaque.",
+     [
+      "vraie",
+      "plaque."
+     ]
+    ],
+    [
+     2.05,
+     null,
+     "Et votre nom.",
+     [
+      "nom."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.61,
+     "Le site de rendez-vous Auto-Planning a été piraté.",
+     [
+      "piraté."
+     ]
+    ],
+    [
+     2.89,
+     null,
+     "Les pirates revendiquent 18 millions de personnes.",
+     [
+      "18",
+      "millions"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.83,
+     "Le lien mène à un faux site de paiement.",
+     [
+      "faux"
+     ]
+    ],
+    [
+     2.11,
+     null,
+     "Il vole votre carte bancaire.",
+     [
+      "carte",
+      "bancaire."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     3.41,
+     "un SMS ne réclame jamais une amende.",
+     [
+      "jamais"
+     ]
+    ],
+    [
+     3.69,
+     null,
+     "Vérifiez la date de votre dernier contrôle.",
+     [
+      "date"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.58,
+     "Envoyez cette vidéo à quelqu’un qui a une voiture.",
+     [
+      "voiture."
+     ]
+    ],
+    [
+     2.86,
+     null,
+     "Le guide complet est sur secureguide.fr.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ NOUVELLE ARNAQUE",
+   "sub": "France · nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.25
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "SMS · Contrôle technique",
+   "icon": "🚗",
+   "items": [
+    [
+     "in",
+     "Votre contrôle technique a expiré. Régularisez sous 48 h 👉 [lien]",
+     1.7
+    ]
+   ],
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.55,
+    0.5,
+    1.7
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "🚘 VOTRE VRAIE PLAQUE",
+   "sub": "et votre vrai nom",
+   "s": 3,
+   "o": 0.05,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "PIRATAGE AUTO-PLANNING",
+   "sub": "450 centres · JeChange, oct. 2026",
+   "s": 4,
+   "o": 0.05,
+   "es": 4,
+   "eo": 2.89
+  },
+  {
+   "type": "counter",
+   "value": 18,
+   "suffix": " millions",
+   "label": "DE PERSONNES REVENDIQUÉES",
+   "count": 0.8,
+   "s": 4,
+   "o": 2.89,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "FAUX<br>PAIEMENT",
+   "sub": "votre carte est volée",
+   "s": 5,
+   "o": 2.11,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "PAS PAR SMS",
+   "bigSize": 110,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Un SMS ne réclame jamais une amende",
+     1.33
+    ],
+    [
+     "✓",
+     "Vérifiez la date de votre dernier contrôle",
+     3.79
+    ],
+    [
+     "✓",
+     "Amende ? Uniquement sur amendes.gouv.fr",
+     5.09
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.81
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 1.7,
+   "sfx": "msg"
+  },
+  {
+   "s": 4,
+   "o": 2.89,
+   "sfx": "tick"
+  },
+  {
+   "s": 4,
+   "o": 3.6900000000000004,
+   "sfx": "impact",
+   "shake": [
+    0.4,
+    16
+   ]
+  },
+  {
+   "s": 5,
+   "o": 2.11,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 3.79,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.7600000000000002,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   4,
+   -0.05,
+   5,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Envoyez-la à un automobiliste.",
+  "offset": 2.81,
+  "sentence": 7
+ }
+}

@@ -1,0 +1,449 @@
+{
+ "out": "014-faux-agent-luxtrust-carte",
+ "dir": "s014",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.98,
+     "Voici une arnaque",
+     [
+      "arnaque"
+     ]
+    ],
+    [
+     1.12,
+     null,
+     "qui a piégé deux hommes au Luxembourg.",
+     [
+      "deux",
+      "hommes"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.85,
+     "Un « agent LuxTrust » vous appelle.",
+     [
+      "LuxTrust"
+     ]
+    ],
+    [
+     2.13,
+     null,
+     "Il parle d’une opération suspecte.",
+     [
+      "suspecte."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.26,
+     "Il vous fait valider des demandes dans l’application.",
+     [
+      "valider"
+     ]
+    ],
+    [
+     2.54,
+     null,
+     "Et les escrocs font des virements.",
+     [
+      "virements."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.62,
+     "Puis un faux agent sonne chez vous.",
+     [
+      "faux",
+      "agent"
+     ]
+    ],
+    [
+     1.9,
+     null,
+     "Il vient chercher votre carte, « pour la détruire ».",
+     [
+      "carte,"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     null,
+     "En fait, il retire de l’argent avec.",
+     [
+      "retire"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     3.18,
+     "personne ne vient chercher votre carte.",
+     [
+      "personne"
+     ]
+    ],
+    [
+     3.46,
+     null,
+     "Et ne validez rien que vous n’avez pas lancé.",
+     [
+      "rien"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.04,
+     "Dites-le à vos parents.",
+     [
+      "parents."
+     ]
+    ],
+    [
+     1.32,
+     null,
+     "Toutes nos alertes sont sur secureguide.fr.",
+     [
+      "alertes"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ ARNAQUE EN COURS",
+   "sub": "Luxembourg · 4 nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "phone",
+   "name": "« Agent LuxTrust »",
+   "sub": "Opération suspecte",
+   "flip": 2.13,
+   "s": 2,
+   "o": 0.05,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.7
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "confirm",
+   "title": "LuxTrust",
+   "sub": "Confirmer l’opération ?",
+   "btn": "Valider",
+   "presses": [
+    1,
+    1.6,
+    2.2
+   ],
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "🚪 UN FAUX AGENT",
+   "sub": "vient chercher la carte",
+   "s": 4,
+   "o": 0.05,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.1
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "ARGENT<br>RETIRÉ",
+   "sub": "Police grand-ducale · L'essentiel",
+   "s": 5,
+   "o": 0.3,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "PERSONNE",
+   "bigSize": 130,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Personne ne vient chercher votre carte",
+     1.33
+    ],
+    [
+     "✗",
+     "Ne validez rien que vous n’avez pas lancé",
+     3.56
+    ],
+    [
+     "✓",
+     "Victime ? Carte : Worldline 49 10 10",
+     4.859999999999999
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 1.27
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "ring"
+  },
+  {
+   "s": 3,
+   "o": 1,
+   "sfx": "tick"
+  },
+  {
+   "s": 3,
+   "o": 1.6,
+   "sfx": "tick"
+  },
+  {
+   "s": 3,
+   "o": 2.2,
+   "sfx": "tick"
+  },
+  {
+   "s": 4,
+   "o": 0.05,
+   "sfx": "dingdong"
+  },
+  {
+   "s": 5,
+   "o": 0.3,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 3.56,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 1.22,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   5,
+   -0.05,
+   6,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Dites-le à vos parents.",
+  "offset": 1.27,
+  "sentence": 7
+ }
+}

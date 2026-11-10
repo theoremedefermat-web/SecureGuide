@@ -1,0 +1,473 @@
+{
+ "out": "015-money-mule",
+ "dir": "s015",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.98,
+     "Voici une arnaque",
+     [
+      "arnaque"
+     ]
+    ],
+    [
+     1.12,
+     null,
+     "qui peut vous faire arrêter.",
+     [
+      "arrêter."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.74,
+     "On vous propose de l’argent facile.",
+     [
+      "facile."
+     ]
+    ],
+    [
+     2.02,
+     4,
+     "Recevoir un virement sur votre compte.",
+     [
+      "virement"
+     ]
+    ],
+    [
+     4.28,
+     null,
+     "Puis le renvoyer ailleurs, contre une commission.",
+     [
+      "commission."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.46,
+     "Mais cet argent a été volé.",
+     [
+      "volé."
+     ]
+    ],
+    [
+     1.74,
+     null,
+     "À des victimes d’hameçonnage.",
+     [
+      "victimes"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     null,
+     "En prêtant votre compte, vous aidez à le blanchir.",
+     [
+      "blanchir."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.65,
+     "Au Luxembourg, la police a arrêté une femme.",
+     [
+      "arrêté"
+     ]
+    ],
+    [
+     2.93,
+     null,
+     "Elle avait prêté son compte.",
+     [
+      "prêté"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     3.58,
+     "ne prêtez jamais votre compte ni votre carte.",
+     [
+      "jamais"
+     ]
+    ],
+    [
+     3.86,
+     null,
+     "Même à un proche, même pour un job.",
+     [
+      "proche,",
+      "job."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.2,
+     "Montrez cette vidéo à un jeune autour de vous.",
+     [
+      "jeune"
+     ]
+    ],
+    [
+     2.48,
+     null,
+     "Et suivez nos alertes sur secureguide.fr.",
+     [
+      "alertes"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ ARGENT FACILE ?",
+   "sub": "Luxembourg · nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.2
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "Offre de « job »",
+   "icon": "💸",
+   "items": [
+    [
+     "in",
+     "Tu reçois un virement, tu le renvoies, tu gardes une commission 😉",
+     0.3
+    ],
+    [
+     "out",
+     "C’est légal ?",
+     4.28
+    ],
+    [
+     "in",
+     "Bien sûr, c’est rapide 👍",
+     5.180000000000001,
+     true
+    ]
+   ],
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.3
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "ARGENT<br>VOLÉ",
+   "sub": "à des victimes de phishing",
+   "s": 3,
+   "o": 0.2,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.6,
+    0.45,
+    1.8
+   ],
+   "move": "in",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "🔁 MULE FINANCIÈRE",
+   "sub": "vous blanchissez sans le savoir",
+   "s": 4,
+   "o": 0.05,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "POLICE GRAND-DUCALE",
+   "sub": "arrestation · L'essentiel, nov. 2026",
+   "s": 5,
+   "o": 0.05,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "JAMAIS",
+   "bigSize": 150,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Ne prêtez jamais votre compte",
+     1.33
+    ],
+    [
+     "✗",
+     "Ni votre carte, même à un proche",
+     3.96
+    ],
+    [
+     "✓",
+     "Un doute ? Appelez votre banque",
+     5.26
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.43
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.3,
+   "sfx": "msg"
+  },
+  {
+   "s": 2,
+   "o": 4.28,
+   "sfx": "msg"
+  },
+  {
+   "s": 2,
+   "o": 5.180000000000001,
+   "sfx": "msg"
+  },
+  {
+   "s": 3,
+   "o": 0.2,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "boom",
+   "flash": "#000"
+  },
+  {
+   "s": 5,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 3.96,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.3800000000000003,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   5,
+   -0.05,
+   6,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Montrez-la à un jeune.",
+  "offset": 2.43,
+  "sentence": 7
+ }
+}

@@ -87,7 +87,8 @@ Dernière mise à jour : 25/10/2026.
   5. Remplacer `HTMLInputElement.prototype.click` pour capturer l'input créé par « Ajouter une photo/vidéo ».
   6. L'insérer dans le DOM à côté du bouton, lui donner le fichier (DataTransfer) et déclencher `change`. « 1080 x 1350 » s'affiche alors.
 - **Programmer un post** : cocher « Définir la date et l'heure ». Pour la date, focus sur l'input `jj/mm/aaaa`, puis taper au clavier et appuyer sur Entrée. Pour l'heure, focus sur les spinbuttons `heures` et `minutes`, puis taper au clavier.
-- **Posts du 09/11** : Engie publié le 09/11 vers 21 h 30, quiz IBAN programmé le 10/11 à 10 h.
+- **Posts du 09/11** : Engie publié le 09/11 vers 21 h 30, quiz IBAN publié le 10/11 à 10 h.
+- **Programmés le 10/11 (à 10 h)** : 11/11 SMS contrôle technique, 12/11 faux agent LuxTrust, 13/11 fuite Pluxee, 14/11 quiz « prêter son compte ». Après le 14/11, rien n’est prêt.
 - **Visuel sous Windows** : `post.js` prend Chrome via `CHROME`, avec `PW_MODULE=playwright-core` et `NODE_PATH` pointant sur les outils.
 
 ## YouTube
@@ -120,6 +121,8 @@ Dernière mise à jour : 25/10/2026.
   - 03/11 : n°11, le faux livreur (`011-faux-livreur.*`) ;
   - 04/11 : n°12, les faux pompiers et le calendrier (`012-faux-pompiers-calendrier.*`).
 - **Style demandé (03/11)** : intro « Attention, voici une nouvelle arnaque… », outro différente à chaque Short.
+- **Shorts n°13 à 17** (tirés du Radar n°4, specs générées par `specs5.js`, programmés le 10/11 à 17 h) : 11/11 SMS contrôle technique, 12/11 faux agent LuxTrust et la carte, 13/11 mule financière, 14/11 fuite Pluxee, 15/11 faux « service fraude » Arkéa. Après le 15/11, rien n’est prêt.
+- **Envoi en série** : la fonction d’envoi est gardée dans `localStorage.sgRun` sur studio.youtube.com. On l’arme avant `file_upload`, elle attend le champ titre puis 5 s, vérifie le titre, programme et recharge la liste. Le journal se lit dans un second onglet Studio (`localStorage.sgLog`), car l’onglet d’envoi est bloqué par vidIQ.
 - **Piège à l'envoi** : si le script remplit le titre dès que le champ apparaît, YouTube l'écrase avec le nom du fichier et la vidéo reste en brouillon. Attendre 4 s, puis vérifier le titre et réessayer. Un brouillon se reprend avec « Modifier le brouillon ».
 - **Envoi depuis le PC** : `file_upload` est limité à 10 Mo et n'accepte que les fichiers du projet. Il faut donc ré-encoder en copie légère (ffmpeg, `-b:v 2000k`, environ 7 Mo) dans un dossier temporaire du projet, puis le supprimer après l'envoi. Le titre doit faire 100 caractères au plus, sinon « Suivant » reste grisé. Heure : `commitTimeOfDay(61200)` = 17:00. Passer à l'étape Visibilité avec `#next-button` (les badges d'étape ne marchent pas pendant le traitement). Le script finit par recharger la liste, et le journal se lit dans `localStorage.sgLog`.
 

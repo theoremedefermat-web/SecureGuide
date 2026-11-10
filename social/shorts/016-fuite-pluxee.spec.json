@@ -1,0 +1,440 @@
+{
+ "out": "016-fuite-pluxee",
+ "dir": "s016",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     1.58,
+     "Voici une arnaque à prévoir,",
+     [
+      "prévoir,"
+     ]
+    ],
+    [
+     1.72,
+     null,
+     "si vous avez des chèques-repas Pluxee.",
+     [
+      "chèques-repas"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.34,
+     "Pluxee Belgique a prévenu ses utilisateurs.",
+     [
+      "prévenu"
+     ]
+    ],
+    [
+     2.62,
+     null,
+     "Des inconnus ont peut-être eu accès à leurs données.",
+     [
+      "données."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     null,
+     "Nom, email, téléphone.",
+     [
+      "Nom,",
+      "email,",
+      "téléphone."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.3,
+     "De quoi vous envoyer un faux message Pluxee.",
+     [
+      "faux"
+     ]
+    ],
+    [
+     2.58,
+     null,
+     "Avec un lien vers une fausse page de connexion.",
+     [
+      "fausse"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     null,
+     "Ou vous appeler, en vous citant par votre nom.",
+     [
+      "nom."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     2.62,
+     "ne cliquez sur aucun lien.",
+     [
+      "aucun"
+     ]
+    ],
+    [
+     2.9,
+     null,
+     "Ouvrez vous-même l’application.",
+     [
+      "vous-même"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.75,
+     "Vos collègues ont aussi des chèques-repas ?",
+     [
+      "collègues"
+     ]
+    ],
+    [
+     1.89,
+     3.15,
+     "Partagez-leur cette vidéo.",
+     [
+      "Partagez-leur"
+     ]
+    ],
+    [
+     3.43,
+     null,
+     "Le guide est sur secureguide.fr.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ FUITE DE DONNÉES",
+   "sub": "Pluxee Belgique · 4 nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.2
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "📧 EMAIL DE PLUXEE",
+   "sub": "accès non autorisé possible",
+   "s": 2,
+   "o": 0.05,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.4,
+    1.7
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "DONNÉES<br>EXPOSÉES",
+   "sub": "nom · email · téléphone",
+   "s": 3,
+   "o": 0.1,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "« Pluxee »",
+   "icon": "🍽",
+   "items": [
+    [
+     "in",
+     "Votre carte va être bloquée. Reconnectez-vous ici 👉 [lien]",
+     0.3,
+     true
+    ]
+   ],
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.2
+   ],
+   "move": "in",
+   "tint": "dark",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "phone",
+   "name": "« Service Pluxee »",
+   "sub": "Il connaît votre nom",
+   "flip": 1.4,
+   "s": 5,
+   "o": 0.05,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "AUCUN LIEN",
+   "bigSize": 110,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Ne cliquez sur aucun lien",
+     1.33
+    ],
+    [
+     "✓",
+     "Ouvrez vous-même l’application",
+     3
+    ],
+    [
+     "✓",
+     "Suspect ? suspect@safeonweb.be",
+     4.3
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 1.8399999999999999
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 0.1,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4
+  },
+  {
+   "s": 4,
+   "o": 0.3,
+   "sfx": "msg"
+  },
+  {
+   "s": 5,
+   "o": 0.05,
+   "sfx": "ring"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 3,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 1.7899999999999998,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Partagez-la à vos collègues.",
+  "offset": 1.8399999999999999,
+  "sentence": 7
+ }
+}

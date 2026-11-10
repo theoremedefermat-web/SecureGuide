@@ -1,0 +1,442 @@
+{
+ "out": "017-faux-service-fraude-arkea",
+ "dir": "s017",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.98,
+     "Voici une arnaque",
+     [
+      "arnaque"
+     ]
+    ],
+    [
+     1.12,
+     null,
+     "qui profite d’une cyberattaque contre une banque.",
+     [
+      "cyberattaque"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     3,
+     "Le Crédit Mutuel Arkéa, maison mère de Fortuneo,",
+     [
+      "Arkéa,",
+      "Fortuneo,"
+     ]
+    ],
+    [
+     3.14,
+     null,
+     "a confirmé une cyberattaque.",
+     [
+      "cyberattaque."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.28,
+     "Les escrocs en profitent.",
+     [
+      "escrocs"
+     ]
+    ],
+    [
+     1.56,
+     null,
+     "Un faux « service fraude » vous appelle au sujet de l’attaque.",
+     [
+      "faux"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.98,
+     "Il vous demande de valider une opération.",
+     [
+      "valider"
+     ]
+    ],
+    [
+     2.26,
+     null,
+     "Ou de donner un code reçu par SMS.",
+     [
+      "code"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.29,
+     "Selon la banque, ses clients ne perdent rien.",
+     [
+      "rien."
+     ]
+    ],
+    [
+     2.57,
+     null,
+     "Le vrai danger, c’est ce faux appel.",
+     [
+      "faux",
+      "appel."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     3.67,
+     "ne donnez jamais un code reçu par SMS.",
+     [
+      "jamais"
+     ]
+    ],
+    [
+     3.95,
+     null,
+     "Raccrochez, et rappelez votre conseiller.",
+     [
+      "Raccrochez,"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.76,
+     "Une question ? Posez-la en commentaire.",
+     [
+      "commentaire."
+     ]
+    ],
+    [
+     3.04,
+     null,
+     "Notre kit gratuit est sur secureguide.fr.",
+     [
+      "kit",
+      "gratuit"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ CYBERATTAQUE BANCAIRE",
+   "sub": "Crédit Mutuel Arkéa · nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.1
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "CRÉDIT MUTUEL ARKÉA",
+   "sub": "et Fortuneo · ToutSurMesFinances",
+   "s": 2,
+   "o": 0.05,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "phone",
+   "name": "« Service fraude »",
+   "sub": "Votre banque",
+   "flip": 2.16,
+   "s": 3,
+   "o": 1.56,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.7
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "SMS · Votre banque",
+   "icon": "🔐",
+   "items": [
+    [
+     "in",
+     "Code de validation : 482 913. Ne le communiquez à personne.",
+     2.26
+    ]
+   ],
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.1
+   ],
+   "move": "in",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "FAUX<br>APPEL",
+   "sub": "la banque ne demande jamais ce code",
+   "s": 5,
+   "o": 2.57,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "RACCROCHEZ",
+   "bigSize": 92,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Ne donnez jamais un code reçu par SMS",
+     1.33
+    ],
+    [
+     "✓",
+     "Raccrochez",
+     4.05
+    ],
+    [
+     "✓",
+     "Rappelez vous-même votre conseiller",
+     5.35
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.99
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 1.56,
+   "sfx": "ring"
+  },
+  {
+   "s": 4,
+   "o": 2.26,
+   "sfx": "msg"
+  },
+  {
+   "s": 5,
+   "o": 2.57,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 4.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.9400000000000004,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Une question ? En commentaire.",
+  "offset": 2.99,
+  "sentence": 7
+ }
+}
