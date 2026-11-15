@@ -1,0 +1,5 @@
+<!doctype html><meta charset="utf-8"><body>préparation…<script>
+const f=new URLSearchParams(location.search).get('f');
+fetch(f).then(r=>r.blob()).then(b=>new Promise(res=>{const fr=new FileReader();fr.onload=()=>res(fr.result.split(',')[1]);fr.readAsDataURL(b);})).then(b64=>{
+location.href='https://business.facebook.com/latest/composer?asset_id=1239294215931177#sgimg='+b64;});
+</script>

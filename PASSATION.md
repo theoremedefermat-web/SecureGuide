@@ -1,7 +1,7 @@
 # Passation SecureGuide.fr
 
 À lire en premier par toute nouvelle conversation Claude qui reprend le projet.
-Dernière mise à jour : 25/10/2026.
+Dernière mise à jour : 15/11/2026.
 
 **Aucun mot de passe, jeton ni clé API ne figure ici, et il ne faut jamais en ajouter.** Les accès passent par les connecteurs de Stéphane (Brevo, Adspirer, invideo, Google Drive, Canva) et par son navigateur Chrome, déjà connecté à Facebook, Brevo, YouTube et Etsy.
 
@@ -126,11 +126,28 @@ Dernière mise à jour : 25/10/2026.
 - **Piège à l'envoi** : si le script remplit le titre dès que le champ apparaît, YouTube l'écrase avec le nom du fichier et la vidéo reste en brouillon. Attendre 4 s, puis vérifier le titre et réessayer. Un brouillon se reprend avec « Modifier le brouillon ».
 - **Envoi depuis le PC** : `file_upload` est limité à 10 Mo et n'accepte que les fichiers du projet. Il faut donc ré-encoder en copie légère (ffmpeg, `-b:v 2000k`, environ 7 Mo) dans un dossier temporaire du projet, puis le supprimer après l'envoi. Le titre doit faire 100 caractères au plus, sinon « Suivant » reste grisé. Heure : `commitTimeOfDay(61200)` = 17:00. Passer à l'étape Visibilité avec `#next-button` (les badges d'étape ne marchent pas pendant le traitement). Le script finit par recharger la liste, et le journal se lit dans `localStorage.sgLog`.
 
+## Cycle hebdomadaire (depuis le 15/11)
+
+Une seule validation de Stéphane par semaine, au lieu d’un « ok » par contenu.
+
+| Quand | Quoi | Où |
+|---|---|---|
+| dimanche 6 h 50 | Radar, 2 articles, brouillon de newsletter | routine cloud `trig_011UUSQCs3zYchYQWJyp8uan` |
+| dimanche 14 h | pack de la semaine : 5 Shorts, 5 posts Facebook, newsletter. Envoi à Stéphane, un seul « ok », puis tout est programmé (Shorts à 17 h, posts à 10 h, du lundi au vendredi) et la newsletter part | tâche locale `pack-hebdo-secureguide` |
+| lundi 10 h | bilan chiffré d’une page, en lecture seule, écrit dans `social/bilans/` | tâche locale `analyse-rendements-secureguide` |
+
+- **Tâches locales** : elles tournent sur le PC, application Claude ouverte, et Chrome ouvert pour YouTube, Facebook et Brevo.
+- **Tâche quotidienne `post-facebook-secureguide`** : désactivée le 15/11 (elle n’avait rien publié depuis le 27/10).
+- **Outils** : les scripts de fabrication sont dans `social/outils/` (`voix.js`, `tts2.ps1`, `specs5.js` comme modèle de spec, `fb-serveur.js` et `fb-go.html` pour l’image Facebook). ffmpeg et playwright-core restent dans `C:UsersNoahAppDataLocalTempsgr` (`bin`, `node_modules`) : ce dossier temporaire peut disparaître, il faudra alors les réinstaller.
+- **Ce qui marche (vues YouTube au 15/11)** : les alertes à chaud avec une marque connue dans le titre. Pluxee 1 136 vues, faux employé LuxTrust 343, faux livreur 206 ; les sujets généraux restent sous 35 vues.
+- **Newsletters** : les Radar n°3, 4 et 5 sont restés en brouillon ; seul le n°2 a été envoyé. L’envoi fait maintenant partie du pack du dimanche.
+- **Revenus** : ventes Etsy et commissions d’affiliation non suivies au 15/11 ; Stéphane doit les communiquer.
+
 ## Tâches planifiées (elles tournent dans le cloud, indépendamment des conversations)
 
 | Tâche | Quand | Rôle |
 |---|---|---|
-| Post Facebook du jour SecureGuide (tâche locale `post-facebook-secureguide`, sur le PC) | tous les jours vers 7 h 45 | prépare le post, attend le « ok », puis publie via Chrome (l'ancienne routine cloud est désactivée) |
+| Post Facebook du jour SecureGuide (tâche locale `post-facebook-secureguide`) | désactivée le 15/11 | remplacée par le pack du dimanche |
 | Radar des arnaques hebdo (`trig_011UUSQCs3zYchYQWJyp8uan`) | dimanche à 6 h 50, heure de Bruxelles | veille, Radar, 2 articles, publication, newsletter, bilan |
 | Bilan J+5 campagne Meta (`trig_013CNpdjirpvZHApUnf66LWa`) | 25/10 à 17 h, heure de Bruxelles | compare A et B, coupe la plus chère, envoie le bilan |
 
