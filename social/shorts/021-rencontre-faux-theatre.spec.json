@@ -1,0 +1,471 @@
+{
+ "out": "021-rencontre-faux-theatre",
+ "dir": "s021",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.98,
+     "Voici une arnaque",
+     [
+      "arnaque"
+     ]
+    ],
+    [
+     1.12,
+     null,
+     "qui commence sur une appli de rencontre.",
+     [
+      "rencontre."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.27,
+     "Une jeune femme vous écrit.",
+     []
+    ],
+    [
+     1.55,
+     null,
+     "Puis elle passe sur WhatsApp.",
+     [
+      "WhatsApp."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.22,
+     "Elle vous invite au théâtre.",
+     [
+      "théâtre."
+     ]
+    ],
+    [
+     1.5,
+     2.54,
+     "Et vous envoie un lien,",
+     [
+      "lien,"
+     ]
+    ],
+    [
+     2.68,
+     null,
+     "pour acheter la place à côté de la sienne.",
+     [
+      "place"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.1,
+     "70 €.",
+     [
+      "70",
+      "€."
+     ]
+    ],
+    [
+     1.38,
+     null,
+     "Mais la billetterie est fausse.",
+     [
+      "fausse."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.61,
+     "Selon la police du Luxembourg,",
+     [
+      "police"
+     ]
+    ],
+    [
+     1.75,
+     null,
+     "le site sert sans doute à voler votre carte.",
+     [
+      "carte."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     3.74,
+     "n’achetez rien via un lien envoyé par un inconnu.",
+     [
+      "rien",
+      "lien",
+      "inconnu."
+     ]
+    ],
+    [
+     4.02,
+     null,
+     "Proposez de vous retrouver sur place.",
+     [
+      "place."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.17,
+     "Un ami célibataire ?",
+     [
+      "célibataire"
+     ]
+    ],
+    [
+     1.31,
+     2.57,
+     "Envoyez-lui cette vidéo.",
+     []
+    ],
+    [
+     2.85,
+     null,
+     "Toutes nos alertes sont sur secureguide.fr.",
+     [
+      "alertes"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ APPLIS DE RENCONTRE",
+   "sub": "Luxembourg · nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.2
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "Nouveau match",
+   "icon": "💬",
+   "items": [
+    [
+     "in",
+     "Coucou 😊 on continue sur WhatsApp ?",
+     0.3
+    ]
+   ],
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "WhatsApp",
+   "icon": "🎭",
+   "items": [
+    [
+     "in",
+     "On va au théâtre ? 🎭",
+     0.2
+    ],
+    [
+     "in",
+     "Prends la place à côté de la mienne 👉 [lien]",
+     1.5,
+     true
+    ]
+   ],
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "FAUSSE<br>BILLETTERIE",
+   "sub": "la pièce n’existe pas",
+   "s": 4,
+   "o": 1.38,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.55,
+    0.45,
+    1.6
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "POLICE GRAND-DUCALE",
+   "sub": "via L'essentiel, nov. 2026",
+   "s": 5,
+   "o": 0.05,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "PAS DE LIEN",
+   "bigSize": 110,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "N’achetez rien via un lien reçu",
+     1.33
+    ],
+    [
+     "✓",
+     "Proposez de vous retrouver sur place",
+     4.119999999999999
+    ],
+    [
+     "✓",
+     "Victime ? Bloquez votre carte",
+     5.42
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.8000000000000003
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.3,
+   "sfx": "msg"
+  },
+  {
+   "s": 3,
+   "o": 0.2,
+   "sfx": "msg"
+  },
+  {
+   "s": 3,
+   "o": 1.5,
+   "sfx": "msg"
+  },
+  {
+   "s": 4,
+   "o": 1.38,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 4.119999999999999,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.7500000000000004,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Envoyez-la à un ami célibataire.",
+  "offset": 2.8000000000000003,
+  "sentence": 7
+ }
+}

@@ -1,0 +1,471 @@
+{
+ "out": "018-fusion-free-faux-messages",
+ "dir": "s018",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.61,
+     "Attention,",
+     [
+      "Attention,"
+     ]
+    ],
+    [
+     0.75,
+     2.33,
+     "voici une arnaque à prévoir,",
+     []
+    ],
+    [
+     2.47,
+     null,
+     "si vous êtes abonné chez Free.",
+     [
+      "Free."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.46,
+     "Free Mobile rejoint Free le 1er décembre.",
+     [
+      "Free",
+      "Free"
+     ]
+    ],
+    [
+     2.74,
+     null,
+     "15,8 millions d’abonnés ont été prévenus.",
+     [
+      "prévenus."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.53,
+     "Les escrocs peuvent en profiter.",
+     [
+      "escrocs"
+     ]
+    ],
+    [
+     1.81,
+     null,
+     "Avec un faux email ou SMS, qui parle de la fusion.",
+     [
+      "faux"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.18,
+     "Il vous demande de payer.",
+     [
+      "payer."
+     ]
+    ],
+    [
+     1.46,
+     null,
+     "Ou de mettre à jour votre carte.",
+     [
+      "carte."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.53,
+     "Le lien mène à une fausse page.",
+     [
+      "fausse"
+     ]
+    ],
+    [
+     1.81,
+     null,
+     "Elle vole votre carte bancaire.",
+     [
+      "carte",
+      "bancaire."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     2.53,
+     "vous n’avez rien à faire.",
+     [
+      "rien"
+     ]
+    ],
+    [
+     2.81,
+     null,
+     "Free ne demande jamais votre carte par email ou SMS.",
+     [
+      "Free",
+      "jamais",
+      "carte"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     0.93,
+     "Vous êtes chez Free ?",
+     [
+      "Free"
+     ]
+    ],
+    [
+     1.07,
+     2.28,
+     "Prévenez votre famille.",
+     [
+      "famille."
+     ]
+    ],
+    [
+     2.56,
+     null,
+     "Le Radar complet est sur secureguide.fr.",
+     [
+      "Radar"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ ABONNÉS FREE",
+   "sub": "fusion du 1er décembre 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.1
+   ],
+   "move": "out",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "FREE MOBILE → FREE",
+   "sub": "le 1er décembre · Tom's Guide",
+   "s": 2,
+   "o": 0.05,
+   "es": 2,
+   "eo": 2.74
+  },
+  {
+   "type": "stamp",
+   "text": "15,8<br>MILLIONS",
+   "sub": "d'abonnés prévenus",
+   "s": 2,
+   "o": 2.74,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.25
+   ],
+   "move": "in",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "« Free »",
+   "icon": "📩",
+   "items": [
+    [
+     "in",
+     "Suite à la fusion Free, régularisez votre abonnement 👉 [lien]",
+     1.81,
+     true
+    ]
+   ],
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.55,
+    0.5,
+    1.7
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "💳 « VOTRE CARTE »",
+   "sub": "à mettre à jour, dit le message",
+   "s": 4,
+   "o": 0.05,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "FAUSSE<br>PAGE",
+   "sub": "votre carte est volée",
+   "s": 5,
+   "o": 1.81,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "RIEN À FAIRE",
+   "bigSize": 92,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✓",
+     "Forfaits et prix ne changent pas",
+     1.33
+    ],
+    [
+     "✗",
+     "Free ne demande jamais votre carte par message",
+     2.91
+    ],
+    [
+     "✓",
+     "Un doute ? Espace abonné ou 3244",
+     4.21
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.5100000000000002
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 2,
+   "o": 2.74,
+   "sfx": "tick"
+  },
+  {
+   "s": 3,
+   "o": 1.81,
+   "sfx": "msg"
+  },
+  {
+   "s": 4,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 5,
+   "o": 1.81,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 2.91,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.4600000000000004,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Prévenez votre famille.",
+  "offset": 2.5100000000000002,
+  "sentence": 7
+ }
+}

@@ -1,0 +1,10 @@
+TITRE : Panne Outlook : ce faux email « restaurez vos messages » vole votre mot de passe #arnaque #shorts
+
+DESCRIPTION :
+Après la panne d'Outlook et de Microsoft 365 du 12 novembre, un faux email « Outage » circule : des messages bloqués pendant la panne seraient supprimés sous 24 heures si vous ne les « restaurez » pas. Le bouton mène à un faux site qui vole votre mot de passe. Microsoft a repéré cette campagne, qui vise pour l'instant des organisations aux États-Unis. (Source : Clubic, 14 novembre 2026)
+
+✅ Le réflexe : ne cliquez pas. Microsoft n'a jamais prévu de supprimer vos emails en 24 heures. Vérifiez l'état du service sur status.cloud.microsoft. Vous avez cliqué ? Changez votre mot de passe.
+
+📄 Compte piraté, que faire ? https://secureguide.fr/guides/compte-pirate-que-faire/?utm_source=youtube&utm_medium=short&utm_campaign=alertes
+
+#arnaque #outlook #microsoft #phishing #prévention

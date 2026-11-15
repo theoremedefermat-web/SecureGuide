@@ -1,0 +1,21 @@
+❓ Vrai ou faux : « Après une panne d'Outlook, il faut restaurer ses emails sous 24 heures, sinon ils sont supprimés. »
+
+Répondez en commentaire avant de lire la suite. 👇
+
+.
+.
+.
+
+❌ FAUX. Après la panne d'Outlook et de Microsoft 365 du 12 novembre, un faux email « Outage » circule : des messages bloqués pendant la panne seraient supprimés sous 24 heures si vous ne les « restaurez » pas. Le bouton mène à un faux site qui vole votre mot de passe. Le mail cite même le vrai numéro d'incident de Microsoft.
+
+Microsoft a repéré cette campagne, qui vise pour l'instant des organisations aux États-Unis. (Source : Clubic, 14 novembre 2026)
+
+✅ Les réflexes :
+1. Ne cliquez pas : Microsoft n'a jamais prévu de supprimer vos emails en 24 heures.
+2. Vérifiez l'état du service sur status.cloud.microsoft, en tapant l'adresse vous-même.
+3. Au travail, transférez le mail à votre service informatique.
+4. Vous avez cliqué ? Changez votre mot de passe.
+
+👉 Compte piraté, que faire ? https://secureguide.fr/guides/compte-pirate-que-faire/?utm_source=facebook&utm_medium=organic&utm_campaign=posts
+
+#Outlook #Microsoft #phishing #arnaque

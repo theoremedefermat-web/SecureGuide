@@ -1,0 +1,451 @@
+{
+ "out": "022-panne-outlook-faux-email",
+ "dir": "s022",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.98,
+     "Voici une arnaque",
+     [
+      "arnaque"
+     ]
+    ],
+    [
+     1.12,
+     null,
+     "qui profite de la panne d’Outlook.",
+     [
+      "panne"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.37,
+     "Le 12 novembre, Outlook tombe en panne.",
+     [
+      "Outlook",
+      "panne."
+     ]
+    ],
+    [
+     2.65,
+     null,
+     "Depuis, un faux email circule.",
+     [
+      "faux"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.78,
+     "« Des messages bloqués pendant la panne",
+     [
+      "panne"
+     ]
+    ],
+    [
+     1.92,
+     null,
+     "seront supprimés sous 24 heures. »",
+     [
+      "supprimés",
+      "24"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.03,
+     "Le bouton « Restaurer » mène à un faux site.",
+     [
+      "Restaurer",
+      "faux"
+     ]
+    ],
+    [
+     2.31,
+     null,
+     "Il vole votre mot de passe.",
+     [
+      "mot",
+      "passe."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.13,
+     "Microsoft a repéré cette campagne.",
+     [
+      "Microsoft"
+     ]
+    ],
+    [
+     2.41,
+     null,
+     "Pour l’instant, elle vise des organisations aux États-Unis.",
+     [
+      "États-Unis."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     2.24,
+     "ne cliquez pas.",
+     [
+      "cliquez"
+     ]
+    ],
+    [
+     2.52,
+     null,
+     "Microsoft ne supprime pas vos emails en 24 heures.",
+     [
+      "Microsoft",
+      "24"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.44,
+     "Cette alerte vous a servi ?",
+     []
+    ],
+    [
+     1.58,
+     2.39,
+     "Laissez un pouce.",
+     [
+      "pouce."
+     ]
+    ],
+    [
+     2.67,
+     null,
+     "Notre kit gratuit est sur secureguide.fr.",
+     [
+      "kit",
+      "gratuit"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ PANNE OUTLOOK",
+   "sub": "faux emails · nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.1
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "📧 PANNE DU 12 NOV.",
+   "sub": "Outlook et Microsoft 365",
+   "s": 2,
+   "o": 0.05,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.45,
+    1.25
+   ],
+   "move": "in",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "chat",
+   "title": "« Outage »",
+   "icon": "📩",
+   "items": [
+    [
+     "in",
+     "Des messages retenus seront supprimés sous 24 h. [Restaurer]",
+     0.2,
+     true
+    ]
+   ],
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.6,
+    0.5,
+    1.4
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "FAUX<br>SITE",
+   "sub": "il vole votre mot de passe",
+   "s": 4,
+   "o": 2.31,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "ALERTE DE MICROSOFT",
+   "sub": "via Clubic, 14 nov. 2026",
+   "s": 5,
+   "o": 0.05,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "NE CLIQUEZ PAS",
+   "bigSize": 76,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Ne cliquez pas sur « Restaurer »",
+     1.33
+    ],
+    [
+     "✓",
+     "Vos emails ne seront pas supprimés",
+     2.62
+    ],
+    [
+     "✓",
+     "Déjà cliqué ? Changez votre mot de passe",
+     3.92
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.62
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 0.2,
+   "sfx": "msg"
+  },
+  {
+   "s": 4,
+   "o": 2.31,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 2.62,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.5700000000000003,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Un pouce si elle vous a servi.",
+  "offset": 2.62,
+  "sentence": 7
+ }
+}

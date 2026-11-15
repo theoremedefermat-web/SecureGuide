@@ -1,0 +1,471 @@
+{
+ "out": "019-faux-pv-qr-code",
+ "dir": "s019",
+ "label": "ALERTE ARNAQUE",
+ "speed": 1.04,
+ "sentences": [
+  {
+   "wav": "t1.wav",
+   "gap": 0.45,
+   "subs": [
+    [
+     0,
+     0.61,
+     "Attention,",
+     [
+      "Attention,"
+     ]
+    ],
+    [
+     0.75,
+     2.06,
+     "voici une nouvelle arnaque,",
+     [
+      "nouvelle"
+     ]
+    ],
+    [
+     2.2,
+     null,
+     "posée sur votre pare-brise.",
+     [
+      "pare-brise."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t2.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.43,
+     "Un papier sous l’essuie-glace.",
+     [
+      "papier"
+     ]
+    ],
+    [
+     1.71,
+     3.19,
+     "Avec le logo de la République,",
+     []
+    ],
+    [
+     3.33,
+     null,
+     "et un QR code.",
+     [
+      "QR",
+      "code."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t3.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.21,
+     "« Payez 35 € sous 48 heures. »",
+     [
+      "35",
+      "48"
+     ]
+    ],
+    [
+     2.35,
+     null,
+     "« Sinon, l’amende passe à 135 €. »",
+     [
+      "135"
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t4.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.37,
+     "Le QR code ouvre un faux site des amendes.",
+     [
+      "QR",
+      "code",
+      "faux"
+     ]
+    ],
+    [
+     2.65,
+     null,
+     "Vous y tapez votre numéro de carte.",
+     [
+      "carte."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t5.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     1.95,
+     "Les escrocs s’en servent pour des achats.",
+     [
+      "achats."
+     ]
+    ],
+    [
+     2.23,
+     null,
+     "Ou le revendent.",
+     [
+      "revendent."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t6.wav",
+   "gap": 0.6,
+   "subs": [
+    [
+     0,
+     0.95,
+     "Le réflexe :",
+     [
+      "réflexe"
+     ]
+    ],
+    [
+     1.23,
+     3.38,
+     "ne payez jamais avec ce QR code.",
+     [
+      "jamais",
+      "QR",
+      "code."
+     ]
+    ],
+    [
+     3.66,
+     null,
+     "Un vrai avis arrive par courrier.",
+     [
+      "courrier."
+     ]
+    ]
+   ]
+  },
+  {
+   "wav": "t7.wav",
+   "gap": 0.35,
+   "subs": [
+    [
+     0,
+     2.38,
+     "Enregistrez cette vidéo pour vous en souvenir.",
+     []
+    ],
+    [
+     2.66,
+     null,
+     "Le guide complet est sur secureguide.fr.",
+     [
+      "guide"
+     ]
+    ]
+   ]
+  }
+ ],
+ "images": [],
+ "scenes": [
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.35
+   ],
+   "move": "in",
+   "s": 1,
+   "o": 0,
+   "es": 2,
+   "eo": 0,
+   "tint": "red"
+  },
+  {
+   "type": "tag",
+   "text": "⚠ NOUVELLE ARNAQUE",
+   "sub": "France · 13 nov. 2026",
+   "s": 1,
+   "o": 0.05,
+   "es": 2,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.15
+   ],
+   "move": "in",
+   "s": 2,
+   "o": 0,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "tag",
+   "text": "🚗 SUR LE PARE-BRISE",
+   "sub": "logo officiel et QR code",
+   "s": 2,
+   "o": 0.05,
+   "es": 3,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img1.jpg",
+   "crop": [
+    0.55,
+    0.45,
+    1.6
+   ],
+   "move": "in",
+   "tint": "red",
+   "s": 3,
+   "o": 0,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "counter",
+   "value": 35,
+   "suffix": " €",
+   "label": "« SOUS 48 HEURES »",
+   "count": 0.5,
+   "s": 3,
+   "o": 0.1,
+   "es": 4,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img2.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "in",
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "confirm",
+   "title": "Paiement de l’amende",
+   "sub": "Numéro de carte · date · code",
+   "btn": "Payer 35 €",
+   "presses": [
+    3.25
+   ],
+   "s": 4,
+   "o": 0,
+   "es": 5,
+   "eo": 0
+  },
+  {
+   "type": "img",
+   "src": "img3.jpg",
+   "crop": [
+    0.5,
+    0.5,
+    1.05
+   ],
+   "move": "out",
+   "tint": "dark",
+   "s": 5,
+   "o": 0,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "stamp",
+   "text": "CARTE<br>VOLÉE",
+   "sub": "source : JeChange, nov. 2026",
+   "s": 5,
+   "o": 0.2,
+   "es": 6,
+   "eo": 0
+  },
+  {
+   "type": "rules",
+   "kicker": "LE RÉFLEXE",
+   "big": "JAMAIS",
+   "bigSize": 150,
+   "bigAt": 1.13,
+   "items": [
+    [
+     "✗",
+     "Ne payez jamais avec ce QR code",
+     1.33
+    ],
+    [
+     "✓",
+     "Un vrai avis arrive par courrier",
+     3.7600000000000002
+    ],
+    [
+     "✓",
+     "Paiement : amendes.gouv.fr seulement",
+     5.0600000000000005
+    ]
+   ],
+   "s": 6,
+   "o": 0,
+   "es": 7,
+   "eo": 2.6100000000000003
+  }
+ ],
+ "fx": [
+  {
+   "s": 1,
+   "o": 0,
+   "sfx": "boom",
+   "flash": "#fff"
+  },
+  {
+   "s": 1,
+   "o": 0.05,
+   "sfx": "glitch",
+   "glitch": 0.4,
+   "shake": [
+    0.35,
+    16
+   ]
+  },
+  {
+   "s": 2,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 3,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 4,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 5,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 2,
+   "o": 0.05,
+   "sfx": "pop"
+  },
+  {
+   "s": 3,
+   "o": 0.1,
+   "sfx": "tick"
+  },
+  {
+   "s": 3,
+   "o": 0.6,
+   "sfx": "impact",
+   "shake": [
+    0.4,
+    16
+   ]
+  },
+  {
+   "s": 4,
+   "o": 3.25,
+   "sfx": "tick"
+  },
+  {
+   "s": 5,
+   "o": 0.2,
+   "sfx": "impact",
+   "shake": [
+    0.55,
+    26
+   ],
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": -1.5,
+   "sfx": "riser"
+  },
+  {
+   "s": 6,
+   "o": -0.05,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  },
+  {
+   "s": 6,
+   "o": 1.13,
+   "sfx": "impact",
+   "shake": [
+    0.45,
+    20
+   ]
+  },
+  {
+   "s": 6,
+   "o": 1.33,
+   "sfx": "pop"
+  },
+  {
+   "s": 6,
+   "o": 3.7600000000000002,
+   "sfx": "pop"
+  },
+  {
+   "s": 7,
+   "o": 2.5600000000000005,
+   "sfx": "whoosh",
+   "flash": "#fff"
+  }
+ ],
+ "quiet": [
+  [
+   5,
+   -0.05,
+   6,
+   -0.1
+  ]
+ ],
+ "cta": {
+  "kicker": "GUIDE ANTI-ARNAQUE · GRATUIT",
+  "title": "Le kit <em>anti-arnaques</em> 2026",
+  "url": "www.secureguide.fr/kit",
+  "sub": "Enregistrez cette vidéo.",
+  "offset": 2.6100000000000003,
+  "sentence": 7
+ }
+}
